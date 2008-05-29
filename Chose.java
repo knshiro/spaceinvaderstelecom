@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /** Chose : Objet le plus générique. Contient les attributs et les méthodes de base.
  * 
  * @author Knshiro
@@ -7,7 +9,7 @@
 
 public abstract class Chose {
 
-	//ArrayList univers = new ArrayList();
+	ArrayList<Chose> univers = new ArrayList<Chose>();
 	
 	Point coord;
 	Point vitesse;
@@ -17,8 +19,8 @@ public abstract class Chose {
 	private int hauteur;
 	private int id;
 	
-	Chose(/*ArrayList univers,*/ Point coord, int vie, int largeur, int hauteur, int id){
-		//this.univers = univers;
+	Chose(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id){
+		this.univers = univers;
 		this.coord = coord;
 		this.vie = vie;
 		this.largeur = largeur;
