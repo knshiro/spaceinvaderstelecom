@@ -84,7 +84,10 @@ class Invaders extends Chose
 	{
 		
 		univers.get(1).setVie(univers.get(1).getVie()-1);
-		super.destruction();	
+		univers.get(1).setMatrice(ligne, colone, null);
+		univers.get(1).tableauxAJour(ligne, colone);
+		super.destruction();
+		
 	}
 	
 	public void prochainTour()
