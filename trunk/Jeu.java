@@ -2,6 +2,14 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/** Jeu : Classe qui gère toute la partie IA. Elle génère l'univers et les timers qui
+ * les controlent.
+ * 
+ * @author Knshiro
+ * @version 1.0
+ * @package default_package
+ */
+
 public class Jeu {
 	ArrayList<Chose> univers;
 	private int score;
@@ -10,6 +18,7 @@ public class Jeu {
 	private int son;
 	javax.swing.Timer tEscadrille;
 	javax.swing.Timer tBaseLaser;
+	javax.swing.Timer tBrique;
 	javax.swing.Timer tMissile;
 	
 	public void setScore(int v){
@@ -48,24 +57,40 @@ public class Jeu {
 		return son;
 	}
 
+	/** Jeu
+	 * constructeur qui instancie tous les objets et crée les listeners utilisés par les timers
+	 * 
+	 * @param level
+	 * @param score
+	 * @param name
+	 */
 	Jeu(int level,int score, String name){
 		this.level=level;
 		this.score=score;
 		setPseudo(name);
 		univers = new ArrayList<Chose>();
 		
+		/** aEscadrille
+		 * action qui lance la méthode prochainTour de l'escadrille
+		 */
 		ActionListener aEscadrille = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 (univers.get(1)).prochainTour();
             }
 		};
 		
+		/** aBaseLaser
+		 * action qui lance la méthode prochainTour de la BaseLaser
+		 */
 		ActionListener aBaseLaser = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 (univers.get(0)).prochainTour();
             }
 		};
 		
+		/** aBrique
+		 * action qui lance la méthode prochainTour des briques de shelter
+		 */
 		ActionListener aBrique = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	for (int i=3;i<43;i++){
@@ -74,6 +99,9 @@ public class Jeu {
             }
 		};
 		
+		/** aBrique
+		 * action qui lance la méthode prochainTour des missiles
+		 */
 		ActionListener aMissile = new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             	for (int i=43;i<60;i++){
@@ -91,7 +119,10 @@ public class Jeu {
 			for (int i=3;i<43;i++){
 			univers.add(new Brique());
 			}
-			tEscadrille.s
+			tEscadrille = new javax.swing.Timer(500,aEscadrille);
+			tBaseLaser = new javax.swing.Timer(500,aBaseLaser);
+			tBrique = new javax.swing.Timer(500,aBrique);
+			tMissile = new javax.swing.Timer(500,aMissile);
 			break;
 
 		case 2 :
