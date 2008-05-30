@@ -81,7 +81,7 @@ public abstract class Chose {
 	* @return rien.
 	*/
 	public void destruction(){
-		//univers[id]=null;
+		univers.set(id,null);
 	}
 	
 	/** prochainTour
