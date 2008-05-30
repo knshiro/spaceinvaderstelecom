@@ -78,4 +78,10 @@ public class BaseLaser extends Chose{
 		}
 	}
 	
+	abscisse=coord.getX();
+	ordonnee=coord.getY();
+	hauteur=super.getHauteur();
+	largeur=super.getLargeur();
+	private int abscisse,ordonnee,hauteur,largeur;
+	
 }
