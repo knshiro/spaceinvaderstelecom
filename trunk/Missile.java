@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 /** Missile : arme du jeu.
+ * Important : CHANGER dans deplacement les bords de l'écran qu'on a mis à 640*800
  */
 public class Missile extends Chose {
 
@@ -20,10 +21,11 @@ public class Missile extends Chose {
 	}
 	
 	public void collision(){
-		if(camp==1){
-			int j=0;
+		int i,j;
+		if(camp==1){   // C'est le gentil terrien qui tire
+			j=0;
 			ArrayList<Chose> mechant = univers.get(1);
-			int i=0;
+			i=0;
 			while(i<5){
 				while(i<5 && !touche((mechant.getMatrice)[i][j])){
 					j++;
@@ -43,16 +45,57 @@ public class Missile extends Chose {
 				}
 				else {
 					i=3;
-					while(univers.get(i) != null && !touche(univers.get(i))){
+					while(i < 100 && !touche(univers.get(i))){
 						i++;
 					}
-					if(touche(univers.get(i))) {
+					if(i<100) {
 						(univers.get(i)).degat(1);
 						destruction();
 					}
 				}
 			}
 		}
+		if(camp==0){  // C'est l'ennemi qui tire
+			i=3;
+			while(i < 43 && !touche(univers.get(i))){
+				i++;
+			}
+			if(i<43) {
+				(univers.get(i)).degat(1);
+				destruction();
+			}
+			else {
+				if(touche(univers.get(0))) {
+					(univers.get(0)).degat(1);
+					destruction();
+				}
+			}	
+		}	
+	}	
+	
+	public void dessin(Graphics g)
+	{
+		int abscisse,ordonnee,hauteur,largeur;
+		abscisse=coord.getX();
+		ordonnee=coord.getY();
+		hauteur=super.getHauteur();
+		largeur=super.getLargeur();
+		
+		g.setColor(Color.white);
+		g.fillRect(abscisse,ordonnee, largeur, hauteur);
 	}
 	
+	public void deplacement(){
+		if (coord.getX()==640 && coord.getY()==800) {
+				destruction();
+		}
+		else {
+			super.deplacement();
+		}
+	}
+	
+	public void prochainTour() {
+		deplacement();
+		collision();
+	}
 }
