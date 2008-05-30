@@ -1,5 +1,11 @@
 
 public class Escadrille extends Chose{
+	
+	/* classe Escadrille: hérite de chose. gère un tableau 5*11 d'Invaders pour les faire bouger et tirer
+	 * author: Charlix
+	 * version:1.0
+	 * package:default_package
+	 * penser à rajouter de quoi perdre quand l'escadrille arrive en bas*/
 	Invaders[][] matrice; /*tableau des invaders*/
 	int[] colonnespleines;/*colonnespleines(i) vaut 0 si la colonne est vide,1 si elle est pleine*/
 	int[] lignespleines;
@@ -7,13 +13,15 @@ public class Escadrille extends Chose{
 	int acceleration;
 	int pas;
 	
-	Escadrille(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas)
+	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
+	Escadrille(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv)
 	{
 		super(univers, coord, vie, largeur, hauteur, id);
 		int i,j;
+		Point place;
 		/*la vie devra valoir 55 au départ*/
 		
-		matrice=new Invaders[5][11];
+		matrice=new Invaders[5][11]; /*mettre à jour selon  le constructeur des invaders*/
 		colonnespleines=new int[11];
 		lignespleines=new int[5];
 		for (i=0;i<11;i++)
@@ -28,7 +36,8 @@ public class Escadrille extends Chose{
 		{
 			for(j=0;j<11;j++)
 			{
-				matrice[i][j]=new Invaders();/*voir selon le constructeur de Invaders*/
+				place=setPoint(coord.getX()+j*larginv,coord.getY()+i*hautinv)
+				matrice[i][j]=new Invaders(univers, place, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
 			}
 		}
 		this.sens=sens;
@@ -36,26 +45,43 @@ public class Escadrille extends Chose{
 		this.pas=pas;
 	}
 	
+	/*pour récupérer la matrice
+	 * param:rien
+	 * renvoi:matrice
+	 */
 	public Invader[][] getMatrice ()
 	{
 		return matrice;
 	}
 	
+	/*modifier la matrice
+	 * param:ligne et colonne de ce que l'on veut modifier, invader à mettre
+	 * renvoi:rien
+	 */
 	public void setMatrice (int i,int j, Invader vaisseau)
 	{
 		matrice[i][j]=vaisseau;
 	}
 	
+	/*modifier une case de colonnespleines
+	 * param: n° de la colonne, un 0 ou un 1
+	 * renvoi: rien
+	 */
 	public void setColonnesPleines (int j, int bool)
 	{
 		colonnespleines[j]=bool;
 	}
 	
+	/*recuperer le tableau colonnespleines
+	 * param: ren
+	 * renvoi: colonnespleines
+	 */
 	public int[] getColonnesPleines ()
 	{
 		return colonnespleines;
 	}
 	
+	/*pareil pour les lignes*/	
 	public void setLignesPleines (int i, int bool)
 	{
 		lignespleines[i]=bool;
@@ -66,6 +92,10 @@ public class Escadrille extends Chose{
 		return lignespleines;
 	}
 	
+	/*checker si l'escadrille arrive au bord de la surface de jeu
+	 * param: xmax et xinf
+	 * renvoi:booleen
+	 */
 	boolean controlebord (int xmax, int xinf)
 	{
 		int j;
@@ -97,6 +127,17 @@ public class Escadrille extends Chose{
 			return(matrice[i][j].coord.getx()<xinf);
 		}
 		
+	}
+	
+	boolean controlebas (int bas)
+	{
+		int i=4;
+		int j=0
+		while ((i>=0)&&(lignespleines[i]==1))
+			i--;
+		while (matrice[i][j]==null)&&(j<11))
+			j++;
+		return(matrice[i][j].coord.getY()<bas);
 	}
 	
 	void prochaintour ()
