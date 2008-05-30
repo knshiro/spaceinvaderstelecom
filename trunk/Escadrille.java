@@ -3,7 +3,7 @@ public class Escadrille extends Chose{
 	
 	/* classe Escadrille: hérite de chose. gère un tableau 5*11 d'Invaders pour les faire bouger et tirer
 	 * author: Charlix
-	 * version:1.0
+	 * version:1.1
 	 * package:default_package
 	 * penser à rajouter de quoi perdre quand l'escadrille arrive en bas*/
 	Invaders[][] matrice; /*tableau des invaders*/
@@ -19,6 +19,7 @@ public class Escadrille extends Chose{
 		super(univers, coord, vie, largeur, hauteur, id);
 		int i,j;
 		Point place;
+		place=new Point(0,0);
 		/*la vie devra valoir 55 au départ*/
 		
 		matrice=new Invaders[5][11]; /*mettre à jour selon  le constructeur des invaders*/
@@ -26,17 +27,17 @@ public class Escadrille extends Chose{
 		lignespleines=new int[5];
 		for (i=0;i<11;i++)
 		{
-			colonnespleines[i]=1;
+			colonnespleines[i]=5;
 		}
 		for (i=0;i<5;i++)
 		{
-			lignespleines[i]=1;
+			lignespleines[i]=11;
 		}
 		for (i=0;i<5;i++)
 		{
 			for(j=0;j<11;j++)
 			{
-				place=setPoint(coord.getX()+j*larginv,coord.getY()+i*hautinv)
+				place.setPoint(coord.getX()+j*larginv,coord.getY()+i*hautinv);
 				matrice[i][j]=new Invaders(univers, place, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
 			}
 		}
@@ -49,7 +50,7 @@ public class Escadrille extends Chose{
 	 * param:rien
 	 * renvoi:matrice
 	 */
-	public Invader[][] getMatrice ()
+	public Invaders[][] getMatrice ()
 	{
 		return matrice;
 	}
@@ -58,7 +59,7 @@ public class Escadrille extends Chose{
 	 * param:ligne et colonne de ce que l'on veut modifier, invader à mettre
 	 * renvoi:rien
 	 */
-	public void setMatrice (int i,int j, Invader vaisseau)
+	public void setMatrice (int i,int j, Invaders vaisseau)
 	{
 		matrice[i][j]=vaisseau;
 	}
@@ -67,9 +68,9 @@ public class Escadrille extends Chose{
 	 * param: n° de la colonne, un 0 ou un 1
 	 * renvoi: rien
 	 */
-	public void setColonnesPleines (int j, int bool)
+	public void setColonnesPleines (int j, int nb)
 	{
-		colonnespleines[j]=bool;
+		colonnespleines[j]=nb;
 	}
 	
 	/*recuperer le tableau colonnespleines
@@ -92,6 +93,11 @@ public class Escadrille extends Chose{
 		return lignespleines;
 	}
 	
+	public void tableauxAJour (int i, int j)
+	{
+		lignespleines[i]=lignespleines[i]-1;
+		colonnespleines[j]=colonnespleines[j]-1;
+	}
 	/*checker si l'escadrille arrive au bord de la surface de jeu
 	 * param: xmax et xinf
 	 * renvoi:booleen
@@ -103,7 +109,7 @@ public class Escadrille extends Chose{
 		if (sens==1)
 		{
 			j=10;
-		while ((colonnespleines[j]=0)&&(j>=0))/*récupération de la dernière colonne*/
+		while ((colonnespleines[j]==0)&&(j>=0))/*récupération de la dernière colonne*/
 		{
 			j--;
 		}
@@ -111,7 +117,7 @@ public class Escadrille extends Chose{
 		{
 			i++;
 		}
-		return(matrice[i][j].coord.getx()>xmax); 
+		return(matrice[i][j].coord.getX()>xmax); 
 		}
 		else
 		{
@@ -124,23 +130,23 @@ public class Escadrille extends Chose{
 			{
 				i++;
 			}
-			return(matrice[i][j].coord.getx()<xinf);
+			return(matrice[i][j].coord.getX()<xinf);
 		}
 		
 	}
 	
-	boolean controlebas (int bas)
+	public boolean controlebas (int bas)
 	{
 		int i=4;
-		int j=0
-		while ((i>=0)&&(lignespleines[i]==1))
+		int j=0;
+		while ((i>=0)&&(lignespleines[i]==0))
 			i--;
-		while (matrice[i][j]==null)&&(j<11))
+		while ((matrice[i][j]==null)&&(j<11))
 			j++;
 		return(matrice[i][j].coord.getY()<bas);
 	}
 	
-	void prochaintour ()
+	public void prochainTour ()
 	{
 		int i,j;
 		if (this.controlebord(xmax, xinf)) /*voir comment récupérer ces parametres*/
