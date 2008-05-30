@@ -11,10 +11,10 @@ public class Escadrille extends Chose{
 	int[] lignespleines;
 	int sens;
 	int acceleration;
-	int pas, xmax,xinf;
+	int pas, xmax,xinf,espace,nbColonnes;
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
-	Escadrille(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv)
+	Escadrille(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv, int espace)
 	{
 		super(univers, coord, vie, largeur, hauteur, id);
 		int i,j;
@@ -37,13 +37,14 @@ public class Escadrille extends Chose{
 		{
 			for(j=0;j<11;j++)
 			{
-				place.setPoint(coord.getX()+j*larginv,coord.getY()+i*hautinv);
+				place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
 				matrice[i][j]=new Invaders(univers, place, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
 			}
 		}
 		this.sens=sens;
 		this.acceleration=acceleration;
 		this.pas=pas;
+		this.nbColonnes=11;
 	}
 	
 	/*pour récupérer la matrice
@@ -97,6 +98,9 @@ public class Escadrille extends Chose{
 	{
 		lignespleines[i]=lignespleines[i]-1;
 		colonnespleines[j]=colonnespleines[j]-1;
+		if (colonnespleines[j]==0)
+			nbColonnes--;
+		
 	}
 	/*checker si l'escadrille arrive au bord de la surface de jeu
 	 * param: xmax et xinf
@@ -146,7 +150,33 @@ public class Escadrille extends Chose{
 		return(matrice[i][j].coord.getY()<bas);
 	}
 	
-	public void prochainTour ()
+	public void tir ()
+	{
+		double i;
+		int j,k,l;
+		k=0;
+		l=0;
+		i=Math.random();
+		i=i*nbColonnes;
+		j=Math.round(Math.round(i));
+		while (k<j)
+		{
+			if (colonnespleines[k]>0)
+			{
+				k++;
+				l++;
+			}
+			else
+				l++;
+		}
+		k=4;
+		while (matrice[k][l]!=null)
+			k--;
+		matrice[k][l].tir();	
+		
+	}
+	
+	public void prochainTour () /*rajouter une fonction qui teste le timer pour pouvoir tirer*/
 	{
 		int i,j;
 		if (this.controlebord(xmax, xinf)) /*voir comment récupérer ces parametres*/
