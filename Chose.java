@@ -19,9 +19,10 @@ public abstract class Chose {
 	private int hauteur;
 	private int id;
 	
-	Chose(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id){
+	Chose(ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
 		this.univers = univers;
 		this.coord = coord;
+		this.vitesse = vitesse;
 		this.vie = vie;
 		this.largeur = largeur;
 		this.hauteur = hauteur;
@@ -89,7 +90,7 @@ public abstract class Chose {
 	* @param rien.
 	* @return rien.
 	*/
-	public void prochainTour(){};
+	public abstract void prochainTour();
 	
 	
 }
