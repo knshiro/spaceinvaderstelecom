@@ -4,22 +4,33 @@ import java.util.ArrayList;
 public class BaseLaser extends Chose{
 	private int nombremissile;
 	private int autorisation;
+	private int ordredeplacement;
 	
-	int Getauto(){
+	int getdeplacement(){
+		return ordredeplacement;
+	}
+	
+	void setdeplacement(int ordredeplacement){
+		this.ordredeplacement=ordredeplacement;
+	}
+	
+	int getauto(){
 		return autorisation;
 	}
 	
-	void Setauto(int i){
+	void setauto(int i){
 		this.autorisation=i;
 	}
 	
 	BaseLaser(ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
 		super(univers,coord,vitesse,vie,largeur,hauteur,id);
 		this.nombremissile=0;
+		this.ordredeplacement=0;
+		this.autorisation=1;
 		}
 
-	void tir(){
-		if( (autorisation==1) && (this.nombremissile<=3 )) {
+	public void tir(){
+		if( (autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande à tirer un missile
 			int i=43;
 			while(this.univers.get(i) != null) i++;
 			
@@ -37,12 +48,19 @@ public class BaseLaser extends Chose{
 			
 	}
 	
-	void dessin(){
+	public void dessin(){
 	}
 	
-	void prochainTour(){
+	public void prochainTour(){
 		this.tir();
-		this.deplacement();
+		if(this.ordredeplacement==1)    // deplacement à droite si ordredeplacement vaut 1
+			this.deplacement();
+		if(this.ordredeplacement==-1){  // deplacement à gauche si ordredeplacement vaut -1;
+			Point sauvervitesse = new Point(this.vitesse.getX(),this.vitesse.getY());
+			this.vitesse.setPoint(-sauvervitesse.getX(),sauvervitesse.getY());
+			this.deplacement();
+			this.vitesse.setPoint(sauvervitesse.getX(),sauvervitesse.getY());
+		}
 	}
 	
 }
