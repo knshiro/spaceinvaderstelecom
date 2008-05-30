@@ -11,7 +11,7 @@ public class Escadrille extends Chose{
 	int[] lignespleines;
 	int sens;
 	int acceleration;
-	int pas;
+	int pas, xmax,xinf;
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
 	Escadrille(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv)

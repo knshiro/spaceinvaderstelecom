@@ -4,11 +4,11 @@ import java.util.ArrayList;
 class Invaders extends Chose 
 {
 	
-	public Invaders(ArrayList univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colone, int ligne)
+	public Invaders(ArrayList univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
 	{
 		super(univers, coord,vitesse,vie, largeur, hauteur,id);
 		this.type=type;
-		this.colone=colone;
+		this.colonne=colonne;
 		this.ligne=ligne;	
 	}
 	
@@ -84,8 +84,8 @@ class Invaders extends Chose
 	{
 		
 		univers.get(1).setVie(univers.get(1).getVie()-1);
-		univers.get(1).setMatrice(ligne, colone, null);
-		univers.get(1).tableauxAJour(ligne, colone);
+		univers.get(1).setMatrice(ligne, colonne, null);
+		univers.get(1).tableauxAJour(ligne, colonne);
 		super.destruction();
 		
 	}
@@ -95,6 +95,8 @@ class Invaders extends Chose
 		deplacement();
 	}
 	
+	private int abscisse,ordonnee,hauteur,largeur, type, colonne, ligne, vie, id;
+	
 	abscisse=coord.getX();
 	ordonnee=coord.getY();
 	hauteur=super.getHauteur();
@@ -102,5 +104,5 @@ class Invaders extends Chose
 	id=super.getId();
 	vie=super.getVie();
 	
-	private int abscisse,ordonnee,hauteur,largeur, type, colone, ligne, vie, id;
+	
 }
