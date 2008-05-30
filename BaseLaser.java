@@ -52,6 +52,12 @@ public class BaseLaser extends Chose{
 	
 	public void dessin(Graphics g)
 	{
+		int abscisse,ordonnee,hauteur,largeur;
+		abscisse=coord.getX();
+		ordonnee=coord.getY();
+		hauteur=super.getHauteur();
+		largeur=super.getLargeur();
+		
 		g.setColor(Color.white);
 		g.fillRect(abscisse+ 3*largeur/7, ordonnee, largeur/7, hauteur/8);//1
 		g.fillRect(abscisse+ 3*largeur/7, ordonnee +hauteur/8, largeur/7, hauteur/8);//2
@@ -70,18 +76,12 @@ public class BaseLaser extends Chose{
 		this.tir();
 		if(this.ordredeplacement==1)    // deplacement à droite si ordredeplacement vaut 1
 			this.deplacement();
-		if(this.ordredeplacement==-1){  // deplacement à gauche si ordredeplacement vaut -1;
+		if(this.ordredeplacement==-1){  // deplacement à gauche si ordredeplacement vaut -1
 			Point sauvervitesse = new Point(this.vitesse.getX(),this.vitesse.getY());
 			this.vitesse.setPoint(-sauvervitesse.getX(),sauvervitesse.getY());
 			this.deplacement();
 			this.vitesse.setPoint(sauvervitesse.getX(),sauvervitesse.getY());
 		}
 	}
-	
-	abscisse=coord.getX();
-	ordonnee=coord.getY();
-	hauteur=super.getHauteur();
-	largeur=super.getLargeur();
-	private int abscisse,ordonnee,hauteur,largeur;
 	
 }
