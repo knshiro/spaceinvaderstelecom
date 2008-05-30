@@ -30,7 +30,7 @@ public class BaseLaser extends Chose{
 		}
 
 	public void tir(){
-		if( (autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande à tirer un missile
+		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande à tirer un missile
 			int i=43;
 			while(this.univers.get(i) != null) i++;
 			
