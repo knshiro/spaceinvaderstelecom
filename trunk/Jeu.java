@@ -1,4 +1,6 @@
 import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
 
 public class Jeu {
 	ArrayList<Chose> univers;
@@ -6,10 +8,9 @@ public class Jeu {
 	private int level;
 	private String pseudo;
 	private int son;
-	Timer tEscadrille;
-	TimerTask taskEscadrille = new
-	Timer tBaseLaser;
-	Timer tMissile;
+	javax.swing.Timer tEscadrille;
+	javax.swing.Timer tBaseLaser;
+	javax.swing.Timer tMissile;
 	
 	public void setScore(int v){
 		score=v;
@@ -51,11 +52,35 @@ public class Jeu {
 		this.level=level;
 		this.score=score;
 		setPseudo(name);
-		tEscadrille = new Timer(true);
-		task
-		tBaseLaser = new Timer(true);
-		tMissile = new Timer(true);
 		univers = new ArrayList<Chose>();
+		
+		ActionListener aEscadrille = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                (univers.get(1)).prochainTour();
+            }
+		};
+		
+		ActionListener aBaseLaser = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                (univers.get(0)).prochainTour();
+            }
+		};
+		
+		ActionListener aBrique = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	for (int i=3;i<43;i++){
+            		(univers.get(i)).prochainTour();
+        			}
+            }
+		};
+		
+		ActionListener aMissile = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	for (int i=43;i<60;i++){
+            		(univers.get(i)).prochainTour();
+        			}
+            }
+		};
 		
 		switch (level) {
 		
@@ -63,7 +88,7 @@ public class Jeu {
 			univers.add(new BaseLaser(univers, new Point(100,50), new Point(0,0), 4, 5, 2, 0));
 			univers.add(new Escadrille(univers, new Point(0,0), 5*11, 11, 5, 1, 1, 1, 1, int hautinv, int larginv));
 			univers.add(new MysteryShip());
-			for (int i=3;i++;i<43){
+			for (int i=3;i<43;i++){
 			univers.add(new Brique());
 			}
 			tEscadrille.s
@@ -80,8 +105,4 @@ public class Jeu {
 		}
 		
 	}
-
-
-
-
 }
