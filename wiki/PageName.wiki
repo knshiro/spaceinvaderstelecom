@@ -8,8 +8,8 @@ Conventions pour le jeu
 = Details =
 
   * Coordonées : (0,0) en haut à gauche sens positif > v
-  * Univers : - 0 base laser
-              - 1 escadrille
-              - 2 mystery ship
-              - 3 à 42 shelters
-              - 43 à infini missiles
+  * Univers : # 0 base laser
+              # 1 escadrille
+              # 2 mystery ship
+              # 3 à 42 shelters
+              # 43 à infini missiles
