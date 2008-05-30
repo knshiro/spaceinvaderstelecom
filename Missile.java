@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.awt.*;
+
 
 /** Missile : arme du jeu.
  * Important : CHANGER dans deplacement les bords de l'écran qu'on a mis à 640*800
@@ -22,7 +24,7 @@ public class Missile extends Chose {
  * @param id
  * @param camp
  */
-	Missile(ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int camp) {
+	Missile(ArrayList<Chose> univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int camp) {
 		super(univers, coord, vitesse, vie, largeur, hauteur, id);
 		this.camp = camp;
 	}
