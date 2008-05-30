@@ -11,9 +11,6 @@ public class Missile extends Chose {
 
 	private int camp; // 1 : ami et 0 : ennemi
 	
-	public void setCamp(int v){
-		camp = v;
-	}
 	public int getCamp(){
 		return camp;
 	}
@@ -28,7 +25,7 @@ public class Missile extends Chose {
 	}
 	
 	public void collision(){
-		if(camp==1){ //allié
+		if(camp==1){
 			int i=1;
 			while(i<4*10 && !touche(univers.get(i))){
 				i++;
