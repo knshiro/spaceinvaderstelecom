@@ -5,21 +5,41 @@ import java.util.ArrayList;
  */
 public class Missile extends Chose {
 
-	private int camp; // 1 : ami et 0 : ennemi
-	
-	public int getCamp(){
-		return camp;
-	}
-	
+/**
+ * Permet de déterminer le camp du tireur de missile
+ * 1 : Base laser -- 0 : Ennemi
+ */	
+	private int camp;
+
+/**
+ * Constructeur : On ajoute juste le camp
+ * @param univers
+ * @param coord
+ * @param vitesse
+ * @param vie
+ * @param largeur
+ * @param hauteur
+ * @param id
+ * @param camp
+ */
 	Missile(ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int camp) {
 		super(univers, coord, vitesse, vie, largeur, hauteur, id);
 		this.camp = camp;
 	}
+
+/**
+ * Permet de savoir si on touche qqn 
+ * @param c
+ * @return
+ */
 	
 	public boolean touche(Chose c){
 		return (coord.getX() >= (c.coord.getX()-c.getLargeur()/2) && c.coord.getX() <= (c.coord.getX()+c.getLargeur()/2)) && (c.coord.getY() >= (c.coord.getY()-c.getHauteur()/2) && c.coord.getY() <= (c.coord.getY()+c.getHauteur()/2)); 
 	}
 	
+/**
+ * Détecte une éventuelle collision
+ */
 	public void collision(){
 		int i,j;
 		if(camp==1){   // C'est le gentil terrien qui tire
@@ -73,6 +93,10 @@ public class Missile extends Chose {
 		}	
 	}	
 	
+/**
+ * Fonction de dessin pour les missiles
+ * @param g
+ */
 	public void dessin(Graphics g)
 	{
 		int abscisse,ordonnee,hauteur,largeur;
@@ -80,11 +104,14 @@ public class Missile extends Chose {
 		ordonnee=coord.getY();
 		hauteur=super.getHauteur();
 		largeur=super.getLargeur();
-		
 		g.setColor(Color.white);
 		g.fillRect(abscisse,ordonnee, largeur, hauteur);
 	}
 	
+/**
+ * Redondance de la fonction de déplacement 
+ * Rapide test si sortie de l'écran
+ */
 	public void deplacement(){
 		if (coord.getX()==640 && coord.getY()==800) {
 				destruction();
@@ -94,6 +121,9 @@ public class Missile extends Chose {
 		}
 	}
 	
+/**
+ * Permettra à la fonction de Jeu de contrôler le prochain tour
+ */
 	public void prochainTour() {
 		deplacement();
 		collision();
