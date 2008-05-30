@@ -9,13 +9,18 @@ import java.util.ArrayList;
 
 public class Missile extends Chose {
 
-	private int camp;
+	private int camp; // 1 : ami et 0 : ennemi
 	
 	public void setCamp(int v){
 		camp = v;
 	}
 	public int getCamp(){
 		return camp;
+	}
+	
+	Missile(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id, int camp) {
+		super(univers, coord, vie, largeur, hauteur, id);
+		this.camp = camp;
 	}
 	
 	public boolean touche(Chose c){
