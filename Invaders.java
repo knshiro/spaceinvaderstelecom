@@ -4,7 +4,7 @@ import java.util.ArrayList;
 class Invaders extends Chose 
 {
 	
-	private int abscisse,ordonnee,hauteur,largeur, type, colonne, ligne, vie, id;
+	private int abscisse,ordonnee,hauteur,largeur, type, colonne, ligne, vie, id ;
 	
 	abscisse=coord.getX();
 	ordonnee=coord.getY();
@@ -96,12 +96,27 @@ class Invaders extends Chose
 		int largeur_missile=4; //la largeur et la hauteur seront sans doute à modifier
 		int hauteur_missile=10;
 		Point vitesse_missile=new Point(0,20); //j'ai aucune idée de l'ordre de grandeur, à modifier ultérieurement
-		int id_missile=id; //Qu'en sais-je?
 		int camp=0;//C'est un ennemi
 		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);
 		
-		Missile missile=new Missile(univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile,camp);//à corriger
+		Missile missile=new Missile(univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);//à corriger
 	}
+	
+	int id_missile()
+	{
+		int i;
+		int trouve=0;
+		for(i=43;i<=(univers.size()-1)&&(trouve==0);i++)
+		{
+			if (univers.get(i)==null)
+			{
+				trouve=1;
+				return i;
+				
+			}
+		}
+	}
+	
 	
 	public void destruction()
 	{
