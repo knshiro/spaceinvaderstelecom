@@ -44,20 +44,21 @@ public class Missile extends Chose {
  */
 	public void collision(){
 		int i,j;
+		Escadrille mechant;
 		if(camp==1){   // C'est le gentil terrien qui tire
 			j=0;
-			ArrayList<Chose> mechant = univers.get(1);
+			mechant = (Escadrille) univers.get(1);
 			i=0;
 			while(i<5){
-				while(i<5 && !touche((mechant.getMatrice)[i][j])){
+				while(i<5 && !touche((mechant.getMatrice())[i][j])){
 					j++;
 					if (j==11) {
 							i++;
 					}
 				}
 			}
-			if(touche(mechant.getMatrice[i][j])){
-				(mechant.getMatrice[i][j]).degat(1);
+			if(touche(mechant.getMatrice()[i][j])){
+				(mechant.getMatrice()[i][j]).degat(1);
 				destruction(); 
 			}
 			else {
