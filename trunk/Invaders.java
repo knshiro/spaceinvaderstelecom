@@ -1,6 +1,9 @@
 import java.awt.*;
 import java.util.ArrayList;
-
+/**
+ * Un objet invaders est un vaisseau ennemi. Son constructeur comporte plus d'arguments que le constructeur de Chose.
+ * En effet il faut aussi préciser quel est le type du vaisseau (cela change le nombre de points attribués en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone.
+ */
 class Invaders extends Chose 
 {
 	
@@ -8,10 +11,11 @@ class Invaders extends Chose
 	
 	abscisse=coord.getX();
 	ordonnee=coord.getY();
-	hauteur=super.getHauteur();
+	/*hauteur=super.getHauteur();
 	largeur=super.getLargeur();
 	id=super.getId();
 	vie=super.getVie();
+	Vraisemblablement inutile*/
 	
 	public Invaders(ArrayList<Chose> univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
 	{
@@ -21,7 +25,10 @@ class Invaders extends Chose
 		this.ligne=ligne;	
 	}
 	
-	
+	/**Dessine l'invaders.Son apparence dépend de la valeur de type.
+	 * 
+	 * @param g de type Graphics
+	 */
 	public void dessin(Graphics g)
 	{
 			
@@ -90,6 +97,9 @@ class Invaders extends Chose
 		}
 	}
 	
+	/**
+	 * Instancie un missile si l'invaders est appelé à tirer.
+	 */
 	void tir()
 	{
 		int vie_missile=1;
@@ -97,12 +107,15 @@ class Invaders extends Chose
 		int hauteur_missile=10;
 		Point vitesse_missile=new Point(0,20); //j'ai aucune idée de l'ordre de grandeur, à modifier ultérieurement
 		int camp=0;//C'est un ennemi
-		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);
-		
+		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);//Pour que le missile parte du bon endroit
+		//instancie un nouveau missile
 		Missile missile=new Missile(univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);//à corriger
 	}
-	
-	int id_missile()
+	/**
+	 * Cette foncion est utilisée dans la méthode tir pour déterminer l'id du missile à instancier. Cette fonction parcours la liste univers et renvoie l'index de la première case vide d'index supérieur ou égal à 43.
+	 * @return L'id du missile. 
+	 */
+	private int id_missile()
 	{
 		int i;
 		int trouve=0;
@@ -118,6 +131,12 @@ class Invaders extends Chose
 	}
 	
 	
+	/**
+	 * <b>Détermine le comportement à adopter lorsque l'invaders est touché:</b>
+	 * <br> -On enlève une unité à la vie de l'escadrille
+	 * <br> -On vide la case correspondante dans la matrice de l'Escadrille
+	 * <br> -On supprime l'invaders de la liste <i>univers</i> 
+	 */
 	public void destruction()
 	{
 		
@@ -127,7 +146,9 @@ class Invaders extends Chose
 		esc.tableauxAJour(ligne, colonne);
 		super.destruction();
 	}
-	
+	/**
+	 * Détermine le comportment à adopter au prochain décléchement du timer. Cette méthode permet le déplacement de l'invaders.
+	 */
 	public void prochainTour()
 	{
 		deplacement();
