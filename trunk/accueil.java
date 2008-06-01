@@ -21,21 +21,31 @@ class Menu extends JMenuBar {
 	}
 
 	private void initializeMenu() {
-		JMenu jeu = new JMenu("Space Invaders");
-		JMenuItem newgame = new JMenuItem("New Game");
-		JMenuItem highscores = new JMenuItem("High Scores");
-		JMenuItem credits = new JMenuItem("Credits");
-		JMenuItem exit = new JMenuItem("Exit");
-		exit.addActionListener(new ActionListener() {
+		JMenu game = new JMenu("Game");
+		JMenuItem game_newgame = new JMenuItem("New Game");
+		JMenuItem game_pause = new JMenuItem("Pause");
+		JMenuItem game_resume = new JMenuItem("Resume");
+		JMenuItem game_quit = new JMenuItem("Quit");
+		game_quit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				System.exit(0);
 			}
 		});
-		jeu.add(newgame);
-		jeu.add(highscores);
-		jeu.add(credits);
-		jeu.add(exit);
-		add(jeu);
+		game.add(game_newgame);
+		game.add(game_pause);
+		game.add(game_resume);
+		game.add(game_quit);
+		add(game);
+		JMenu tools = new JMenu("Tools");
+		JMenuItem tools_commandlist = new JMenuItem("Command List");
+		JMenuItem tools_options = new JMenuItem("Options");
+		tools.add(tools_commandlist);
+		tools.add(tools_options);
+		add(tools);
+		JMenu help = new JMenu("Help");
+		JMenuItem help_credits = new JMenuItem("Credits");
+		help.add(help_credits);
+		add(help);
 		
 	}
 
