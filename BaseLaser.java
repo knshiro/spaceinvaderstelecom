@@ -74,9 +74,9 @@ public class BaseLaser extends Chose{
 	
 	public void prochainTour(){
 		this.tir();
-		if(this.ordredeplacement==1)    // deplacement à droite si ordredeplacement vaut 1
+		if(this.ordredeplacement==1)    // deplacement droite si ordredeplacement vaut 1
 			this.deplacement();
-		if(this.ordredeplacement==-1){  // deplacement à gauche si ordredeplacement vaut -1
+		if(this.ordredeplacement==-1){  // deplacement gauche si ordredeplacement vaut -1
 			Point sauvervitesse = new Point(this.vitesse.getX(),this.vitesse.getY());
 			this.vitesse.setPoint(-sauvervitesse.getX(),sauvervitesse.getY());
 			this.deplacement();
