@@ -45,7 +45,7 @@ public class Escadrille extends Chose{
 			for(j=0;j<11;j++)
 			{
 				place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-				matrice[i][j]=new Invaders(univers, place, vitesse, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
+				matrice[i][j]=new Invaders(Player, univers, place, vitesse, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
 			}
 		}
 		this.sens=sens;
