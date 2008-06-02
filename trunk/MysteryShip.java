@@ -1,7 +1,8 @@
 import java.awt.Color;
 import java.awt.*;
+import java.util.*;
 
-//Attention la classe n'est pas du tout opérationnelle pour l'instant, il faut modifier le constructeur.
+//Attention la classe n'est pas du tout oprationnelle pour l'instant, il faut modifier le constructeur.
 
 class MysteryShip extends Chose
 {
