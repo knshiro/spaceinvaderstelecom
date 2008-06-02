@@ -16,9 +16,9 @@ class Invaders extends Chose
 	vie=super.getVie();
 	Vraisemblablement inutile*/
 
-	public Invaders(ArrayList<Chose> univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
+	public Invaders(Joueur player, ArrayList<Chose> univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
 	{
-		super(univers, coord,vitesse,vie, largeur, hauteur,id);
+		super(player,univers, coord,vitesse,vie, largeur, hauteur,id);
 		this.type=type;
 		this.colonne=colonne;
 		this.ligne=ligne;
