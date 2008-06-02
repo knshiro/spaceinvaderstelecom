@@ -22,6 +22,46 @@ public class Jeu {
 	private int gameOver;
 	Joueur player;
 	
+	/** aEscadrille
+	 * action qui lance la méthode prochainTour de l'escadrille
+	 */
+	ActionListener aEscadrille = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            (univers.get(1)).prochainTour();
+        }
+	};
+	
+	/** aBaseLaser
+	 * action qui lance la méthode prochainTour de la BaseLaser
+	 */
+	ActionListener aBaseLaser = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            (univers.get(0)).prochainTour();
+        }
+	};
+	
+	/** aBrique
+	 * action qui lance la méthode prochainTour des briques de shelter
+	 */
+	ActionListener aBrique = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+        	for (int i=3;i<43;i++){
+        		(univers.get(i)).prochainTour();
+    			}
+        }
+	};
+	
+	/** aBrique
+	 * action qui lance la méthode prochainTour des missiles
+	 */
+	ActionListener aMissile = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+        	for (int i=43;i<60;i++){
+        		(univers.get(i)).prochainTour();
+    			}
+        }
+	};
+	
 	
 	public void setGameOver(int v){
 		gameOver=v;
@@ -39,55 +79,14 @@ public class Jeu {
 	}
 
 	/** Jeu
-	 * constructeur qui instancie tous les objets et crée les listeners utilisés par les timers
+	 * constructeur qui instancie tous les objets et crée les timers utilisés par les timers
 	 * 
 	 * @param level
-	 * @param score
-	 * @param name
 	 */
 	Jeu(int level){
 		this.level=level;
 		univers = new ArrayList<Chose>();
 		
-		/** aEscadrille
-		 * action qui lance la méthode prochainTour de l'escadrille
-		 */
-		ActionListener aEscadrille = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                (univers.get(1)).prochainTour();
-            }
-		};
-		
-		/** aBaseLaser
-		 * action qui lance la méthode prochainTour de la BaseLaser
-		 */
-		ActionListener aBaseLaser = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                (univers.get(0)).prochainTour();
-            }
-		};
-		
-		/** aBrique
-		 * action qui lance la méthode prochainTour des briques de shelter
-		 */
-		ActionListener aBrique = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	for (int i=3;i<43;i++){
-            		(univers.get(i)).prochainTour();
-        			}
-            }
-		};
-		
-		/** aBrique
-		 * action qui lance la méthode prochainTour des missiles
-		 */
-		ActionListener aMissile = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-            	for (int i=43;i<60;i++){
-            		(univers.get(i)).prochainTour();
-        			}
-            }
-		};
 		
 		switch (level) {
 		
@@ -117,10 +116,17 @@ public class Jeu {
 			break;
 		}	
 	}
+	
 	public void jouer(){
 		tEscadrille.start();
 		tBaseLaser.start();
 		tBrique.start();
 		tMissile.start();
+	}
+	public void stop(){
+		tEscadrille.stop();
+		tBaseLaser.stop();
+		tBrique.stop();
+		tMissile.stop();
 	}
 }
