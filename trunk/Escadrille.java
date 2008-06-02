@@ -21,7 +21,7 @@ public class Escadrille extends Chose{
 		
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
-	public Escadrille(ArrayList<Chose> univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, Joueur Player, int sens, int acceleration, int pas, int hautinv, int larginv, int espace)
+	public Escadrille(Joueur Player, ArrayList<Chose> univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv, int espace)
 	{
 		super(Player, univers, coord, vitesse, vie, largeur, hauteur, id);
 		int i,j;
