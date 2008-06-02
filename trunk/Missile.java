@@ -24,7 +24,7 @@ public class Missile extends Chose {
  * @param id
  * @param camp
  */
-	Missile(ArrayList<Chose> univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int camp) {
+	public Missile(ArrayList<Chose> univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int camp) {
 		super(univers, coord, vitesse, vie, largeur, hauteur, id);
 		this.camp = camp;
 	}
