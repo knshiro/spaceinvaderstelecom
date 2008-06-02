@@ -119,17 +119,12 @@ class Invaders extends Chose
 	 */
 	private int id_missile()
 	{
-		int i;
-		int trouve=0;
-		for(i=43;i<=(univers.size()-1)&&(trouve==0);i++)
+		int i=43;
+		while(univers.get(i)!=null)
 		{
-			if (univers.get(i)==null)
-			{
-				trouve=1;
-				return i;
-				
-			}
+			i++;
 		}
+		return i;
 	}
 	
 	
