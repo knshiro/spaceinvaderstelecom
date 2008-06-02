@@ -30,6 +30,7 @@ public class Joueur extends JPanel {
 		this.level=level;
 		this.score=score;
 		this.game=game;
+		
 	}
 	
 	
@@ -49,7 +50,10 @@ public class Joueur extends JPanel {
 		case -1:
 			win();
 			break;
+		}
 	}
+	
+	
 	
 	
 	
