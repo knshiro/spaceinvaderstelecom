@@ -20,6 +20,8 @@ public class Jeu {
 	javax.swing.Timer tBaseLaser;
 	javax.swing.Timer tBrique;
 	javax.swing.Timer tMissile;
+	private int larginv, hautinv; //modifier pour entrer la hauteur et la largeur des invaders
+	
 	
 	public void setScore(int v){
 		score=v;
@@ -114,7 +116,7 @@ public class Jeu {
 		
 		case 1 :
 			univers.add(new BaseLaser(univers, new Point(100,50), new Point(0,0), 4, 5, 2, 0));
-			univers.add(new Escadrille(univers, new Point(0,0), 5*11, 11, 5, 1, 1, 1, 1, int hautinv, int larginv));
+			univers.add(new Escadrille(univers, new Point(0,0), new Point (3,0), 5*11, 11, 5, 1, 1, 1, 1,hautinv, larginv, 2));
 			univers.add(new MysteryShip());
 			for (int i=3;i<43;i++){
 			univers.add(new Brique());

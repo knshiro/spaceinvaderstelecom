@@ -1,3 +1,4 @@
+import java.util.*;
 
 public class Escadrille extends Chose{
 	
@@ -6,17 +7,21 @@ public class Escadrille extends Chose{
 	 * version:1.1
 	 * package:default_package
 	 * penser à rajouter de quoi perdre quand l'escadrille arrive en bas*/
-	Invaders[][] matrice; /*tableau des invaders*/
-	int[] colonnespleines;/*colonnespleines(i) vaut 0 si la colonne est vide,1 si elle est pleine*/
-	int[] lignespleines;
+	private Invaders[][] matrice; /*tableau des invaders*/
+	private int[] colonnespleines;/*colonnespleines(i) vaut 0 si la colonne est vide,1 si elle est pleine*/
+	private int[] lignespleines;
 	int sens;
 	int acceleration;
 	int pas, xmax,xinf,espace,nbColonnes;
+	private int vie;
+	private int largeur;
+	private int hauteur;
+	private int id;
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
-	Escadrille(ArrayList univers, Point coord, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv, int espace)
+	public Escadrille(ArrayList<Chose> univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv, int espace)
 	{
-		super(univers, coord, vie, largeur, hauteur, id);
+		super(univers, coord, vitesse, vie, largeur, hauteur, id);
 		int i,j;
 		Point place;
 		place=new Point(0,0);
@@ -38,7 +43,7 @@ public class Escadrille extends Chose{
 			for(j=0;j<11;j++)
 			{
 				place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-				matrice[i][j]=new Invaders(univers, place, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
+				matrice[i][j]=new Invaders(univers, place, vitesse, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
 			}
 		}
 		this.sens=sens;
