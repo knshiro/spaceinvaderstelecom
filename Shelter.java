@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.awt.*;
-//non fini
+
 
 
 class Shelter extends Chose
@@ -10,13 +10,8 @@ class Shelter extends Chose
 	{
 		super(player,univers,coord, vitesse, vie,largeur, hauteur,id);
 		vitesse.setPoint(0, 0);
-	}
-	
-	public void dessin(Graphics g)
-	{
-		int i;
 		
-		ArrayList<Brique> bouclier= new ArrayList<Brique>();
+		
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+5*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
@@ -27,7 +22,15 @@ class Shelter extends Chose
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+5*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
-		
+	}
+	
+	public void dessin(Graphics g)
+	{
+		int i;
+		for(i=0;i<=9;i++)
+		{
+			bouclier.get(i).dessin();
+		}
 	}
 	private int id_bouclier()
 	{
@@ -47,6 +50,6 @@ class Shelter extends Chose
 	
 	
 	
-	private int vie, largeur, hauteur,id;
-	
+	private int vie, largeur,hauteur,id;
+	ArrayList<Brique> bouclier= new ArrayList<Brique>();
 }
