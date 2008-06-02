@@ -29,7 +29,7 @@ class Shelter extends Chose
 		int i;
 		for(i=0;i<=9;i++)
 		{
-			bouclier.get(i).dessin();
+			bouclier.get(i).dessin(g);
 		}
 	}
 	private int id_bouclier()
