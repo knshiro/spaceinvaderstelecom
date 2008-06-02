@@ -1,9 +1,9 @@
-//  Created by Matthieu Gédon-Monaco on 01/06/08.
-//  Copyright 2008 Bébénuts. All rights reserved.
+//  Created by Matthieu Gdon-Monaco on 01/06/08.
+//  Copyright 2008 Bbnuts. All rights reserved.
 //
-// Fonctionne en autonome, pour l'intégration, penser
-// à enlever le main. Pour l'instant c'est un menu qui
-// pourra être intégré à la fenêtre de jeu.
+// Fonctionne en autonome, pour l'intgration, penser
+//  enlever le main. Pour l'instant c'est un menu qui
+// pourra tre intgr  la fentre de jeu.
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,7 +23,6 @@ class Menu extends JMenuBar {
 	private void initializeMenu() {
 		JMenu game = new JMenu("Game");
 		JMenuItem game_newgame = new JMenuItem("New Game");
-		JMenuItem game_highscores = new JMenuItem("High Scores");
 		JMenuItem game_pause = new JMenuItem("Pause");
 		JMenuItem game_resume = new JMenuItem("Resume");
 		JMenuItem game_quit = new JMenuItem("Quit");
@@ -33,7 +32,6 @@ class Menu extends JMenuBar {
 			}
 		});
 		game.add(game_newgame);
-		game.add(game_highscores);
 		game.add(game_pause);
 		game.add(game_resume);
 		game.add(game_quit);
@@ -50,13 +48,4 @@ class Menu extends JMenuBar {
 		add(help);
 		
 	}
-
-	public static void main(String[] args) {
-		JFrame frame = new JFrame();
-		frame.setJMenuBar(new Menu());
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.pack();
-		frame.setVisible(true);
-	}
-
 }
