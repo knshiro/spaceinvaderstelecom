@@ -3,7 +3,7 @@ import java.awt.*;
 
 
 /** Missile : arme du jeu.
- * Important : CHANGER dans deplacement les bords de l'écran qu'on a mis à 640*800
+ * Important : CHANGER dans deplacement les bords de l'écran qu'on a mis, moi et mes mains à 640*800
  */
 public class Missile extends Chose {
 
