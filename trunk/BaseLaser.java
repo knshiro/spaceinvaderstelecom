@@ -3,6 +3,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 
+
 public class BaseLaser extends Chose{
 	private int nombremissile;
 	private int autorisation;
