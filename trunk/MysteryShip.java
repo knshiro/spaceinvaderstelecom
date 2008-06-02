@@ -3,14 +3,13 @@ import java.awt.*;
 
 //Attention la classe n'est pas du tout opérationnelle pour l'instant, il faut modifier le constructeur.
 
-class MysteryShip //extends Chose
+class MysteryShip extends Chose
 {
-	public MysteryShip(int abscisse,int ordonnee,int hauteur,int largeur)
+	public MysteryShip(ArrayList<Chose> univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id)
 	{
-		this.abscisse=abscisse;
-		this.ordonnee=ordonnee;
-		this.hauteur=hauteur;
-		this.largeur=largeur;
+		super(univers,coord,vitesse,vie,largeur,hauteur,id);
+		abscisse=coord.getX();
+		ordonnee=coord.getY();
 	}
 	
 	public void dessin(Graphics g)
@@ -36,5 +35,18 @@ class MysteryShip //extends Chose
 			g.fillRect(abscisse +(2*i-1)*largeur/13, ordonnee + 8*hauteur/9, largeur/13, hauteur/9);//8
 		}	
 	}
-	private int i, abscisse, ordonnee, hauteur, largeur;
+	
+	
+	public void prochainTour()
+	{
+		deplacement();
+		if((coord.getX()>800)||(coord.getX()<0)||(coord.getY()<0)||(coord.getY()>600))
+		{
+			destruction();
+		}
+	}
+	
+	private int i, abscisse, ordonnee, largeur, hauteur;
+
+	
 }
