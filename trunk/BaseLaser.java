@@ -36,7 +36,7 @@ public class BaseLaser extends Chose{
 		super(joueur,univers,coord,vitesse,vie,largeur,hauteur,id);
 		this.nombremissile=0;
 		this.ordredeplacement=0;
-		this.autorisation=1;
+		this.autorisation=0;
 		this.game_over=0;
 		}
 
