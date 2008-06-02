@@ -17,6 +17,7 @@ public class Escadrille extends Chose{
 	private int largeur;
 	private int hauteur;
 	private int id;
+		
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
 	public Escadrille(ArrayList<Chose> univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id, int sens, int acceleration, int pas, int hautinv, int larginv, int espace)
@@ -50,6 +51,8 @@ public class Escadrille extends Chose{
 		this.acceleration=acceleration;
 		this.pas=pas;
 		this.nbColonnes=11;
+		this.xinf=0;
+		this.xmax=600;
 	}
 	
 	/*pour récupérer la matrice
@@ -152,7 +155,7 @@ public class Escadrille extends Chose{
 			i--;
 		while ((matrice[i][j]==null)&&(j<11))
 			j++;
-		return(matrice[i][j].coord.getY()<bas);
+		return(matrice[i][j].coord.getY()>bas);
 	}
 	
 	public void tir ()
