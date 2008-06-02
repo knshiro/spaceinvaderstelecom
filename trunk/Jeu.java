@@ -13,7 +13,6 @@ import java.awt.event.*;
 public class Jeu {
 	ArrayList<Chose> univers;
 	private int level;
-	private String pseudo;
 	private int son;
 	javax.swing.Timer tEscadrille;
 	javax.swing.Timer tBaseLaser;
@@ -25,23 +24,12 @@ public class Jeu {
 	
 	
 	public void setGameOver(int v){
-		level=v;
+		gameOver=v;
 	}
 	public int getGameOver(){
-		return level;
+		return gameOver;
 	}
 	
-	public void setPseudo(String v){
-		if(v.length()<4){
-			pseudo=v.toUpperCase();
-		}
-		else {
-			pseudo="ASS";
-		}
-	}
-	public String getPseudo(){
-		return pseudo;
-	}
 	
 	public void setSon(int v){
 		son=v;
