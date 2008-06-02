@@ -13,7 +13,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-public class Menu extends JMenuBar {
+class Menu extends JMenuBar {
 
 	public Menu() {
 		super();
@@ -48,9 +48,10 @@ public class Menu extends JMenuBar {
 		JMenuItem help_credits = new JMenuItem("Credits");
 		help.add(help_credits);
 		add(help);
-
+		
+			
 	}
-	
+
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setJMenuBar(new Menu());
@@ -58,4 +59,5 @@ public class Menu extends JMenuBar {
 		frame.pack();
 		frame.setVisible(true);
 	}
+
 }
