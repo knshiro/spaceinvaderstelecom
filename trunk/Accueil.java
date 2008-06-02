@@ -52,6 +52,12 @@ class Accueil extends JFrame implements ActionListener{
 		
 	}
 	
+	public static void main(String [] argv){
+		Accueil fenetre = new Accueil();
+		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fenetre.pack();
+		fenetre.setVisible(true);
+	}
 	
 
 }
