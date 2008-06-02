@@ -23,22 +23,6 @@ public class Jeu {
 	private int gameOver;
 	Joueur player;
 	
-	public void setScore(int v){
-		score=v;
-	}
-	public void addScore(int v){
-		score+=v;
-	}
-	public int getScore(){
-		return score;
-	}
-	
-	public void setLevel(int v){
-		level=v;
-	}
-	public int getLevel(){
-		return level;
-	}
 	
 	public void setGameOver(int v){
 		level=v;
@@ -73,10 +57,8 @@ public class Jeu {
 	 * @param score
 	 * @param name
 	 */
-	Jeu(int level,int score, String name){
+	Jeu(int level){
 		this.level=level;
-		this.score=score;
-		setPseudo(name);
 		univers = new ArrayList<Chose>();
 		
 		/** aEscadrille
