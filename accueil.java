@@ -23,6 +23,7 @@ class Menu extends JMenuBar {
 	private void initializeMenu() {
 		JMenu game = new JMenu("Game");
 		JMenuItem game_newgame = new JMenuItem("New Game");
+		JMenuItem game_highscores = new JMenuItem("High Scores");
 		JMenuItem game_pause = new JMenuItem("Pause");
 		JMenuItem game_resume = new JMenuItem("Resume");
 		JMenuItem game_quit = new JMenuItem("Quit");
@@ -32,6 +33,7 @@ class Menu extends JMenuBar {
 			}
 		});
 		game.add(game_newgame);
+		game.add(game_highscores);
 		game.add(game_pause);
 		game.add(game_resume);
 		game.add(game_quit);
