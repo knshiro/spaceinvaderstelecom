@@ -12,6 +12,7 @@ class MysteryShip extends Chose
 		this.etat=etat;
 		abscisse=coord.getX();
 		ordonnee=coord.getY();
+		
 	}
 	
 	public void dessin(Graphics g)
