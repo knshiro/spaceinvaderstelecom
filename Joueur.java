@@ -1,12 +1,23 @@
 import javax.swing.*;
 
 
-public class Joueur extends JPanel {
+public class Joueur{
 
 	private int level;
 	private int score;
-	Timer tRefresh;
-	Jeu game;
+	private String pseudo;
+	
+	public void setPseudo(String v){
+		if(v.length()<4){
+			pseudo=v.toUpperCase();
+		}
+		else {
+			pseudo="ASS";
+		}
+	}
+	public String getPseudo(){
+		return pseudo;
+	}
 	
 	public void setScore(int v){
 		score=v;
@@ -26,35 +37,11 @@ public class Joueur extends JPanel {
 	}
 	
 	
-	Joueur(int level, int score, Jeu game){
+	Joueur(int level, int score, String pseudo){
 		this.level=level;
 		this.score=score;
-		this.game=game;
-		
+		setPseudo(pseudo);
 	}
 	
-	
-	
-	public void paintComponent(java.awt.Graphics g) {
-		super.paintComponent(g);
-		switch(game.getGameOver()){
-		case 0 :
-			for (int i=0;i<60;i++){
-				(game.univers.get(i)).dessin();	
-			}
-			break;
-		
-		case 1 : 
-			gameOver();
-			break;
-		case -1:
-			win();
-			break;
-		}
-	}
-	
-	
-	
-	
-	
+
 }
