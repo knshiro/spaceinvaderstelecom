@@ -6,17 +6,25 @@ import java.util.ArrayList;
  */
 class Invaders extends Chose 
 {
+	private int abscisse,ordonnee,hauteur,largeur, type, colonne, ligne, vie, id ;
 	
-	private int abscisse, ordonnee, hauteur, largeur, type, colonne, ligne, vie, id; 
-	abscisse=coord.getX();
-	ordonnee=coord.getY();
+
 	
+	/*hauteur=super.getHauteur();
+	largeur=super.getLargeur();
+	id=super.getId();
+	vie=super.getVie();
+	Vraisemblablement inutile*/
+
 	public Invaders(ArrayList<Chose> univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
 	{
 		super(univers, coord,vitesse,vie, largeur, hauteur,id);
 		this.type=type;
 		this.colonne=colonne;
-		this.ligne=ligne;	
+		this.ligne=ligne;
+		abscisse=coord.getX();
+		ordonnee=coord.getY();
+		
 	}
 	
 	/**Dessine l'invaders. Son apparence dépend de la valeur de <i>type</i>.

@@ -10,6 +10,10 @@ import java.util.ArrayList;
 	{
 		 
 		 super(univers,coord,vitesse,vie,largeur,hauteur,id);
+		 col=Color.green;
+		 
+		 abscisse=this.coord.getX();
+		 ordonnee=this.coord.getY();
 		
 	}
 	 
@@ -84,13 +88,16 @@ import java.util.ArrayList;
 			return 1;
 		}
 		
+		else
+		{
 		if ((1<=alea)&&(alea<2))
 		{
 			return 2;
 		}
-		if (alea>=2)
+		else 
 		{
 			return 3;
+		}
 		}
 	 }
 	 
@@ -103,9 +110,7 @@ import java.util.ArrayList;
 	 private static int hauteur;
 	 private int vie;
 	 private int abscisse, ordonnee, i,j;
-	 private Color col=Color.green;
+	 private Color col;
 	 
-	 abscisse=coord.getX();
-	 ordonnee=coord.getY();
 
 }
