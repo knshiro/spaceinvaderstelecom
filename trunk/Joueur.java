@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 
-public class Joueur{
+public class Joueur extends JPanel{
 
 	private int level;
 	private int score;

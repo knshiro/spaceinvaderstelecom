@@ -15,27 +15,34 @@ import javax.swing.JMenuItem;
 
 class Menu extends JMenuBar {
 
-	public Menu() {
+	Accueil fenetre;
+	
+	public Menu(Accueil fenetre) {
 		super();
+		this.fenetre=fenetre;
 		initializeMenu();
 	}
 
 	private void initializeMenu() {
 		JMenu game = new JMenu("Game");
-		JMenuItem game_newgame = new JMenuItem("New Game");
-		JMenuItem game_pause = new JMenuItem("Pause");
-		JMenuItem game_resume = new JMenuItem("Resume");
 		JMenuItem game_quit = new JMenuItem("Quit");
+		
 		game_quit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				System.exit(0);
 			}
 		});
-		game.add(game_newgame);
-		game.add(game_pause);
-		game.add(game_resume);
+		
+		
+		game.add(fenetre.game_newgame);
+		game.add(fenetre.game_pause);
+		game.add(fenetre.game_resume);
 		game.add(game_quit);
+		
 		add(game);
+		
+		
+		
 		JMenu tools = new JMenu("Tools");
 		JMenuItem tools_commandlist = new JMenuItem("Command List");
 		JMenuItem tools_options = new JMenuItem("Options");
