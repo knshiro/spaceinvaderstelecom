@@ -2,13 +2,12 @@ import java.awt.*;
 import java.util.ArrayList;
 /**
  * Un objet invaders est un vaisseau ennemi. Son constructeur comporte plus d'arguments que le constructeur de Chose.
- * En effet il faut aussi préciser quel est le type du vaisseau (cela change le nombre de points attribués en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone.
+ * En effet il faut aussi préciser quel est le type du vaisseau (cela change le nombre de points attribués en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone).
  */
 class Invaders extends Chose 
 {
 	
-	private int abscisse,ordonnee,hauteur,largeur, type, colonne, ligne, vie, id ;
-	
+	private int abscisse,ordonnee,hauteur,largeur, type, colonne, ligne, vie, id; 
 	abscisse=coord.getX();
 	ordonnee=coord.getY();
 	/*hauteur=super.getHauteur();
@@ -25,7 +24,7 @@ class Invaders extends Chose
 		this.ligne=ligne;	
 	}
 	
-	/**Dessine l'invaders.Son apparence dépend de la valeur de type.
+	/**Dessine l'invaders. Son apparence dépend de la valeur de <i>type</i>.
 	 * 
 	 * @param g de type Graphics
 	 */
