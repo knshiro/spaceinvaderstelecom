@@ -12,7 +12,6 @@ import java.awt.event.*;
 
 public class Jeu {
 	ArrayList<Chose> univers;
-	private int score;
 	private int level;
 	private String pseudo;
 	private int son;
@@ -21,7 +20,8 @@ public class Jeu {
 	javax.swing.Timer tBrique;
 	javax.swing.Timer tMissile;
 	private int larginv, hautinv; //modifier pour entrer la hauteur et la largeur des invaders
-	
+	private int gameOver;
+	Joueur player;
 	
 	public void setScore(int v){
 		score=v;
@@ -37,6 +37,13 @@ public class Jeu {
 		level=v;
 	}
 	public int getLevel(){
+		return level;
+	}
+	
+	public void setGameOver(int v){
+		level=v;
+	}
+	public int getGameOver(){
 		return level;
 	}
 	
@@ -115,11 +122,14 @@ public class Jeu {
 		switch (level) {
 		
 		case 1 :
-			univers.add(new BaseLaser(univers, new Point(100,50), new Point(0,0), 4, 5, 2, 0));
-			univers.add(new Escadrille(univers, new Point(0,0), new Point (3,0), 5*11, 11, 5, 1, 1, 1, 1,hautinv, larginv, 2));
+			univers.add(new BaseLaser(player,univers, new Point(100,50), new Point(0,0), 4, 5, 2, 0));
+			univers.add(new Escadrille(player,univers, new Point(0,0), new Point (3,0), 5*11, 11, 5, 1, 1, 1, 1,hautinv, larginv, 2));
 			univers.add(new MysteryShip());
 			for (int i=3;i<43;i++){
 			univers.add(new Brique());
+			}
+			for(int i=3;i<=60;i++){
+				univers.add(null);
 			}
 			tEscadrille = new javax.swing.Timer(500,aEscadrille);
 			tBaseLaser = new javax.swing.Timer(500,aBaseLaser);
@@ -135,7 +145,12 @@ public class Jeu {
 
 		default : 
 			break;
-		}
-		
+		}	
+	}
+	public void jouer(){
+		tEscadrille.start();
+		tBaseLaser.start();
+		tBrique.start();
+		tMissile.start();
 	}
 }

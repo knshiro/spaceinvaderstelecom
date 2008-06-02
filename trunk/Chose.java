@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public abstract class Chose {
 
 	ArrayList<Chose> univers = new ArrayList<Chose>();
+	Joueur player;
 	
 	Point coord;
 	Point vitesse;
@@ -19,7 +20,8 @@ public abstract class Chose {
 	private int hauteur;
 	private int id;
 	
-	Chose(ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
+	Chose(Joueur player,ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
+		this.player = player;
 		this.univers = univers;
 		this.coord = coord;
 		this.vitesse = vitesse;
