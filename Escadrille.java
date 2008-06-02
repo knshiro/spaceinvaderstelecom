@@ -17,7 +17,7 @@ public class Escadrille extends Chose{
 	private int largeur;
 	private int hauteur;
 	private int id;
-	int gameover;
+	int game_over;
 		
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
@@ -61,9 +61,15 @@ public class Escadrille extends Chose{
 	 * param:rien
 	 * renvoi:matrice
 	 */
-	public Invaders[][] getMatrice ()
+	
+		public Invaders[][] getMatrice ()
 	{
 		return matrice;
+	}
+		
+	int getgame_over()
+	{
+		return game_over;
 	}
 	
 	/*modifier la matrice
@@ -191,11 +197,11 @@ public class Escadrille extends Chose{
 		int i,j;
 		double t;
 		if (vie<=0)
-			gameover=-1;
+			game_over=-1;
 		else
 		{
 			if (controlebas(bas))
-				gameover=1;
+				game_over=1;
 			else
 				{
 				t=Math.random();
