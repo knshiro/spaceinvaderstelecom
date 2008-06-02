@@ -7,6 +7,12 @@ public class BaseLaser extends Chose{
 	private int nombremissile;
 	private int autorisation;
 	private int ordredeplacement;
+	private int game_over;
+	
+	int getgame_over(){
+		return game_over;
+	}
+	
 	
 	int getdeplacement(){
 		return ordredeplacement;
@@ -29,6 +35,7 @@ public class BaseLaser extends Chose{
 		this.nombremissile=0;
 		this.ordredeplacement=0;
 		this.autorisation=1;
+		this.game_over=0;
 		}
 
 	public void tir(){
@@ -82,6 +89,10 @@ public class BaseLaser extends Chose{
 			this.deplacement();
 			this.vitesse.setPoint(sauvervitesse.getX(),sauvervitesse.getY());
 		}
+	}
+	
+	public void destruction(){
+		this.game_over=1;
 	}
 	
 }

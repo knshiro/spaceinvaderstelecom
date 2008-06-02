@@ -12,11 +12,12 @@ public class Escadrille extends Chose{
 	private int[] lignespleines;
 	int sens;
 	int acceleration;
-	int pas, xmax,xinf,espace,nbColonnes;
+	int pas, xmax,xinf,espace,nbColonnes,bas;
 	private int vie;
 	private int largeur;
 	private int hauteur;
 	private int id;
+	int gameover;
 		
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
@@ -53,6 +54,7 @@ public class Escadrille extends Chose{
 		this.nbColonnes=11;
 		this.xinf=0;
 		this.xmax=600;
+		this.bas=600;
 	}
 	
 	/*pour récupérer la matrice
@@ -188,42 +190,55 @@ public class Escadrille extends Chose{
 	{
 		int i,j;
 		double t;
-		t=Math.random();
-		if (t<0.2)
-			tir();		
-		
-		if (this.controlebord(xmax, xinf)) 
-		{
-			sens=-sens;
-			this.vitesse.setPoint(this.vitesse.getX()+sens*acceleration,this.vitesse.getY());
-			for (i=0;i<5;i++)
-			{
-				for (j=0;j<11;j++)
-				{
-					if (matrice[i][j]!=null)
-					{
-						matrice[i][j].vitesse.setPoint(matrice[i][j].vitesse.getX()+sens*acceleration,matrice[i][j].vitesse.getY());
-						matrice[i][j].coord.setPoint(matrice[i][j].coord.getX(),matrice[i][j].coord.getY()+pas);
-					}
-				}
-			}
-			
-		}
+		if (vie<=0)
+			gameover=-1;
 		else
 		{
-			for (i=0;i<5;i++)
-			{
-				for (j=0;j<11;j++)
+			if (controlebas(bas))
+				gameover=1;
+			else
 				{
-					if (matrice[i][j]!=null)
-					{
-						matrice[i][j].prochainTour();
-					}
-				}
-			}
-			deplacement();
-		}
+				t=Math.random();
+				if (t<0.2)
+					tir();	
 		
+		
+		
+				if (this.controlebord(xmax, xinf)) 
+					{
+						sens=-sens;
+						this.vitesse.setPoint(this.vitesse.getX()+sens*acceleration,this.vitesse.getY());
+						for (i=0;i<5;i++)
+						{
+							for (j=0;j<11;j++)
+							{
+								if (matrice[i][j]!=null)
+								{
+									matrice[i][j].vitesse.setPoint(matrice[i][j].vitesse.getX()+sens*acceleration,matrice[i][j].vitesse.getY());
+									matrice[i][j].coord.setPoint(matrice[i][j].coord.getX(),matrice[i][j].coord.getY()+pas);
+								}
+							}
+						}
+					}
+				else		
+		
+				{
+					for (i=0;i<5;i++)
+					{
+						for (j=0;j<11;j++)
+						{
+							if (matrice[i][j]!=null)
+							{
+								matrice[i][j].prochainTour();
+							}
+						}
+					}
+					deplacement();
+				}
+		
+				}
+		}
 	}
-	
+		
 }
+	
