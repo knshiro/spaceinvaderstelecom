@@ -35,7 +35,10 @@ public class Joueur{
 	public int getLevel(){
 		return level;
 	}
-	
+	public void nextLevel(){
+		if(level<4)
+			level++;
+	}
 	
 	Joueur(int level, int score, String pseudo){
 		this.level=level;

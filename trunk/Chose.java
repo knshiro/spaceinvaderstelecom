@@ -55,7 +55,7 @@ public abstract class Chose {
 	* @param rien.
 	* @return rien.
 	*/
-	public void dessin(){};
+	public void dessin(java.awt.Graphics g){};
 	
 	
 	/** deplacement
