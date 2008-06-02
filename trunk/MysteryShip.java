@@ -6,9 +6,10 @@ import java.util.*;
 
 class MysteryShip extends Chose
 {
-	public MysteryShip(ArrayList<Chose> univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id)
+	public MysteryShip(ArrayList<Chose> univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id, int etat)
 	{
 		super(univers,coord,vitesse,vie,largeur,hauteur,id);
+		this.etat=etat;
 		abscisse=coord.getX();
 		ordonnee=coord.getY();
 	}
@@ -47,7 +48,7 @@ class MysteryShip extends Chose
 		}
 	}
 	
-	private int i, abscisse, ordonnee, largeur, hauteur;
+	private int i, abscisse, ordonnee, largeur, hauteur, etat;
 
 	
 }
