@@ -1,4 +1,5 @@
 import java.util.*;
+import java.awt.*;
 
 public class Escadrille extends Chose{
 	
@@ -8,7 +9,7 @@ public class Escadrille extends Chose{
 	 * package:default_package
 	 * penser à rajouter de quoi perdre quand l'escadrille arrive en bas*/
 	private Invaders[][] matrice; /*tableau des invaders*/
-	private int[] colonnespleines;/*colonnespleines(i) vaut 0 si la colonne est vide,1 si elle est pleine*/
+	private int[] colonnespleines;/*colonnespleines(i) vaut le nombre d'invaders dans la colonne*/
 	private int[] lignespleines;
 	int sens;
 	int acceleration;
@@ -18,6 +19,8 @@ public class Escadrille extends Chose{
 	private int hauteur;
 	private int id;
 	int game_over;
+	
+	
 		
 	
 	/*constructeur.Prend en paramètres pareil que Chose+le sens, l'acceleration lors de la descente,le pas de descente*/
@@ -122,6 +125,19 @@ public class Escadrille extends Chose{
 	 * param: xmax et xinf
 	 * renvoi:booleen
 	 */
+	
+	public void dessin (Graphics g)
+	{
+		int i,j;
+		for (i=0;i<5;i++)
+		{
+			for(j=0;j<11;j++)
+			{if (matrice[i][j]!=null)
+				matrice[i][j].dessin(g);
+			}
+		}
+	}
+	
 	boolean controlebord (int xmax, int xinf)
 	{
 		int j;
