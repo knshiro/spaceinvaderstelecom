@@ -16,12 +16,15 @@ public class Session extends JPanel {
         }
 	};
 	
-	Session(String pseudo){
-		player = new Joueur(1,0,pseudo);
+	Session(){
+		player = new Joueur(1,0,"bob");
+		tRefresh = new Timer(80,aRefresh);
 	}	
 	
 	public void jouer(){
 		game = new Jeu(player.getLevel());
+		tRefresh.start();
+		game.jouer();
 		
 	}
 	
@@ -47,6 +50,7 @@ public class Session extends JPanel {
 	
 	public void win(){
 		game.stop();
+		tRefresh.stop();
 		/*afficher un écran gagnant*/
 		try{
 			wait(5000);
@@ -63,6 +67,7 @@ public class Session extends JPanel {
 			wait(5000);
 		}
 		catch(InterruptedException e){ e.printStackTrace(); }
+		/* afficher le score et demander le nom*/
 	}
 
 }
