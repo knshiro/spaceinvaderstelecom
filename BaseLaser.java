@@ -14,6 +14,7 @@ public class BaseLaser extends Chose{
 	}
 	
 	
+	
 	int getdeplacement(){
 		return ordredeplacement;
 	}
