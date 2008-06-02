@@ -187,7 +187,12 @@ public class Escadrille extends Chose{
 	public void prochainTour () /*rajouter une fonction qui teste le timer pour pouvoir tirer*/
 	{
 		int i,j;
-		if (this.controlebord(xmax, xinf)) /*voir comment récupérer ces parametres*/
+		double t;
+		t=Math.random();
+		if (t<0.2)
+			tir();		
+		
+		if (this.controlebord(xmax, xinf)) 
 		{
 			sens=-sens;
 			this.vitesse.setPoint(this.vitesse.getX()+sens*acceleration,this.vitesse.getY());
@@ -212,7 +217,7 @@ public class Escadrille extends Chose{
 				{
 					if (matrice[i][j]!=null)
 					{
-						matrice[i][j].deplacement();
+						matrice[i][j].prochainTour();
 					}
 				}
 			}
