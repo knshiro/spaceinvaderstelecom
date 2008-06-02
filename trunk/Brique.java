@@ -6,10 +6,10 @@ import java.util.ArrayList;
  class Brique extends Chose
 {
 	
-	 public Brique(ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id)
+	 public Brique(Joueur player, ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id)
 	{
 		 
-		 super(univers,coord,vitesse,vie,largeur,hauteur,id);
+		 super(player, univers,coord,vitesse,vie,largeur,hauteur,id);
 		 col=Color.green;
 		 
 		 abscisse=this.coord.getX();
