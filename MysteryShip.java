@@ -6,7 +6,7 @@ import java.util.*;
 
 class MysteryShip extends Chose
 {
-	public MysteryShip(joueur,ArrayList<Chose> univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id, int etat)
+	public MysteryShip(Joueur joueur,ArrayList<Chose> univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id, int etat)
 	{
 		super(joueur,univers,coord,vitesse,vie,largeur,hauteur,id);
 		this.etat=etat;
