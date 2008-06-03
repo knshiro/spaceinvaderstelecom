@@ -31,9 +31,6 @@ class Accueil extends JFrame implements ActionListener{
 		System.out.println("test");
 	}
 	
-	
-	
-	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==myMenu.game_newgame){
 			partie = new Session();
