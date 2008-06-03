@@ -61,7 +61,7 @@ public class Jeu {
 	 */
 	ActionListener aMissile = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-        	for (int i=43;i<100;i++){
+        	for (int i=43;i<60;i++){
         		if(univers.get(i)!=null)
         			(univers.get(i)).prochainTour();
     			}
