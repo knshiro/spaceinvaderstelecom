@@ -1,4 +1,4 @@
-//  Created by Matthieu Gdon-Monaco on 01/06/08.
+//  Created by Matthieu Gedon-Monaco on 01/06/08.
 //  Copyright 2008 Bbnuts. All rights reserved.
 //
 // Fonctionne en autonome, pour l'intgration, penser
