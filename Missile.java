@@ -3,12 +3,12 @@ import java.awt.*;
 
 
 /** Missile : arme du jeu.
- * Important : CHANGER dans deplacement les bords de l'écran qu'on a mis, moi et mes mains à 800*600
+ * Important : CHANGER dans deplacement les bords de l'cran qu'on a mis, moi et mes mains  800*600
  */
 public class Missile extends Chose {
 
 /**
- * Permet de déterminer le camp du tireur de missile
+ * Permet de dterminer le camp du tireur de missile
  * 1 : Base laser -- 0 : Ennemi
  */	
 	private int camp;
@@ -42,7 +42,7 @@ public class Missile extends Chose {
 	}
 	
 /**
- * Détecte une éventuelle collision
+ * Dtecte une ventuelle collision
  */
 	public void collision(){
 		int i,j;
@@ -116,13 +116,13 @@ public class Missile extends Chose {
 	}
 	
 /**
- * Redondance de la fonction de déplacement 
- * Rapide test si sortie de l'écran
+ * Redondance de la fonction de dplacement 
+ * Rapide test si sortie de l'cran
  */
 	public void deplacement(){
 		if ((coord.getX()>800) || (coord.getY()>600) || (coord.getX()<0) || (coord.getY() <0)) {
 				destruction();
-				(univers.get(0)).nombremissile--;
+				((BaseLaser) (univers.get(0))).nombremissile--;
 		}
 		else {
 			super.deplacement();
@@ -130,7 +130,7 @@ public class Missile extends Chose {
 	}
 	
 /**
- * Permettra à la fonction de Jeu de contrôler le prochain tour
+ * Permettra  la fonction de Jeu de contrler le prochain tour
  */
 	public void prochainTour() {
 		System.out.println("entree dans prochain tour de missile");
