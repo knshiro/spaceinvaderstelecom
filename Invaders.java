@@ -20,9 +20,6 @@ class Invaders extends Chose
 		this.type=type;
 		this.colonne=colonne;
 		this.ligne=ligne;
-	//	hauteur=super.getHauteur();
-		//largeur=super.getLargeur();
-		/*id=super.getId();*/
 		vie=super.getVie();
 		abscisse=coord.getX();
 		ordonnee=coord.getY();
@@ -43,11 +40,11 @@ class Invaders extends Chose
 			g.setColor(Color.WHITE);
 			g.fillRect((2*abscisse+largeur)/2-3*largeur/14, ordonnee, 3*largeur/7, hauteur/8);//premire ligne
 			g.fillRect(abscisse+largeur/14 , ordonnee+hauteur/8, 6*largeur/7, hauteur/8);//2nd ligne
-			g.fillRect(abscisse , ordonnee+2*hauteur/8, largeur, hauteur/8);//troisime ligne
-			g.fillRect(abscisse , ordonnee+3*hauteur/8, 2*largeur/7, hauteur/8);//quatrime
+			g.fillRect(abscisse, ordonnee+2*hauteur/8, largeur, hauteur/8);//troisime ligne
+			g.fillRect(abscisse, ordonnee+3*hauteur/8, 2*largeur/7, hauteur/8);//quatrime
 			g.fillRect(abscisse+3*largeur/7, ordonnee+3*hauteur/8, largeur/7, hauteur/8);
 			g.fillRect(abscisse+5*largeur/7, ordonnee+3*hauteur/8,2*largeur/7, hauteur/8);
-			g.fillRect(abscisse , ordonnee+4*hauteur/8,largeur, hauteur/8);//cinquime ligne
+			g.fillRect(abscisse, ordonnee+4*hauteur/8,largeur, hauteur/8);//cinquime ligne
 			g.fillRect(abscisse+2*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);//sixime ligne
 			g.fillRect(abscisse+4*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);
 			g.fillRect(abscisse+largeur/7 , ordonnee+6*hauteur/8,largeur/7, hauteur/8);//7 ligne
@@ -192,7 +189,7 @@ class Invaders extends Chose
 		return i-1;
 	}
 	
-	
+
 	/**
 	 * <b>Dtermine le comportement  adopter lorsque l'invaders est touch:</b>
 	 * <br> -On enlve une unit  la vie de l'escadrille

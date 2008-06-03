@@ -10,8 +10,8 @@ class Shelter extends Chose
 	{
 		super(player,univers,coord, vitesse, vie,largeur, hauteur,id);
 		vitesse.setPoint(0, 0);
-		
-		
+		largeur=getLargeur();
+		hauteur=getHauteur();
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+5*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
