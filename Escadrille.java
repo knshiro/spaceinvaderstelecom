@@ -138,9 +138,10 @@ public class Escadrille extends Chose{
 
 	public void tableauxAJour (int i, int j)
 	{
-		lignespleines[i]=lignespleines[i]-1;
-		colonnespleines[j]=colonnespleines[j]-1;
-		if (colonnespleines[j]==0)
+		setLignesPleines(i,(getLignesPleines()[i])-1);
+		setColonnesPleines(j,(getColonnesPleines()[j])-1);
+		System.out.println("colonnes pleines "+j+" "+getColonnesPleines()[j]);
+		if (getColonnesPleines()[j]==0)
 			nbColonnes--;
 
 	}
@@ -228,8 +229,11 @@ public class Escadrille extends Chose{
 		 k=4;
 		 while ((matrice[k][l]==null)&&(k>=0)){
 			 k--;
-			 matrice[k][l].tir();    
+			 if ((k>=0)&&(matrice[k][l]!=null))
+			 matrice[k][l].tir(); 
+		 
 		 }
+	 
 	 }
 
 	 public void prochainTour () /*rajouter une fonction qui teste le timer pour pouvoir tirer*/
@@ -250,7 +254,7 @@ public class Escadrille extends Chose{
 			 else
 			 {
 				 t=Math.random();
-				 if (t<0.2){
+				 if (t<0.4){
 					 tir();  
 					 System.out.println("tir ok");
 				 }
