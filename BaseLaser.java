@@ -54,7 +54,7 @@ public class BaseLaser extends Chose{
 			int vitesseY = this.vitesse.getY() + 10;
 			Point vitesses = new Point(vitesseX,vitesseY);
 			this.nombremissile++;
-			Missile missile = new Missile(player,this.univers,coords,vitesses,1,1,2,i,1);
+			Missile missile = new Missile(player,this.univers,coords,vitesses,1,3,10,i,1);
 			(missile.univers).set(i,missile);
 		}
 		
