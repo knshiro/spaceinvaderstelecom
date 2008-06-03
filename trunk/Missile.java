@@ -60,8 +60,10 @@ public class Missile extends Chose {
 				
 			}
 			if(i!=5){
+				System.out.println("TOUCHE PAR MISSILE");
 				(mechant.getMatrice()[i][j]).degat(1);
 				destruction(); 
+				(univers.get(0)).nombremissile--;
 			}
 			else {
 				if(touche(univers.get(2))) {
@@ -120,6 +122,7 @@ public class Missile extends Chose {
 	public void deplacement(){
 		if ((coord.getX()>800) || (coord.getY()>600) || (coord.getX()<0) || (coord.getY() <0)) {
 				destruction();
+				(univers.get(0)).nombremissile--;
 		}
 		else {
 			super.deplacement();
