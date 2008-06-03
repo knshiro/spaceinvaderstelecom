@@ -53,7 +53,7 @@ public class Escadrille extends Chose{
 				matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, i, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
 			}
 		}
-		System.out.println("vitesse state 2= "+ matrice[4][4].vitesse.getX());
+
 		for(j=0;j<11;j++)
 		{
 			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
@@ -61,6 +61,7 @@ public class Escadrille extends Chose{
 			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 1, j, 0);
 			matrice[0][j]=in;
 		}
+
 		for(j=0;j<11;j++)
 		{
 			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+4*(espace+hautinv));
@@ -72,6 +73,7 @@ public class Escadrille extends Chose{
 		System.out.println("x invader 4x4 state 1 ="+matrice[4][4].coord.getX());
 		System.out.println("x invader 4x4 state 1 ="+matrice[2][10].coord.getX());
 		System.out.println("x invader 4x4 state 1 ="+matrice[3][7].coord.getX());
+
 		this.sens=sens;
 		this.acceleration=acceleration;
 		this.pas=pas;
@@ -232,8 +234,7 @@ public class Escadrille extends Chose{
 
 	 public void prochainTour () /*rajouter une fonction qui teste le timer pour pouvoir tirer*/
 	 {
-		 System.out.println("x invader 4x4 "+matrice[4][4].coord.getX());
-		 System.out.println("vitesse state 4= "+ matrice[4][4].vitesse.getX());
+		 
 		 int i,j;
 		 double t;
 		 if (getVie()<=0){
