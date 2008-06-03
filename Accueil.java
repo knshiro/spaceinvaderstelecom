@@ -16,7 +16,7 @@ import javax.swing.JMenuItem;
 
 class Accueil extends JFrame implements ActionListener{
 
-	Session partie;
+	static Session partie;
 	Menu myMenu;
 	
 	
