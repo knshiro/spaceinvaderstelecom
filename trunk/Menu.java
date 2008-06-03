@@ -20,6 +20,9 @@ class Menu extends JMenuBar {
 	JMenuItem game_pause;
 	JMenuItem game_resume;
 	JMenuItem game_quit;
+	JMenuItem tools_options;
+	JMenuItem tools_commandlist;
+	JMenuItem help_credits;
 	
 	
 	public Menu(Accueil fenetre) {
@@ -56,13 +59,13 @@ class Menu extends JMenuBar {
 		
 		
 		JMenu tools = new JMenu("Tools");
-		JMenuItem tools_commandlist = new JMenuItem("Command List");
-		JMenuItem tools_options = new JMenuItem("Options");
+		tools_commandlist = new JMenuItem("Command List");
+		tools_options = new JMenuItem("Options");
 		tools.add(tools_commandlist);
 		tools.add(tools_options);
 		add(tools);
 		JMenu help = new JMenu("Help");
-		JMenuItem help_credits = new JMenuItem("Credits");
+		help_credits = new JMenuItem("Credits");
 		help.add(help_credits);
 		add(help);
 		
