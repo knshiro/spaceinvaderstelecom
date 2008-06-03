@@ -66,6 +66,9 @@ public class BaseLaser extends Chose{
 		ordonnee=coord.getY();
 		hauteur=super.getHauteur();
 		largeur=super.getLargeur();
+		System.out.println("largeur = "+ largeur);
+		System.out.println("hauteur = "+ hauteur);
+		
 		
 		g.setColor(Color.white);
 		g.fillRect(abscisse+ 3*largeur/7, ordonnee, largeur/7, hauteur/8);//1
