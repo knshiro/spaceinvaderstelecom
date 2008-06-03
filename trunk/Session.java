@@ -39,7 +39,8 @@ public class Session extends JPanel {
 		case 0 :
 			for (int i=0;i<60;i++){
 				if(game.univers.get(i)!=null)
-					(game.univers.get(i)).dessin(g);	
+					(game.univers.get(i)).dessin(g);
+				
 			}
 			break;
 		

@@ -37,7 +37,9 @@ class Invaders extends Chose
 		switch(type)
 		{
 		case 1:
-			g.setColor(Color.white);
+			g.setColor(Color.WHITE);
+			System.out.println(" " + abscisse+ " "+ ordonnee);
+			System.out.println("invadlargeur = "+ getLargeur());
 			g.fillRect((2*abscisse+largeur)/2-3*largeur/14, ordonnee, 3*largeur/7, hauteur/8);//première ligne
 			g.fillRect(abscisse+largeur/14 , ordonnee+hauteur/8, 6*largeur/7, hauteur/8);//2nd ligne
 			g.fillRect(abscisse , ordonnee+2*hauteur/8, largeur, hauteur/8);//troisième ligne

@@ -19,6 +19,7 @@ public class Escadrille extends Chose{
 	private int hauteur;
 	private int id;
 	int game_over;
+	private int larginv, hautinv;
 	
 	
 		
@@ -30,9 +31,9 @@ public class Escadrille extends Chose{
 		int i,j;
 		Point place;
 		place=new Point(0,0);
-		/*la vie devra valoir 55 au départ*/
+				/*la vie devra valoir 55 au départ*/
 		
-		matrice=new Invaders[5][11]; /*mettre à jour selon  le constructeur des invaders*/
+		matrice=new Invaders[5][11];/*mettre à jour selon  le constructeur des invaders*/
 		colonnespleines=new int[11];
 		lignespleines=new int[5];
 		for (i=0;i<11;i++)
@@ -47,9 +48,11 @@ public class Escadrille extends Chose{
 		{
 			for(j=0;j<11;j++)
 			{
-				place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-				matrice[i][j]=new Invaders(Player, univers, place, vitesse, 1, larginv, hautinv, 15, i, j, i);/*voir selon le constructeur de Invaders*/
-			}
+				
+			place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
+			Invaders in=new	Invaders(Player, univers, place, vitesse, 1, larginv, hautinv, 15, i, j, i);
+			matrice[i][j]=in;/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+				System.out.println(" = "+ matrice[i][j].getVie());}
 		}
 		this.sens=sens;
 		this.acceleration=acceleration;
