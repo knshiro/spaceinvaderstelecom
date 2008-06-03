@@ -55,7 +55,6 @@ public class Session extends JPanel {
 	
 	public void win(){
 		game.stop();
-		tRefresh.stop();
 		/*afficher un écran gagnant*/
 		
 		jouer();
