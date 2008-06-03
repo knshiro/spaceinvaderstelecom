@@ -16,6 +16,11 @@ import javax.swing.JMenuItem;
 class Menu extends JMenuBar {
 
 	Accueil fenetre;
+	JMenuItem game_newgame;
+	JMenuItem game_pause;
+	JMenuItem game_resume;
+	JMenuItem game_quit;
+	
 	
 	public Menu(Accueil fenetre) {
 		super();
@@ -25,7 +30,14 @@ class Menu extends JMenuBar {
 
 	private void initializeMenu() {
 		JMenu game = new JMenu("Game");
-		JMenuItem game_quit = new JMenuItem("Quit");
+		game_newgame = new JMenuItem("New Game");
+		game_pause = new JMenuItem("Pause");
+		game_resume = new JMenuItem("Resume");
+		game_quit = new JMenuItem("Quit");
+		
+		game_newgame.addActionListener(fenetre);
+		game_pause.addActionListener(fenetre);
+		game_resume.addActionListener(fenetre);
 		
 		game_quit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
@@ -34,9 +46,9 @@ class Menu extends JMenuBar {
 		});
 		
 		
-		game.add(fenetre.game_newgame);
-		game.add(fenetre.game_pause);
-		game.add(fenetre.game_resume);
+		game.add(game_newgame);
+		game.add(game_pause);
+		game.add(game_resume);
 		game.add(game_quit);
 		
 		add(game);
