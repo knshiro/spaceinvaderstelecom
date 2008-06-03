@@ -175,7 +175,9 @@ class Invaders extends Chose
 		int camp=0;//C'est un ennemi
 		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);//Pour que le missile parte du bon endroit
 		//instancie un nouveau missile
-		Missile missile=new Missile(player,univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);// corriger
+		Missile missile=new Missile(player,univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);
+	
+		// corriger
 	}
 	/**
 	 * Cette foncion est utilise dans la mthode tir pour dterminer l'id du missile  instancier. Cette fonction parcours la liste univers et renvoie l'index de la premire case vide d'index suprieur ou gal  43.
