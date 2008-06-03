@@ -86,7 +86,9 @@ public class Jeu {
 	Jeu(int level){
 		this.level=level;
 		univers = new ArrayList<Chose>();
-		
+		for(int i=0;i<=60;i++)
+			univers.add(i,null);
+	
 		
 		switch (level) {
 		
