@@ -23,6 +23,7 @@ public class BaseLaser extends Chose{
 	void setdeplacement(int ordredeplacement){
 		this.ordredeplacement=ordredeplacement;
 	}
+
 	
 	int getauto(){
 		return autorisation;
@@ -41,7 +42,7 @@ public class BaseLaser extends Chose{
 		}
 
 	public void tir(){
-		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande  tirer un missile
+		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande à tirer un missile
 			int i=43;
 			while(this.univers.get(i) != null) i++;
 			
@@ -54,6 +55,7 @@ public class BaseLaser extends Chose{
 			Point vitesses = new Point(vitesseX,vitesseY);
 			this.nombremissile++;
 			Missile missile = new Missile(player,this.univers,coords,vitesses,1,1,2,i,1);
+			(missile.univers).set(i,missile);
 		}
 		
 			
@@ -66,7 +68,8 @@ public class BaseLaser extends Chose{
 		ordonnee=coord.getY();
 		hauteur=super.getHauteur();
 		largeur=super.getLargeur();
-		
+		//System.out.println("largeur = "+ largeur);
+		//System.out.println("hauteur = "+ hauteur);
 		
 		
 		g.setColor(Color.white);
@@ -85,8 +88,10 @@ public class BaseLaser extends Chose{
 	
 	public void prochainTour(){
 		this.tir();
-		if(this.ordredeplacement==1)    // deplacement droite si ordredeplacement vaut 1
+		if(this.ordredeplacement==1){    // deplacement droite si ordredeplacement vaut 1
 			this.deplacement();
+			System.out.println("ordredeplacement="+this.ordredeplacement);
+		}
 		if(this.ordredeplacement==-1){  // deplacement gauche si ordredeplacement vaut -1
 			Point sauvervitesse = new Point(this.vitesse.getX(),this.vitesse.getY());
 			this.vitesse.setPoint(-sauvervitesse.getX(),sauvervitesse.getY());
