@@ -33,6 +33,7 @@ class Accueil extends JFrame implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==myMenu.game_newgame){
+			if(partie == null){
 			partie = new Session();
 			System.out.println("Nouvelle session ok");
 			/*add(partie.player, BorderLayout.NORTH);*/
@@ -40,7 +41,7 @@ class Accueil extends JFrame implements ActionListener{
 			pack();
 			System.out.println("Disposition des panels ok");
 			partie.jouer();
-			
+			}
 			
 			AudioPlayer audioPlayer = new AudioPlayer("file:spaceinvaders.wav");
 			try {
