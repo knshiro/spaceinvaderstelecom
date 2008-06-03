@@ -86,6 +86,16 @@ public class BaseLaser extends Chose{
 	
 	}
 	
+	public void deplacement(){
+		int X=this.coord.getX();
+		if ( (X<=800) || (X>=0) )
+			super.deplacement();
+	}
+	
+	
+	
+	
+	
 	public void prochainTour(){
 		this.tir();
 		if(this.ordredeplacement==1){    // deplacement droite si ordredeplacement vaut 1
