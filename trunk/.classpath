@@ -2,5 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/St_Sauveur/Documents/Projets/Space Invaders/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="/Users/St_Sauveur/Documents/Projets/Space Invaders/lib/mediaplayer.jar"/>
+	<classpathentry kind="lib" path="/Users/St_Sauveur/Documents/Projets/Space Invaders/lib/multiplayer.jar"/>
+	<classpathentry kind="lib" path="/Users/St_Sauveur/Documents/Projets/Space Invaders/lib/customizer.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
