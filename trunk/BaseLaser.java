@@ -46,8 +46,8 @@ public class BaseLaser extends Chose{
 			int i=43;
 			while(this.univers.get(i) != null) i++;
 			
-			int X = this.coord.getX() + 20;
-			int Y = this.coord.getY() - 20;
+			int X = this.coord.getX() + 60;
+			int Y = this.coord.getY() - 100;
 			Point coords = new Point(X,Y);
 			
 			int vitesseX = this.vitesse.getX()*ordredeplacement;
