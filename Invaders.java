@@ -2,7 +2,7 @@ import java.awt.*;
 import java.util.ArrayList;
 /**
  * Un objet invaders est un vaisseau ennemi. Son constructeur comporte plus d'arguments que le constructeur de Chose.
- * En effet il faut aussi préciser quel est le type du vaisseau (cela change le nombre de points attribués en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone).
+ * En effet il faut aussi prciser quel est le type du vaisseau (cela change le nombre de points attribus en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone).
  */
 class Invaders extends Chose 
 {
@@ -29,7 +29,7 @@ class Invaders extends Chose
 		
 	}
 	
-	/**Dessine l'invaders. Son apparence dépend de la valeur de <i>type</i>.
+	/**Dessine l'invaders. Son apparence dpend de la valeur de <i>type</i>.
 	 * 
 	 * @param g de type Graphics
 	 */
@@ -41,17 +41,14 @@ class Invaders extends Chose
 		{
 		case 1:
 			g.setColor(Color.WHITE);
-			System.out.println(" " + abscisse+ " "+ ordonnee);
-			System.out.println("invadlargeur = "+ largeur);
-			
-			g.fillRect((2*abscisse+largeur)/2-3*largeur/14, ordonnee, 3*largeur/7, hauteur/8);//première ligne
+			g.fillRect((2*abscisse+largeur)/2-3*largeur/14, ordonnee, 3*largeur/7, hauteur/8);//premire ligne
 			g.fillRect(abscisse+largeur/14 , ordonnee+hauteur/8, 6*largeur/7, hauteur/8);//2nd ligne
-			g.fillRect(abscisse , ordonnee+2*hauteur/8, largeur, hauteur/8);//troisième ligne
-			g.fillRect(abscisse , ordonnee+3*hauteur/8, 2*largeur/7, hauteur/8);//quatrième
+			g.fillRect(abscisse , ordonnee+2*hauteur/8, largeur, hauteur/8);//troisime ligne
+			g.fillRect(abscisse , ordonnee+3*hauteur/8, 2*largeur/7, hauteur/8);//quatrime
 			g.fillRect(abscisse+3*largeur/7, ordonnee+3*hauteur/8, largeur/7, hauteur/8);
 			g.fillRect(abscisse+5*largeur/7, ordonnee+3*hauteur/8,2*largeur/7, hauteur/8);
-			g.fillRect(abscisse , ordonnee+4*hauteur/8,largeur, hauteur/8);//cinquième ligne
-			g.fillRect(abscisse+2*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);//sixième ligne
+			g.fillRect(abscisse , ordonnee+4*hauteur/8,largeur, hauteur/8);//cinquime ligne
+			g.fillRect(abscisse+2*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);//sixime ligne
 			g.fillRect(abscisse+4*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);
 			g.fillRect(abscisse+largeur/7 , ordonnee+6*hauteur/8,largeur/7, hauteur/8);//7 ligne
 			g.fillRect(abscisse+5*largeur/7 , ordonnee+6*hauteur/8,largeur/7, hauteur/8);
@@ -62,7 +59,7 @@ class Invaders extends Chose
 		
 		case 2:
 			g.setColor(Color.white);
-			g.fillRect(abscisse + 2*largeur/7, ordonnee, 3*largeur/7, hauteur/8);//première ligne
+			g.fillRect(abscisse + 2*largeur/7, ordonnee, 3*largeur/7, hauteur/8);//premire ligne
 			g.fillRect(abscisse + largeur/7, ordonnee+ hauteur/8, 5*largeur/7, hauteur/8);//2 ligne
 			g.fillRect(abscisse + largeur/7, ordonnee +2*hauteur/8, largeur/7, hauteur/8);//3 ligne
 			g.fillRect(abscisse + 3*largeur/7, ordonnee+2*hauteur/8, largeur/7, hauteur/8);//3 ligne
@@ -104,14 +101,14 @@ class Invaders extends Chose
 		
 		case 4:
 			g.setColor(Color.white);
-			g.fillRect((2*abscisse+largeur)/2-3*largeur/14, ordonnee, 3*largeur/7, hauteur/8);//première ligne
+			g.fillRect((2*abscisse+largeur)/2-3*largeur/14, ordonnee, 3*largeur/7, hauteur/8);//premire ligne
 			g.fillRect(abscisse+largeur/14 , ordonnee+hauteur/8, 6*largeur/7, hauteur/8);//2nd ligne
-			g.fillRect(abscisse , ordonnee+2*hauteur/8, largeur, hauteur/8);//troisième ligne
-			g.fillRect(abscisse , ordonnee+3*hauteur/8, 2*largeur/7, hauteur/8);//quatrième
+			g.fillRect(abscisse , ordonnee+2*hauteur/8, largeur, hauteur/8);//troisime ligne
+			g.fillRect(abscisse , ordonnee+3*hauteur/8, 2*largeur/7, hauteur/8);//quatrime
 			g.fillRect(abscisse+3*largeur/7 , ordonnee+3*hauteur/8, largeur/7, hauteur/8);
 			g.fillRect(abscisse+5*largeur/7 , ordonnee+3*hauteur/8,2*largeur/7, hauteur/8);
-			g.fillRect(abscisse , ordonnee+4*hauteur/8,largeur, hauteur/8);//cinquième ligne
-			g.fillRect(abscisse+2*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);//sixième ligne
+			g.fillRect(abscisse , ordonnee+4*hauteur/8,largeur, hauteur/8);//cinquime ligne
+			g.fillRect(abscisse+2*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);//sixime ligne
 			g.fillRect(abscisse+4*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);
 			g.fillRect(abscisse+largeur/7 , ordonnee+6*hauteur/8,largeur/7, hauteur/8);//7 ligne
 			g.fillRect(abscisse+5*largeur/7 , ordonnee+6*hauteur/8,largeur/7, hauteur/8);
@@ -123,7 +120,7 @@ class Invaders extends Chose
 		
 		case 5:
 			g.setColor(Color.white);
-			g.fillRect(abscisse + 2*largeur/7, ordonnee, 3*largeur/7, hauteur/8);//première ligne
+			g.fillRect(abscisse + 2*largeur/7, ordonnee, 3*largeur/7, hauteur/8);//premire ligne
 			g.fillRect(abscisse + largeur/7, ordonnee+ hauteur/8, 5*largeur/7, hauteur/8);//2 ligne
 			g.fillRect(abscisse + largeur/7, ordonnee +2*hauteur/8, largeur/7, hauteur/8);//3 ligne
 			g.fillRect(abscisse + 3*largeur/7, ordonnee+2*hauteur/8, largeur/7, hauteur/8);//3 ligne
@@ -168,21 +165,21 @@ class Invaders extends Chose
 	}
 	
 	/**
-	 * Instancie un missile si l'invaders est appelé à tirer.
+	 * Instancie un missile si l'invaders est appel  tirer.
 	 */
 	void tir()
 	{
 		int vie_missile=1;
-		int largeur_missile=4; //la largeur et la hauteur seront sans doute à modifier
+		int largeur_missile=4; //la largeur et la hauteur seront sans doute  modifier
 		int hauteur_missile=10;
-		Point vitesse_missile=new Point(0,20); //j'ai aucune idée de l'ordre de grandeur, à modifier ultérieurement
+		Point vitesse_missile=new Point(0,20); //j'ai aucune ide de l'ordre de grandeur,  modifier ultrieurement
 		int camp=0;//C'est un ennemi
 		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);//Pour que le missile parte du bon endroit
 		//instancie un nouveau missile
-		Missile missile=new Missile(player,univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);//à corriger
+		Missile missile=new Missile(player,univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);// corriger
 	}
 	/**
-	 * Cette foncion est utilisée dans la méthode tir pour déterminer l'id du missile à instancier. Cette fonction parcours la liste univers et renvoie l'index de la première case vide d'index supérieur ou égal à 43.
+	 * Cette foncion est utilise dans la mthode tir pour dterminer l'id du missile  instancier. Cette fonction parcours la liste univers et renvoie l'index de la premire case vide d'index suprieur ou gal  43.
 	 * @return L'id du missile. 
 	 */
 	private int id_missile()
@@ -197,8 +194,8 @@ class Invaders extends Chose
 	
 	
 	/**
-	 * <b>Détermine le comportement à adopter lorsque l'invaders est touché:</b>
-	 * <br> -On enlève une unité à la vie de l'escadrille
+	 * <b>Dtermine le comportement  adopter lorsque l'invaders est touch:</b>
+	 * <br> -On enlve une unit  la vie de l'escadrille
 	 * <br> -On vide la case correspondante dans la matrice de l'Escadrille
 	 * <br> -On supprime l'invaders de la liste <i>univers</i> 
 	 */
@@ -212,7 +209,7 @@ class Invaders extends Chose
 		super.destruction();
 	}
 	/**
-	 * Détermine le comportment à adopter au prochain décléchement du timer. Cette méthode permet le déplacement de l'invaders.
+	 * Dtermine le comportment  adopter au prochain dclchement du timer. Cette mthode permet le dplacement de l'invaders.
 	 */
 	public void prochainTour()
 	{
