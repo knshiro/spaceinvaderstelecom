@@ -1,12 +1,11 @@
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
+import  java.awt.event.*;
 
 
-public class Session extends JPanel {
+public class Session extends JPanel implements KeyListener{
 
 	Jeu game;
 	Joueur player;
@@ -18,6 +17,22 @@ public class Session extends JPanel {
         	repaint();
         }
 	};
+	
+	 public void keyPressed(KeyEvent evt){ }
+	 public void keyReleased(KeyEvent evt){}  
+	 public void keyTyped(KeyEvent evt){
+		 if (evt.getKeyChar() == VK_LEFT)
+				game.univers.get(arg0);
+			      else if (evt.getKeyChar() == 'b')
+				ardoise.setForeground(Color.blue);
+			      else if (evt.getKeyChar() == 'v')
+				ardoise.setForeground(Color.green);
+			      else if (evt.getKeyChar() == 'e')
+				ardoise.setForeground(ardoise.getBackground());
+			      repaint();
+
+	 }
+
 	
 	Session(){
 		player = new Joueur(1,0,"bob");

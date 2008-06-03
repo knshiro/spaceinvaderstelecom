@@ -3,10 +3,10 @@ import java.awt.*;
 
 public class Escadrille extends Chose{
 	
-	/* classe Escadrille: hérite de chose. gère un tableau 5*11 d'Invaders pour les faire bouger et tirer
-	 * author: Charlix
-	 * version:1.1
-	 * package:default_package
+	/** classe Escadrille: hérite de chose. gère un tableau 5*11 d'Invaders pour les faire bouger et tirer
+	 * @author: Charlix
+	 * @version:1.1
+	 * @package:default_package
 	 * penser à rajouter de quoi perdre quand l'escadrille arrive en bas*/
 	private Invaders[][] matrice; /*tableau des invaders*/
 	private int[] colonnespleines;/*colonnespleines(i) vaut le nombre d'invaders dans la colonne*/
@@ -70,7 +70,7 @@ public class Escadrille extends Chose{
 		this.pas=pas;
 		this.nbColonnes=11;
 		this.xinf=0;
-		this.xmax=600;
+		this.xmax=800-larginv;
 		this.bas=600;
 	}
 	
@@ -204,8 +204,8 @@ public class Escadrille extends Chose{
 		l=0;
 		i=Math.random();
 		i=i*nbColonnes;
-		j=Math.round(Math.round(i));
-		if (colonnespleines==null){System.out.println("colonne tir =" + j);}
+		j = (int)i;
+		//j=Math.round(Math.round(i));
 		while (k<j)
 		{
 			if (colonnespleines[k]>0)
@@ -252,14 +252,14 @@ public class Escadrille extends Chose{
 					{
 					System.out.println("on est au bord");
 						sens=-sens;
-						this.vitesse.setPoint(sens*Math.abs((this.vitesse.getX()+acceleration)),this.vitesse.getY());
+						this.vitesse.setPoint(sens*(Math.abs((this.vitesse.getX())+acceleration)),this.vitesse.getY());
 						for (i=0;i<5;i++)
 						{
 							for (j=0;j<11;j++)
 							{
 								if (matrice[i][j]!=null)
 								{
-									matrice[i][j].vitesse.setPoint(matrice[i][j].vitesse.getX()+sens*acceleration,matrice[i][j].vitesse.getY());
+									matrice[i][j].vitesse.setPoint(sens*(Math.abs(matrice[i][j].vitesse.getX())+acceleration),matrice[i][j].vitesse.getY());
 									matrice[i][j].coord.setPoint(matrice[i][j].coord.getX(),matrice[i][j].coord.getY()+pas);
 								}
 							}
