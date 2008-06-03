@@ -11,7 +11,8 @@ public class BriquePanel extends JPanel
 	private Point coord = new Point(50,50);
 	private Point vitesse = new Point(300,0);
 	private ArrayList<Chose> univers = new ArrayList<Chose>();
-	private BaseLaser mysteryship=new BaseLaser(univers,coord,vitesse,3,50,30,0);
+	
+	
 	
 	BriquePanel()
 	{
