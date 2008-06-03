@@ -71,14 +71,18 @@ public class Session extends JPanel {
 	public void win(){
 		game.stop();
 		/*afficher un écran gagnant*/
-		
+		JLabel label = new JLabel("YOU WON !");
+		label.setFont(new Font("Serif",Font.PLAIN,72));
+		add(label,BorderLayout.CENTER);
 		jouer();
 	}
 	
 	public void gameOver(){
 		game.stop();
 		/*afficher un écran perdant*/
-		
+		JLabel label = new JLabel("GAME OVER");
+		label.setFont(new Font("Serif",Font.PLAIN,72));
+		add(label,BorderLayout.CENTER);
 		/* afficher le score et demander le nom*/
 	}
 
