@@ -63,7 +63,7 @@ public class Missile extends Chose {
 				System.out.println("TOUCHE PAR MISSILE");
 				(mechant.getMatrice()[i][j]).degat(1);
 				destruction(); 
-				(univers.get(0)).nombremissile--;
+				((BaseLaser) (univers.get(0))).nombremissile--;
 			}
 			else {
 				if(touche(univers.get(2))) {
