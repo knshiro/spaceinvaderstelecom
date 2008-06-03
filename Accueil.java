@@ -42,21 +42,13 @@ class Accueil extends JFrame implements ActionListener{
 			partie.jouer();
 			
 			
-			/*AudioPlayer audioPlayer = new AudioPlayer("file:/Users/St_Sauveur/Documents/Music.wav");
+			AudioPlayer audioPlayer = new AudioPlayer("file:/Users/St_Sauveur/Documents/Music.wav");
 			try {
 				audioPlayer.start();
-				char choice = 'c';
-				while(choice == 'c') {
-					System.out.println("Si vous souhaitez arrêter, tapez 'q' : ");
-					choice = (char)System.in.read();
-					System.in.read();
-				}
-				audioPlayer.stop();
-				System.exit(0);
 			} catch (Exception f) {
 				System.out.println("Impossible de lire (cause : " + f + ")");
 			}	
-			*/
+			
 		}
 		else if (e.getSource()==myMenu.game_pause){
 			if (partie != null)
