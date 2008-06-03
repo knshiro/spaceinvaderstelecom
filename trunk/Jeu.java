@@ -95,7 +95,7 @@ public class Jeu {
 		
 		case 1 :
 			univers.add(new BaseLaser(player,univers, new Point(100,50), new Point(0,0), 4, 21, 16, 0));
-			univers.add(new Escadrille(player,univers, new Point(0,0), new Point (3,0), 5*11, 11, 5, 1, 1, 1, 1, 50, 50, 2));
+			univers.add(new Escadrille(player,univers, new Point(0,0), new Point (3,0), 5*11, 11, 5, 1, 1, 1, 1, 42, 32, 2));
 			univers.add(new MysteryShip(player,univers,new Point(10,50), new Point(2,0), 1, 21, 16, 2,0));
 			/*for (int i=3;i<43;i++){
 			univers.add(new Brique());
