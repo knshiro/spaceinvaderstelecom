@@ -36,7 +36,9 @@ public class Missile extends Chose {
  */
 	
 	public boolean touche(Chose c){
-		return ((coord.getX() >= c.coord.getX()-c.getLargeur()/2) && (c.coord.getX() <= c.coord.getX()+c.getLargeur()/2) && (c.coord.getY() >= c.coord.getY()-c.getHauteur()/2) && (c.coord.getY() <= c.coord.getY()+c.getHauteur()/2)); 
+		if(c!=null)
+			return ((coord.getX() >= c.coord.getX()-c.getLargeur()/2) && (c.coord.getX() <= c.coord.getX()+c.getLargeur()/2) && (c.coord.getY() >= c.coord.getY()-c.getHauteur()/2) && (c.coord.getY() <= c.coord.getY()+c.getHauteur()/2));
+		else return false;
 	}
 	
 /**
@@ -116,7 +118,7 @@ public class Missile extends Chose {
  * Rapide test si sortie de l'écran
  */
 	public void deplacement(){
-		if (coord.getX()>800 || coord.getY()>600 || coord.getX()<0 || coord.getY() <0) {
+		if ((coord.getX()>800) || (coord.getY()>600) || (coord.getX()<0) || (coord.getY() <0)) {
 				destruction();
 		}
 		else {
