@@ -200,6 +200,7 @@ public class Escadrille extends Chose{
 		i=Math.random();
 		i=i*nbColonnes;
 		j=Math.round(Math.round(i));
+		if (colonnespleines==null){System.out.println("colonne tir =" + j);}
 		while (k<j)
 		{
 			if (colonnespleines[k]>0)
@@ -221,18 +222,23 @@ public class Escadrille extends Chose{
 	{
 		int i,j;
 		double t;
-		if (vie<=0)
+		if (getVie()<=0){
+			System.out.println("gagne");
 			game_over=-1;
+		}
 		else
 		{
-			if (controlebas(bas))
+			if (controlebas(bas)){
+				System.out.println("perdu");
 				game_over=1;
+			}
 			else
 				{
 				t=Math.random();
-				if (t<0.2)
+				if (t<0.2){
 					tir();	
-		
+				System.out.println("tir ok");
+				}
 		
 		
 				if (this.controlebord(xmax, xinf)) 
@@ -260,6 +266,7 @@ public class Escadrille extends Chose{
 						{
 							if (matrice[i][j]!=null)
 							{
+								System.out.println("deplacement de "+ vitesse.getX()+ " " + vitesse.getY());
 								matrice[i][j].prochainTour();
 							}
 						}

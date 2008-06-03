@@ -29,6 +29,7 @@ public class Jeu {
 	ActionListener aEscadrille = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	if(univers.get(1)!=null)
+        		System.out.println("prochain tour escadrille");
         		(univers.get(1)).prochainTour();
         }
 	};
@@ -39,6 +40,7 @@ public class Jeu {
 	ActionListener aBaseLaser = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	if(univers.get(0)!=null)
+        		System.out.println("prochain tour base laser");
         		(univers.get(0)).prochainTour();
         }
 	};
@@ -95,7 +97,7 @@ public class Jeu {
 		
 		case 1 :
 			univers.add(new BaseLaser(player,univers, new Point(400,550), new Point(0,0), 4, 21, 16, 0));
-			univers.add(new Escadrille(player,univers, new Point(110,0), new Point (3,0), 5*11, 11, 5, 1, 1, 1, 1, 32, 42, 10));
+			univers.add(new Escadrille(player,univers, new Point(110,0), new Point (3,0), 55, 11, 5, 1, 1, 1, 1, 32, 42, 10));
 			univers.add(new MysteryShip(player,univers,new Point(10,50), new Point(2,0), 1, 21, 16, 2,0));
 			/*for (int i=3;i<43;i++){
 			univers.add(new Brique());

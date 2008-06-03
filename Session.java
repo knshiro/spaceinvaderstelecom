@@ -41,6 +41,7 @@ public class Session extends JPanel {
 		catch(Exception e){
 			System.err.println(e.getMessage());
 		}
+		
 		game.jouer();
 		
 	}
