@@ -64,7 +64,15 @@ public abstract class Chose {
 	* @return rien.
 	*/
 	public void deplacement(){
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("avant "+coord.getX());
 		coord.translate(vitesse.getX(), vitesse.getY());
+		System.out.println("apres "+coord.getX());
+		System.out.println();
+		System.out.println();
+		System.out.println();
 	}
 	
 	/** degat
