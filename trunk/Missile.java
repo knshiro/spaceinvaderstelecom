@@ -54,6 +54,7 @@ public class Missile extends Chose {
 					j++;
 					if (j==10) {
 							i++;
+							j=0;
 					}
 				}
 			}
