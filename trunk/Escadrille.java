@@ -9,7 +9,7 @@ public class Escadrille extends Chose{
 	 * @package:default_package
 	 * penser à rajouter de quoi perdre quand l'escadrille arrive en bas*/
 	private Invaders[][] matrice; /*tableau des invaders*/
-	private int[] colonnespleines;/*colonnespleines(i) vaut le nombre d'invaders dans la colonne*/
+	//private int[] colonnespleines;/*colonnespleines(i) vaut le nombre d'invaders dans la colonne*/
 	private int[] lignespleines;
 	int sens;
 	int acceleration;
