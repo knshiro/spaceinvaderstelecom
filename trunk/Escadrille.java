@@ -274,7 +274,7 @@ public class Escadrille extends Chose{
 						{
 							if (matrice[i][j]!=null)
 							{
-								System.out.println("deplacement de "+ vitesse.getX()+ " " + vitesse.getY());
+								//System.out.println("deplacement de "+ vitesse.getX()+ " " + vitesse.getY());
 								matrice[i][j].prochainTour();
 							}
 						}

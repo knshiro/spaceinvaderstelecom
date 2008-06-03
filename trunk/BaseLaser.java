@@ -89,7 +89,7 @@ public class BaseLaser extends Chose{
 	
 	public void deplacement(){
 		int X = this.coord.getX();
-		System.out.println("DéplacementX base laser = "+X);
+		System.out.println("DéplacementX base laser = "+ ordredeplacement);
 		if(ordredeplacement==1){// deplacement droite si ordredeplacement vaut 1
 			if (X<800){
 			coord.translate(vitesse.getX(), vitesse.getY());
