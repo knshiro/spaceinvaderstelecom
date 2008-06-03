@@ -20,17 +20,11 @@ public class Session extends JPanel implements KeyListener{
 	
 	 public void keyPressed(KeyEvent evt){ }
 	 public void keyReleased(KeyEvent evt){}  
-	 public void keyTyped(KeyEvent evt){/*
-		 if (evt.getKeyChar() == VK_LEFT)
-				game.univers.get(arg0);
-			      else if (evt.getKeyChar() == 'b')
-				ardoise.setForeground(Color.blue);
-			      else if (evt.getKeyChar() == 'v')
-				ardoise.setForeground(Color.green);
-			      else if (evt.getKeyChar() == 'e')
-				ardoise.setForeground(ardoise.getBackground());
-			      repaint();
-*/
+	 public void keyTyped(KeyEvent evt){
+		 if (evt.getKeyChar() == KeyEvent.VK_LEFT)
+			 ((BaseLaser) game.univers.get(0)).setdeplacement(1);
+		 else if (evt.getKeyChar() == KeyEvent.VK_RIGHT)
+			 ((BaseLaser) game.univers.get(0)).setdeplacement(-1);
 	 }
 
 	
