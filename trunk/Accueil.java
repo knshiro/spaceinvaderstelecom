@@ -39,7 +39,7 @@ class Accueil extends JFrame implements ActionListener{
 		if(e.getSource()==game_newgame){
 			partie = new Session();
 			System.out.println("Nouvelle session ok");
-			add(partie.player, BorderLayout.NORTH);
+			/*add(partie.player, BorderLayout.NORTH);*/
 			add(partie, BorderLayout.CENTER);
 			pack();
 			System.out.println("Disposition des panels ok");
