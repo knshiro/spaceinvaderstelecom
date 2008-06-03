@@ -22,6 +22,7 @@ public class Jeu {
 	private int gameOver;
 	Joueur player;
 	
+	
 	/** aEscadrille
 	 * action qui lance la méthode prochainTour de l'escadrille
 	 */

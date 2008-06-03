@@ -186,7 +186,7 @@ class Invaders extends Chose
 		{
 			i++;
 		}
-		return i;
+		return i-1;
 	}
 	
 	
