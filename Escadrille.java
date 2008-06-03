@@ -31,7 +31,6 @@ public class Escadrille extends Chose{
 		int i,j;
 		Point place;
 		System.out.println("vitesse state 1= "+ vitesse.getX());
-		place=new Point(0,0);
 				/*la vie devra valoir 55 au départ*/
 		
 		matrice=new Invaders[5][11];/*mettre à jour selon  le constructeur des invaders*/
@@ -49,21 +48,23 @@ public class Escadrille extends Chose{
 		{
 			for(j=0;j<11;j++)
 			{
-				
-			place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-			Invaders in=new	Invaders(Player, univers, place, vitesse, 1, larginv, hautinv, 15, i, j, i);
-			matrice[i][j]=in;/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
+			//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
+			matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, i, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
 			}
 		}
 		System.out.println("vitesse state 2= "+ matrice[4][4].vitesse.getX());
 		for(j=0;j<11;j++)
 			{
-			place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
-			Invaders in=new	Invaders(Player, univers, place, vitesse, 1, larginv, hautinv, 15, 1, j, 0);
+			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
+			//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
+			Invaders in=new	Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 1, j, 0);
 			matrice[0][j]=in;
 			}
 		System.out.println("vitesse state 3= "+ matrice[4][4].vitesse.getX());
 		System.out.println("x invader 4x4 state 1 ="+matrice[4][4].coord.getX());
+		System.out.println("x invader 4x4 state 1 ="+matrice[2][10].coord.getX());
+		System.out.println("x invader 4x4 state 1 ="+matrice[3][7].coord.getX());
 		this.sens=sens;
 		this.acceleration=acceleration;
 		this.pas=pas;
