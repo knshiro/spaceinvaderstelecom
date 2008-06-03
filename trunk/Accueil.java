@@ -25,9 +25,11 @@ class Accueil extends JFrame implements ActionListener{
 	Accueil(){
 		myMenu = new Menu(this);
 		add(myMenu);
+		System.out.println("Menu ok");
 		game_newgame.addActionListener(this);
 		game_pause.addActionListener(this);
 		game_resume.addActionListener(this);
+		System.out.println("Listener ok");
 	}
 	
 	
@@ -36,9 +38,11 @@ class Accueil extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==game_newgame){
 			partie = new Session();
+			System.out.println("Nouvelle session ok");
 			add(partie.player, BorderLayout.NORTH);
 			add(partie, BorderLayout.CENTER);
 			pack();
+			System.out.println("Disposition des panels ok");
 			partie.jouer();
 		}
 		else if (e.getSource()==game_pause){

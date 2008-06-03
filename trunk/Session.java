@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,15 +20,13 @@ public class Session extends JPanel {
 	Session(){
 		player = new Joueur(1,0,"bob");
 		tRefresh = new Timer(80,aRefresh);
+		setPreferredSize(new java.awt.Dimension(800, 600));
+		setBackground(Color.BLACK);
 	}	
 	
 	public void jouer(){
 		game = new Jeu(player.getLevel());
 		tRefresh.start();
-		try{
-			wait(3000);
-		}
-		catch(InterruptedException e){ e.printStackTrace(); }
 		game.jouer();
 		
 	}
@@ -57,21 +56,14 @@ public class Session extends JPanel {
 		game.stop();
 		tRefresh.stop();
 		/*afficher un écran gagnant*/
-		try{
-			wait(5000);
-		}
-		catch(InterruptedException e){ e.printStackTrace(); }
-		player.nextLevel();
+		
 		jouer();
 	}
 	
 	public void gameOver(){
 		game.stop();
 		/*afficher un écran perdant*/
-		try{
-			wait(5000);
-		}
-		catch(InterruptedException e){ e.printStackTrace(); }
+		
 		/* afficher le score et demander le nom*/
 	}
 
