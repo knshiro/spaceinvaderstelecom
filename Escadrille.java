@@ -44,7 +44,7 @@ public class Escadrille extends Chose{
 		{
 			lignespleines[i]=11;
 		}
-		for (i=1;i<5;i++)
+		for (i=1;i<4;i++)
 		{
 			for(j=0;j<11;j++)
 			{
@@ -60,6 +60,13 @@ public class Escadrille extends Chose{
 			//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
 			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 1, j, 0);
 			matrice[0][j]=in;
+		}
+		for(j=0;j<11;j++)
+		{
+			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+4*(espace+hautinv));
+			//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
+			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 3, j, 4);
+			matrice[4][j]=in;
 		}
 		System.out.println("vitesse state 3= "+ matrice[4][4].vitesse.getX());
 		System.out.println("x invader 4x4 state 1 ="+matrice[4][4].coord.getX());
