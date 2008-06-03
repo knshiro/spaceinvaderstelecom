@@ -20,7 +20,7 @@ public class Session extends JPanel implements KeyListener{
 	
 	 public void keyPressed(KeyEvent evt){ }
 	 public void keyReleased(KeyEvent evt){}  
-	 public void keyTyped(KeyEvent evt){
+	 public void keyTyped(KeyEvent evt){/*
 		 if (evt.getKeyChar() == VK_LEFT)
 				game.univers.get(arg0);
 			      else if (evt.getKeyChar() == 'b')
@@ -30,7 +30,7 @@ public class Session extends JPanel implements KeyListener{
 			      else if (evt.getKeyChar() == 'e')
 				ardoise.setForeground(ardoise.getBackground());
 			      repaint();
-
+*/
 	 }
 
 	
