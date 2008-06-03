@@ -42,6 +42,10 @@ class Point
 		y+=ordonnee;
 	}
 	
+	public void xplus(){
+		x = x+5;
+	}
+	
 	private int x;
 	private int y;
 

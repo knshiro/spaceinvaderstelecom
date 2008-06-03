@@ -34,6 +34,8 @@ class Invaders extends Chose
 	{
 			largeur = getLargeur();
 			hauteur = getHauteur();
+			abscisse = coord.getX();
+			ordonnee = coord.getY();
 		switch(type)
 		{
 		case 1:
