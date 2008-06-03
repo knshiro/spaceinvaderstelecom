@@ -40,7 +40,6 @@ public class Jeu {
 	ActionListener aBaseLaser = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	if(univers.get(0)!=null)
-        		System.out.println("prochain tour base laser");
         		(univers.get(0)).prochainTour();
         }
 	};
@@ -62,7 +61,7 @@ public class Jeu {
 	 */
 	ActionListener aMissile = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-        	for (int i=43;i<60;i++){
+        	for (int i=43;i<100;i++){
         		if(univers.get(i)!=null)
         			(univers.get(i)).prochainTour();
     			}
