@@ -23,7 +23,6 @@ class Accueil extends JFrame implements ActionListener{
 	Accueil(){
 		myMenu = new Menu(this);
 		add(myMenu,BorderLayout.NORTH);
-		AudioPlayer audioPlayer = new AudioPlayer("file:/Users/St_Sauveur/Documents/Music.wav");
 		System.out.println("Menu ok");
 		System.out.println("Listener ok");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,6 +40,23 @@ class Accueil extends JFrame implements ActionListener{
 			pack();
 			System.out.println("Disposition des panels ok");
 			partie.jouer();
+			
+			
+			/*AudioPlayer audioPlayer = new AudioPlayer("file:/Users/St_Sauveur/Documents/Music.wav");
+			try {
+				audioPlayer.start();
+				char choice = 'c';
+				while(choice == 'c') {
+					System.out.println("Si vous souhaitez arrêter, tapez 'q' : ");
+					choice = (char)System.in.read();
+					System.in.read();
+				}
+				audioPlayer.stop();
+				System.exit(0);
+			} catch (Exception f) {
+				System.out.println("Impossible de lire (cause : " + f + ")");
+			}	
+			*/
 		}
 		else if (e.getSource()==myMenu.game_pause){
 			if (partie != null)
