@@ -66,7 +66,7 @@ public class Escadrille extends Chose{
 		{
 			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+4*(espace+hautinv));
 			//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
-			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 3, j, 4);
+			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 2, j, 4);
 			matrice[4][j]=in;
 		}
 		System.out.println("vitesse state 3= "+ matrice[4][4].vitesse.getX());
