@@ -23,6 +23,7 @@ class Accueil extends JFrame implements ActionListener{
 	Accueil(){
 		myMenu = new Menu(this);
 		add(myMenu,BorderLayout.NORTH);
+		AudioPlayer audioPlayer = new AudioPlayer("file:/Users/St_Sauveur/Documents/Music.wav");
 		System.out.println("Menu ok");
 		System.out.println("Listener ok");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,9 +54,10 @@ class Accueil extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String [] argv){
-		Accueil fenetre = new Accueil();	
-		
+		Accueil fenetre = new Accueil();
+
 	}
+
 	
 
 }
