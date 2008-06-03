@@ -61,7 +61,7 @@ public class Jeu {
 	 */
 	ActionListener aMissile = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-        	for (int i=43;i<60;i++){
+        	for (int i=43;i<100;i++){
         		if(univers.get(i)!=null)
         			(univers.get(i)).prochainTour();
     			}
@@ -101,7 +101,7 @@ public class Jeu {
 			/*for (int i=3;i<43;i++){
 			univers.add(new Brique());
 			}*/
-			for(int i=3;i<=60;i++){
+			for(int i=3;i<=100;i++){
 				univers.add(null);
 			}
 			tEscadrille = new javax.swing.Timer(500,aEscadrille);
