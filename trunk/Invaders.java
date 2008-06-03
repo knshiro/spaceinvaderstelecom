@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.awt.Graphics;
 /**
  * Un objet invaders est un vaisseau ennemi. Son constructeur comporte plus d'arguments que le constructeur de Chose.
  * En effet il faut aussi prciser quel est le type du vaisseau (cela change le nombre de points attribus en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone).
@@ -176,7 +177,6 @@ class Invaders extends Chose
 		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);//Pour que le missile parte du bon endroit
 		//instancie un nouveau missile
 		Missile missile=new Missile(player,univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);
-	
 		// corriger
 	}
 	/**
@@ -215,6 +215,28 @@ class Invaders extends Chose
 	public void prochainTour()
 	{
 		deplacement();
+		switch(type)
+		{
+		case 1:
+			type=4;
+		break;
+		case 2: 
+			type=5;
+		break;
+		case 3:
+			type=6;
+		break;
+		case 4:
+			type=1;
+		break;
+		case 5:
+			type=2;
+		break;
+		case 6:
+			type=1;
+		break;
+		}
+	
 	}
 	
 
