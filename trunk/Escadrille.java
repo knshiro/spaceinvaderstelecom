@@ -275,7 +275,7 @@ public class Escadrille extends Chose{
 				}
 		
 				}
-		}
+		}	
 	}
 		
 }
