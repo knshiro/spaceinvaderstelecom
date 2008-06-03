@@ -41,7 +41,6 @@ class Menu extends JMenuBar {
 		game_newgame.addActionListener(fenetre);
 		game_pause.addActionListener(fenetre);
 		game_resume.addActionListener(fenetre);
-		
 		game_quit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
 				System.exit(0);
@@ -61,11 +60,14 @@ class Menu extends JMenuBar {
 		JMenu tools = new JMenu("Tools");
 		tools_commandlist = new JMenuItem("Command List");
 		tools_options = new JMenuItem("Options");
+		tools_commandlist.addActionListener(fenetre);
+		tools_options.addActionListener(fenetre);
 		tools.add(tools_commandlist);
 		tools.add(tools_options);
 		add(tools);
 		JMenu help = new JMenu("Help");
 		help_credits = new JMenuItem("Credits");
+		help_credits.addActionListener(fenetre);
 		help.add(help_credits);
 		add(help);
 		
