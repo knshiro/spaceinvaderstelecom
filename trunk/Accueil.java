@@ -42,7 +42,7 @@ class Accueil extends JFrame implements ActionListener{
 			partie.jouer();
 			
 			
-			AudioPlayer audioPlayer = new AudioPlayer("file:/Users/St_Sauveur/Documents/Music.wav");
+			AudioPlayer audioPlayer = new AudioPlayer("file:spaceinvaders.wav");
 			try {
 				audioPlayer.start();
 			} catch (Exception f) {
