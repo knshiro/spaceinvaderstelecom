@@ -10,11 +10,9 @@ class Invaders extends Chose
 	
 
 	
-	/*hauteur=super.getHauteur();
-	largeur=super.getLargeur();
-	id=super.getId();
-	vie=super.getVie();
-	Vraisemblablement inutile*/
+	
+	
+
 
 	public Invaders(Joueur player, ArrayList<Chose> univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
 	{
@@ -22,6 +20,10 @@ class Invaders extends Chose
 		this.type=type;
 		this.colonne=colonne;
 		this.ligne=ligne;
+	//	hauteur=super.getHauteur();
+		//largeur=super.getLargeur();
+		/*id=super.getId();*/
+		vie=super.getVie();
 		abscisse=coord.getX();
 		ordonnee=coord.getY();
 		
@@ -33,19 +35,21 @@ class Invaders extends Chose
 	 */
 	public void dessin(Graphics g)
 	{
-			
+			largeur = getLargeur();
+			hauteur = getHauteur();
 		switch(type)
 		{
 		case 1:
 			g.setColor(Color.WHITE);
 			System.out.println(" " + abscisse+ " "+ ordonnee);
-			System.out.println("invadlargeur = "+ getLargeur());
+			System.out.println("invadlargeur = "+ largeur);
+			
 			g.fillRect((2*abscisse+largeur)/2-3*largeur/14, ordonnee, 3*largeur/7, hauteur/8);//première ligne
 			g.fillRect(abscisse+largeur/14 , ordonnee+hauteur/8, 6*largeur/7, hauteur/8);//2nd ligne
 			g.fillRect(abscisse , ordonnee+2*hauteur/8, largeur, hauteur/8);//troisième ligne
 			g.fillRect(abscisse , ordonnee+3*hauteur/8, 2*largeur/7, hauteur/8);//quatrième
-			g.fillRect(abscisse+3*largeur/7 , ordonnee+3*hauteur/8, largeur/7, hauteur/8);
-			g.fillRect(abscisse+5*largeur/7 , ordonnee+3*hauteur/8,2*largeur/7, hauteur/8);
+			g.fillRect(abscisse+3*largeur/7, ordonnee+3*hauteur/8, largeur/7, hauteur/8);
+			g.fillRect(abscisse+5*largeur/7, ordonnee+3*hauteur/8,2*largeur/7, hauteur/8);
 			g.fillRect(abscisse , ordonnee+4*hauteur/8,largeur, hauteur/8);//cinquième ligne
 			g.fillRect(abscisse+2*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);//sixième ligne
 			g.fillRect(abscisse+4*largeur/7 , ordonnee+5*hauteur/8,largeur/7, hauteur/8);
