@@ -6,7 +6,7 @@ import java.util.ArrayList;
  class Brique extends Chose
 {
 	
-	 public Brique(Joueur player, ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id)
+	 public Brique(Joueur player, ArrayPerso univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id)
 	{
 		 
 		 super(player, univers,coord,vitesse,vie,largeur,hauteur,id);

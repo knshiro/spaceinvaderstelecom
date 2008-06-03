@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public abstract class Chose {
 
-	ArrayList<Chose> univers = new ArrayList<Chose>();
+	ArrayPerso univers = new ArrayPerso();
 	Joueur player;
 	
 	Point coord;
@@ -20,7 +20,7 @@ public abstract class Chose {
 	private int hauteur;
 	private int id;
 	
-	Chose(Joueur player,ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
+	Chose(Joueur player,ArrayPerso univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
 		this.player = player;
 		this.univers = univers;
 		this.coord = coord;
@@ -85,7 +85,7 @@ public abstract class Chose {
 	* @return rien.
 	*/
 	public void destruction(){
-		univers.set(id,null);
+		univers.add(id,null);
 	}
 	
 	/** prochainTour

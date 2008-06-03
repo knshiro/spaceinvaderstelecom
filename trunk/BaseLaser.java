@@ -33,7 +33,7 @@ public class BaseLaser extends Chose{
 		this.autorisation=i;
 	}
 	
-	BaseLaser(Joueur joueur,ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
+	BaseLaser(Joueur joueur,ArrayPerso univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
 		super(joueur,univers,coord,vitesse,vie,largeur,hauteur,id);
 		this.nombremissile=0;
 		this.ordredeplacement=0;
