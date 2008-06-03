@@ -177,6 +177,9 @@ class Invaders extends Chose
 		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);//Pour que le missile parte du bon endroit
 		//instancie un nouveau missile
 		Missile missile=new Missile(player,univers,coord_missile,vitesse_missile,vie_missile,largeur_missile,hauteur_missile,id_missile(),camp);
+		int i=43;
+		while(this.univers.get(i) != null) i++;
+		(missile.univers).add(i,missile);
 		// corriger
 	}
 	/**
