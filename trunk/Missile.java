@@ -50,7 +50,7 @@ public class Missile extends Chose {
 			mechant = (Escadrille) univers.get(1);
 			i=0;
 			while(i<5){
-				while(i<5 && !touche((mechant.getMatrice())[i][j])){
+				while(i<5 && !(touche((mechant.getMatrice())[i][j]))){
 					j++;
 					if (j==11) {
 							i++;
