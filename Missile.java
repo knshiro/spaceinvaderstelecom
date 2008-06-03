@@ -128,6 +128,7 @@ public class Missile extends Chose {
  * Permettra à la fonction de Jeu de contrôler le prochain tour
  */
 	public void prochainTour() {
+		System.out.println("entree dans prochain tour de missile");
 		deplacement();
 		collision();
 	}
