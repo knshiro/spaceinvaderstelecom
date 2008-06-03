@@ -18,6 +18,8 @@ class Accueil extends JFrame implements ActionListener{
 
 	static Session partie;
 	Menu myMenu;
+	AudioPlayer audioPlayer;
+
 	
 	
 	Accueil(){
@@ -42,8 +44,7 @@ class Accueil extends JFrame implements ActionListener{
 			System.out.println("Disposition des panels ok");
 			partie.jouer();
 			}
-			
-			AudioPlayer audioPlayer = new AudioPlayer("file:spaceinvaders.wav");
+			audioPlayer = new AudioPlayer("file:spaceinvaders.wav");
 			try {
 				audioPlayer.start();
 			} catch (Exception f) {
@@ -59,7 +60,16 @@ class Accueil extends JFrame implements ActionListener{
 			if (partie != null)
 				partie.game.jouer();
 		}
-		
+		else if (e.getSource()==myMenu.music_musicoff){
+			audioPlayer.stop();
+		}
+		else if (e.getSource()==myMenu.music_musicon){
+			try{
+				audioPlayer.start();}
+			catch (Exception f) {
+				System.out.println("Impossible de lire (cause : " + f + ")");
+			}	
+		}
 	}
 	
 	public static void main(String [] argv){
