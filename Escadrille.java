@@ -44,7 +44,7 @@ public class Escadrille extends Chose{
 		{
 			lignespleines[i]=11;
 		}
-		for (i=0;i<5;i++)
+		for (i=0;i<4;i++)
 		{
 			for(j=0;j<11;j++)
 			{
@@ -54,6 +54,12 @@ public class Escadrille extends Chose{
 			matrice[i][j]=in;/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
 				System.out.println(" = "+ matrice[i][j].getVie());}
 		}
+		for(j=0;j<11;j++)
+			{
+			place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+4*(espace+hautinv));
+			Invaders in=new	Invaders(Player, univers, place, vitesse, 1, larginv, hautinv, 15, 4, j, 3);
+			matrice[4][j]=in;
+			}
 		this.sens=sens;
 		this.acceleration=acceleration;
 		this.pas=pas;
