@@ -27,7 +27,8 @@ public class Jeu {
 	 */
 	ActionListener aEscadrille = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            (univers.get(1)).prochainTour();
+        	if(univers.get(1)!=null)
+        		(univers.get(1)).prochainTour();
         }
 	};
 	
@@ -36,7 +37,8 @@ public class Jeu {
 	 */
 	ActionListener aBaseLaser = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-            (univers.get(0)).prochainTour();
+        	if(univers.get(0)!=null)
+        		(univers.get(0)).prochainTour();
         }
 	};
 	
@@ -46,7 +48,8 @@ public class Jeu {
 	ActionListener aBrique = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	for (int i=3;i<43;i++){
-        		(univers.get(i)).prochainTour();
+        		if(univers.get(i)!=null)
+        			(univers.get(i)).prochainTour();
     			}
         }
 	};
@@ -57,7 +60,8 @@ public class Jeu {
 	ActionListener aMissile = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	for (int i=43;i<60;i++){
-        		(univers.get(i)).prochainTour();
+        		if(univers.get(i)!=null)
+        			(univers.get(i)).prochainTour();
     			}
         }
 	};
@@ -84,7 +88,7 @@ public class Jeu {
 	 * @param level
 	 */
 	Jeu(int level){
-		this.level=level;
+		this.level=1;//level;
 		univers = new ArrayList<Chose>();
 		for(int i=0;i<=60;i++)
 			univers.add(i,null);
