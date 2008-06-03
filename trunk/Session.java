@@ -35,6 +35,12 @@ public class Session extends JPanel {
 	public void jouer(){
 		game = new Jeu(player.getLevel());
 		tRefresh.start();
+		try{
+			wait(5000);
+		}
+		catch(Exception e){
+			System.err.println(e.getMessage());
+		}
 		game.jouer();
 		
 	}
