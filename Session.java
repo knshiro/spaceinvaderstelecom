@@ -21,7 +21,7 @@ public class Session extends JPanel implements KeyListener{
 	 public void keyPressed(KeyEvent evt){ }
 	 public void keyReleased(KeyEvent evt){}  
 	 public void keyTyped(KeyEvent evt){
-		 System.out.println(evt.getKeyChar());
+		 System.out.println("caca");
 		 if (evt.getKeyChar() == KeyEvent.VK_LEFT)
 			 ((BaseLaser) game.univers.get(0)).setdeplacement(1);
 		 else if (evt.getKeyChar() == KeyEvent.VK_RIGHT)
