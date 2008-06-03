@@ -1,7 +1,8 @@
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.*;
+import javax.imageio.*;
 import javax.swing.*;
 
 
@@ -10,6 +11,7 @@ public class Session extends JPanel {
 	Jeu game;
 	Joueur player;
 	Timer tRefresh;
+	Image img;
 	
 	ActionListener aRefresh = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -22,6 +24,12 @@ public class Session extends JPanel {
 		tRefresh = new Timer(80,aRefresh);
 		setPreferredSize(new java.awt.Dimension(800, 600));
 		setBackground(Color.BLACK);
+		try {
+		img = ImageIO.read(new File("FarAway.jpg"));
+		}
+		catch (IOException e){
+			e.printStackTrace();
+		}
 	}	
 	
 	public void jouer(){
@@ -35,6 +43,7 @@ public class Session extends JPanel {
 	
 	public void paintComponent(java.awt.Graphics g) {
 		super.paintComponent(g);
+		g.drawImage(img, 0, 0, null);
 		switch(game.getGameOver()){
 		case 0 :
 			for (int i=0;i<60;i++){
