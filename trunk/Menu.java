@@ -25,6 +25,8 @@ class Menu extends JMenuBar {
 	JMenuItem tools_options;
 	JMenuItem tools_commandlist;
 	JMenuItem help_credits;
+	JMenuItem music_musicon;
+	JMenuItem music_musicoff;
 	
 	
 	public Menu(Accueil fenetre) {
@@ -61,7 +63,16 @@ class Menu extends JMenuBar {
 		add(game);
 		
 		
-		
+		JMenu music = new JMenu("Music");
+		music_musicon = new JMenuItem("Music On");
+		music_musicoff = new JMenuItem("Music Off");
+		music_musicon.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.CTRL_MASK));
+		music_musicoff.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
+		music_musicon.addActionListener(fenetre);
+		music_musicoff.addActionListener(fenetre);
+		music.add(music_musicon);
+		music.add(music_musicoff);
+		add(music);
 		JMenu tools = new JMenu("Tools");
 		tools_commandlist = new JMenuItem("Command List");
 		tools_options = new JMenuItem("Options");
