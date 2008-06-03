@@ -104,8 +104,8 @@ public class Jeu {
 			for(int i=3;i<=100;i++){
 				univers.add(null);
 			}
-			tEscadrille = new javax.swing.Timer(500,aEscadrille);
-			tBaseLaser = new javax.swing.Timer(500,aBaseLaser);
+			tEscadrille = new javax.swing.Timer(200,aEscadrille);
+			tBaseLaser = new javax.swing.Timer(100,aBaseLaser);
 			tBrique = new javax.swing.Timer(500,aBrique);
 			tMissile = new javax.swing.Timer(500,aMissile);
 			break;
