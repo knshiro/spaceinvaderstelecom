@@ -37,7 +37,7 @@ public class Missile extends Chose {
 	
 	public boolean touche(Chose c){
 		if(c!=null){
-			boolean contact = !( coord.getX() >= c.coord.getX()-c.getLargeur()/2 ) && ( coord.getX() <= c.coord.getX()+c.getLargeur()/2 ) && ( coord.getY() >= c.coord.getY()-c.getHauteur()/2 ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()/2); 
+			boolean contact = ( coord.getX() >= c.coord.getX()) && ( coord.getX() <= c.coord.getX()+c.getLargeur() ) && ( coord.getY() >= c.coord.getY() ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()); 
 			//System.out.println(( coord.getX() >= c.coord.getX()-c.getLargeur()/2 ) && ( coord.getX() <= c.coord.getX()+c.getLargeur()/2 ) && ( coord.getY() >= c.coord.getY()-c.getHauteur()/2 ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()/2) );
 			return (contact);
 		}
@@ -56,7 +56,7 @@ public class Missile extends Chose {
 			i=0;
 			while(i<5 && !touche((mechant.getMatrice())[i][j])){
 				j++;
-				if (j==10) {
+				if (j==11) {
 					i++;
 					j=0;
 				}
