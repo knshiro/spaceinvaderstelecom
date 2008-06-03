@@ -42,12 +42,12 @@ public class BaseLaser extends Chose{
 		}
 
 	public void tir(){
-		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande  tirer un missile
+		if( (this.autorisation==1) && (this.nombremissile<=0 )) {  // autorisation =1 si on demande  tirer un missile
 			int i=43;
 			while(this.univers.get(i) != null) i++;
 			
-			int X = this.coord.getX() + 60;
-			int Y = this.coord.getY() - 100;
+			int X = this.coord.getX();
+			int Y = this.coord.getY() - 2;
 			Point coords = new Point(X,Y);
 			
 			int vitesseX = this.vitesse.getX()*ordredeplacement;
