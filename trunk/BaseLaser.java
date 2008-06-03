@@ -42,7 +42,7 @@ public class BaseLaser extends Chose{
 		}
 
 	public void tir(){
-		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande à tirer un missile
+		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande  tirer un missile
 			int i=43;
 			while(this.univers.get(i) != null) i++;
 			
@@ -88,7 +88,7 @@ public class BaseLaser extends Chose{
 	
 	public void deplacement(){
 		int X = this.coord.getX();
-		System.out.println(X);
+		System.out.println("DÃ©placementX base laser = "+X);
 		if ( (X<800) && (X>=0) )
 			super.deplacement();
 	}
