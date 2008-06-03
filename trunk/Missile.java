@@ -37,7 +37,7 @@ public class Missile extends Chose {
 	
 	public boolean touche(Chose c){
 		if(c!=null){
-			boolean contact = !( coord.getX() >= c.coord.getX()-c.getLargeur()/2 ) && ( coord.getX() <= c.coord.getX()+c.getLargeur()/2 ) && ( coord.getY() >= c.coord.getY()-c.getHauteur()/2 ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()/2); 
+			boolean contact = !( coord.getX() >= c.coord.getX()-0 ) && ( coord.getX() <= c.coord.getX()+0 ) && ( coord.getY() >= c.coord.getY()-c.getHauteur()/2 ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()/2); 
 			//System.out.println(( coord.getX() >= c.coord.getX()-c.getLargeur()/2 ) && ( coord.getX() <= c.coord.getX()+c.getLargeur()/2 ) && ( coord.getY() >= c.coord.getY()-c.getHauteur()/2 ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()/2) );
 			return (contact);
 		}
