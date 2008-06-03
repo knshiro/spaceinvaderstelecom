@@ -65,6 +65,7 @@ class Menu extends JMenuBar {
 		JMenu tools = new JMenu("Tools");
 		tools_commandlist = new JMenuItem("Command List");
 		tools_options = new JMenuItem("Options");
+		tools_commandlist.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
 		tools_options.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
 		tools_commandlist.addActionListener(fenetre);
 		tools_options.addActionListener(fenetre);
