@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class BaseLaser extends Chose{
-	private int nombremissile;
+	int nombremissile;
 	private int autorisation;
 	private int ordredeplacement;
 	private int game_over;
@@ -37,7 +37,7 @@ public class BaseLaser extends Chose{
 		super(joueur,univers,coord,vitesse,vie,largeur,hauteur,id);
 		this.nombremissile=0;
 		this.ordredeplacement=1;
-		this.autorisation=0;
+		this.autorisation=1;
 		this.game_over=0;
 		}
 
@@ -51,11 +51,11 @@ public class BaseLaser extends Chose{
 			Point coords = new Point(X,Y);
 			
 			int vitesseX = this.vitesse.getX();
-			int vitesseY = this.vitesse.getY() + 10;
+			int vitesseY = this.vitesse.getY() - 10;
 			Point vitesses = new Point(vitesseX,vitesseY);
 			this.nombremissile++;
 			Missile missile = new Missile(player,this.univers,coords,vitesses,1,3,10,i,1);
-			(missile.univers).set(i,missile);
+			(missile.univers).add(i,missile);
 			
 		}
 		
