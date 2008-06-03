@@ -30,6 +30,10 @@ class Accueil extends JFrame implements ActionListener{
 		game_pause.addActionListener(this);
 		game_resume.addActionListener(this);
 		System.out.println("Listener ok");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.pack();
+		this.setVisible(true);
+		System.out.println("test");
 	}
 	
 	
@@ -57,10 +61,8 @@ class Accueil extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String [] argv){
-		Accueil fenetre = new Accueil();
-		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenetre.pack();
-		fenetre.setVisible(true);
+		Accueil fenetre = new Accueil();	
+		
 	}
 	
 
