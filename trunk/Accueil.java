@@ -24,7 +24,7 @@ class Accueil extends JFrame implements ActionListener{
 	
 	Accueil(){
 		myMenu = new Menu(this);
-		add(myMenu);
+		add(myMenu,BorderLayout.NORTH);
 		System.out.println("Menu ok");
 		game_newgame.addActionListener(this);
 		game_pause.addActionListener(this);
