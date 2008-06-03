@@ -36,7 +36,7 @@ public class BaseLaser extends Chose{
 	BaseLaser(Joueur joueur,ArrayList univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
 		super(joueur,univers,coord,vitesse,vie,largeur,hauteur,id);
 		this.nombremissile=0;
-		this.ordredeplacement=-1;
+		this.ordredeplacement=1;
 		this.autorisation=1;
 		this.game_over=0;
 		}
@@ -87,8 +87,9 @@ public class BaseLaser extends Chose{
 	}
 	
 	public void deplacement(){
-		int X=this.coord.getX();
-		if ( (X<=800) || (X>=0) )
+		int X = this.coord.getX();
+		System.out.println(X);
+		if ( (X<800) && (X>=0) )
 			super.deplacement();
 	}
 	
