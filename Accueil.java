@@ -18,17 +18,12 @@ class Accueil extends JFrame implements ActionListener{
 
 	Session partie;
 	Menu myMenu;
-	JMenuItem game_newgame = new JMenuItem("New Game");
-	JMenuItem game_pause = new JMenuItem("Pause");
-	JMenuItem game_resume = new JMenuItem("Resume");
+	
 	
 	Accueil(){
 		myMenu = new Menu(this);
 		add(myMenu,BorderLayout.NORTH);
 		System.out.println("Menu ok");
-		game_newgame.addActionListener(this);
-		game_pause.addActionListener(this);
-		game_resume.addActionListener(this);
 		System.out.println("Listener ok");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.pack();
@@ -40,7 +35,7 @@ class Accueil extends JFrame implements ActionListener{
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==game_newgame){
+		if(e.getSource()==myMenu.game_newgame){
 			partie = new Session();
 			System.out.println("Nouvelle session ok");
 			/*add(partie.player, BorderLayout.NORTH);*/
@@ -49,11 +44,11 @@ class Accueil extends JFrame implements ActionListener{
 			System.out.println("Disposition des panels ok");
 			partie.jouer();
 		}
-		else if (e.getSource()==game_pause){
+		else if (e.getSource()==myMenu.game_pause){
 			if (partie != null)
 				partie.game.stop();
 		}
-		else if (e.getSource()==game_resume){
+		else if (e.getSource()==myMenu.game_resume){
 			if (partie != null)
 				partie.game.jouer();
 		}
