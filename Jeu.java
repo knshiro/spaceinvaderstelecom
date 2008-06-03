@@ -95,7 +95,7 @@ public class Jeu {
 		switch (level) {
 		
 		case 1 :
-			univers.add(new BaseLaser(player,univers, new Point(400,550), new Point(0,0), 4, 21, 16, 0));
+			univers.add(new BaseLaser(player,univers, new Point(400,550), new Point(2,0), 4, 21, 16, 0));
 			univers.add(new Escadrille(player,univers, new Point(110,0), new Point (3,0), 55, 11, 5, 1, 1, 0, 10, 25, 20, 10));
 			univers.add(new MysteryShip(player,univers,new Point(10,50), new Point(2,0), 1, 21, 16, 2,0));
 			/*for (int i=3;i<43;i++){
