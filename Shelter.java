@@ -6,7 +6,7 @@ import java.awt.*;
 class Shelter extends Chose
 {
 	
-	Shelter(Joueur player, ArrayList<Chose> univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id)
+	Shelter(Joueur player, ArrayPerso univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id)
 	{
 		super(player,univers,coord, vitesse, vie,largeur, hauteur,id);
 		vitesse.setPoint(0, 0);

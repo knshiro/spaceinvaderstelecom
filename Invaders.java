@@ -15,7 +15,7 @@ class Invaders extends Chose
 	
 
 
-	public Invaders(Joueur player, ArrayList<Chose> univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
+	public Invaders(Joueur player, ArrayPerso univers, Point coord,Point vitesse, int vie, int largeur, int hauteur, int id, int type, int colonne, int ligne)
 	{
 		super(player,univers, coord,vitesse,vie, largeur, hauteur,id);
 		this.type=type;
