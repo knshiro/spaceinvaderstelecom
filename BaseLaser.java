@@ -50,7 +50,7 @@ public class BaseLaser extends Chose{
 			int Y = this.coord.getY() - 20;
 			Point coords = new Point(X,Y);
 			
-			int vitesseX = this.vitesse.getX();
+			int vitesseX = this.vitesse.getX()*ordredeplacement;
 			int vitesseY = this.vitesse.getY() - 10;
 			Point vitesses = new Point(vitesseX,vitesseY);
 			this.nombremissile++;
