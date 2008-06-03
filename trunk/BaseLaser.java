@@ -46,7 +46,7 @@ public class BaseLaser extends Chose{
 			int i=43;
 			while(this.univers.get(i) != null) i++;
 			
-			int X = this.coord.getX();
+			int X = this.coord.getX()+this.getHauteur()/2;
 			int Y = this.coord.getY() - 2;
 			Point coords = new Point(X,Y);
 			
