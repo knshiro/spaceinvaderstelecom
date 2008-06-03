@@ -89,8 +89,21 @@ public class BaseLaser extends Chose{
 	public void deplacement(){
 		int X = this.coord.getX();
 		System.out.println("DéplacementX base laser = "+X);
-		if ( (X<800) && (X>=0) )
-			super.deplacement();
+		if(ordredeplacement==1){// deplacement droite si ordredeplacement vaut 1
+			if (X<800){
+			coord.translate(vitesse.getX(), vitesse.getY());
+			ordredeplacement=0;
+			System.out.println("ordredeplacement="+this.ordredeplacement);
+			}
+		}	
+		else if(ordredeplacement==-1){
+			if (X>0){
+				coord.translate(-(vitesse.getX()), vitesse.getY());
+				ordredeplacement=0;
+				System.out.println("ordredeplacement="+this.ordredeplacement);
+				}
+		}
+			
 	}
 	
 	
@@ -99,17 +112,9 @@ public class BaseLaser extends Chose{
 	
 	public void prochainTour(){
 		this.tir();
-		if(this.ordredeplacement==1){    // deplacement droite si ordredeplacement vaut 1
-			this.deplacement();
-			System.out.println("ordredeplacement="+this.ordredeplacement);
-		}
-		if(this.ordredeplacement==-1){  // deplacement gauche si ordredeplacement vaut -1
-			Point sauvervitesse = new Point(this.vitesse.getX(),this.vitesse.getY());
-			this.vitesse.setPoint(-sauvervitesse.getX(),sauvervitesse.getY());
-			this.deplacement();
-			this.vitesse.setPoint(sauvervitesse.getX(),sauvervitesse.getY());
-		}
+		this.deplacement();
 	}
+
 	
 	public void destruction(){
 		this.game_over=1;
