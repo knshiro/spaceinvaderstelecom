@@ -102,10 +102,6 @@ public class Jeu {
 			univers.add(0,new BaseLaser(player,univers, new Point(400,550), new Point(3,0), 4, 21, 16, 0));
 			univers.add(1,new Escadrille(player,univers, new Point(110,0), new Point (3,0), 55, 11, 5, 1, 1, 0, 10, 25, 20, 10));
 			univers.add(2,new MysteryShip(player,univers,new Point(10,50), new Point(2,0), 1, 21, 16, 2,0));
-			/*for (int i=3;i<43;i++){
-			univers.add(new Brique());
-			}*/
-			
 			univers.add(3,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,3));
 			univers.add(4,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,4));
 			univers.add(5,new Brique(player,univers,new Point(coord.getX()+5*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,5));
