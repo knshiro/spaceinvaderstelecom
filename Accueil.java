@@ -1,6 +1,7 @@
 //  Created by Matthieu Gedon-Monaco on 01/06/08.
 //  Copyright 2008 Bbnuts. All rights reserved.
 //
+//
 // Fonctionne en autonome, pour l'intgration, penser
 //  enlever le main. Pour l'instant c'est un menu qui
 // pourra tre intgr  la fentre de jeu.
