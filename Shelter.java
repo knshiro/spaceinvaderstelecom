@@ -24,14 +24,7 @@ class Shelter extends Chose
 		bouclier.add(new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
 	}
 	
-	public void dessin(Graphics g)
-	{
-		int i;
-		for(i=0;i<=9;i++)
-		{
-			bouclier.get(i).dessin(g);
-		}
-	}
+	
 	private int id_bouclier()
 	{
 		int i=3;

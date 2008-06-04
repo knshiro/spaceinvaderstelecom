@@ -73,8 +73,8 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 			for (int i=0;i<60;i++){
 				if(game.univers.get(i)!=null)
 					(game.univers.get(i)).dessin(g);
-				
 			}
+			
 			break;
 		
 		case 1 : 

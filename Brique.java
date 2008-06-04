@@ -8,13 +8,11 @@ import java.util.ArrayList;
 	
 	 public Brique(Joueur player, ArrayPerso univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id)
 	{
-		 
 		 super(player, univers,coord,vitesse,vie,largeur,hauteur,id);
 		 col=Color.green;
-		 
 		 abscisse=this.coord.getX();
-		 ordonnee=this.coord.getY();
-		
+		 ordonnee=this.coord.getY();	 
+		 vie=getVie();
 	}
 	 
 	 /**C'est la fonction qui dessine la brique, elle prend en compte les différents aspects possibles de la brique en fontion de la vie
@@ -22,6 +20,10 @@ import java.util.ArrayList;
 	  * */
 	 public void dessin(Graphics g)
 	 {
+		 largeur = getLargeur();
+		 hauteur = getHauteur();
+		 vie=getVie();
+		 
 		 switch(vie)
 		 {
 		 case 4:
@@ -103,13 +105,11 @@ import java.util.ArrayList;
 	 
 	 public void prochainTour()
 	 {
-		 //A priori les briques ne bougent pas.
+		 
 	 }
 	 
-	 private static int largeur;
-	 private static int hauteur;
 	 private int vie;
-	 private int abscisse, ordonnee, i,j;
+	 private int abscisse, ordonnee, i,j, hauteur, largeur;
 	 private Color col;
 	 
 
