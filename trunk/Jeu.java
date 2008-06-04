@@ -92,10 +92,10 @@ public class Jeu {
 	Jeu(int level){
 		this.level=1;//level;
 		univers = new ArrayPerso();
-		Point coord= new Point(50,50);
+		Point coord= new Point(50,500);
 		Point vitesse=new Point(0,0);
-		int largeur=20;
-	 	int hauteur=20;
+		int largeur=15;
+	 	int hauteur=15;
 		switch (level) {
 		
 		case 1 :
