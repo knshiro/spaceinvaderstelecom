@@ -9,7 +9,7 @@ import java.util.ArrayList;
 	 public Brique(Joueur player, ArrayPerso univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id)
 	{
 		 super(player, univers,coord,vitesse,vie,largeur,hauteur,id);
-		 col=Color.green;
+		 col=Color.white;
 		 abscisse=this.coord.getX();
 		 ordonnee=this.coord.getY();	 
 		 vie=getVie();
@@ -32,7 +32,7 @@ import java.util.ArrayList;
 		 		{
 		 			for (i=0;i<=9;i++)
 		 			{
-		 				g.fillRect(abscisse-largeur/2+i*largeur/10, ordonnee-hauteur/2+j*hauteur/10, largeur/(nbr_aleatoire()+10),hauteur/(nbr_aleatoire()+10));
+		 				g.fillRect(abscisse-largeur/2+i*largeur/10, ordonnee-hauteur/2+j*hauteur/10, largeur/(/*nbr_aleatoire()+*/10),hauteur/10);
 		 			}
 		 		}
 		 break;
