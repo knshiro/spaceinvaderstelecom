@@ -19,17 +19,19 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	};
 	
 	 public void keyPressed(KeyEvent evt){
-		 System.out.println("caca");
 	 }
 	 public void keyReleased(KeyEvent evt){
-		 System.out.println("caca");
 	 }  
 	 public void keyTyped(KeyEvent evt){
 		 System.out.println("caca");
-		 if (evt.getKeyChar() == KeyEvent.VK_LEFT)
+		 if (evt.getKeyChar() == KeyEvent.VK_LEFT){
 			 ((BaseLaser) game.univers.get(0)).setdeplacement(1);
-		 else if (evt.getKeyChar() == KeyEvent.VK_RIGHT)
+			 System.out.println("gauche");
+		 }
+		 else if (evt.getKeyChar() == KeyEvent.VK_RIGHT){
 			 ((BaseLaser) game.univers.get(0)).setdeplacement(-1);
+			 System.out.println("droite");
+		 }
 	 }
 
 	
@@ -67,6 +69,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	
 	public void paintComponent(java.awt.Graphics g) {
 		super.paintComponent(g);
+		requestFocus();
 		g.drawImage(img, 0, 0, null);
 		switch(game.getGameOver()){
 		case 0 :
@@ -103,6 +106,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		add(label,BorderLayout.CENTER);
 		/* afficher le score et demander le nom*/
 	}
+	
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		
@@ -126,5 +130,6 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }
