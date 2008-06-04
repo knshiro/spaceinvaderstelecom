@@ -92,7 +92,7 @@ public class Jeu {
 	Jeu(int level){
 		this.level=1;//level;
 		univers = new ArrayPerso();
-		Point coord= new Point(50,500);
+		Point coord= new Point(100,500);
 		Point vitesse=new Point(0,0);
 		int largeur=15;
 	 	int hauteur=15;
@@ -106,17 +106,17 @@ public class Jeu {
 			for (int i=0;i<=3;i++)
 			{
 				coord.setPoint(100+i*150,500);
-				univers.add(3+13*i,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,3));
-				univers.add(4+13*i,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,4));
-				univers.add(5+13*i,new Brique(player,univers,new Point(coord.getX()+5*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,5));
-				univers.add(6+13*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,6));
-				univers.add(7+13*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+3*hauteur/2),vitesse,4,largeur,hauteur,7));
-				univers.add(8+13*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+3*hauteur/2),vitesse,4,largeur,hauteur,8));
-				univers.add(9+13*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+5*hauteur/2),vitesse,4,largeur,hauteur,9));
-				univers.add(10+13*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+5*hauteur/2),vitesse,4,largeur,hauteur,10));
-				univers.add(11+13*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,11));
-				univers.add(12+13*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,12));
-				univers.add(13+13*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,13));
+				univers.add(3+11*i,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,3+11*i));
+				univers.add(4+11*i,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,4+11*i));
+				univers.add(5+11*i,new Brique(player,univers,new Point(coord.getX()+5*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,5+11*i));
+				univers.add(6+11*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,6+11*i));
+				univers.add(7+11*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+3*hauteur/2),vitesse,4,largeur,hauteur,7+11*i));
+				univers.add(8+11*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+3*hauteur/2),vitesse,4,largeur,hauteur,8+11*i));
+				univers.add(9+11*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+5*hauteur/2),vitesse,4,largeur,hauteur,9+11*i));
+				univers.add(10+11*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+5*hauteur/2),vitesse,4,largeur,hauteur,10+11*i));
+				univers.add(11+11*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,11+11*i));
+				univers.add(12+11*i,new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,12+11*i));
+				univers.add(13+11*i,new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,13+11*i));
 			}
 			
 			
