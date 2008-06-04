@@ -41,13 +41,13 @@ class Menu extends JMenuBar {
 		game_pause = new JMenuItem("Pause");
 		game_resume = new JMenuItem("Resume");
 		game_quit = new JMenuItem("Quit");
-		/*
+		
 		game_newgame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK));
 		game_pause.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
 		game_resume.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, ActionEvent.CTRL_MASK));
 		game_quit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK));	
-		*/
 		game_newgame.addActionListener(fenetre);
+		
 		game_pause.addActionListener(fenetre);
 		game_resume.addActionListener(fenetre);
 		game_quit.addActionListener(new ActionListener() {
@@ -68,10 +68,10 @@ class Menu extends JMenuBar {
 		JMenu music = new JMenu("Music");
 		music_musicon = new JMenuItem("Music On");
 		music_musicoff = new JMenuItem("Music Off");
-		/*
+
 		music_musicon.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, ActionEvent.CTRL_MASK));
 		music_musicoff.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, ActionEvent.CTRL_MASK));
-		*/
+
 		music_musicon.addActionListener(fenetre);
 		music_musicoff.addActionListener(fenetre);
 		music.add(music_musicon);
@@ -80,10 +80,10 @@ class Menu extends JMenuBar {
 		JMenu tools = new JMenu("Tools");
 		tools_commandlist = new JMenuItem("Command List");
 		tools_options = new JMenuItem("Options");
-		/*
+		
 		tools_commandlist.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, ActionEvent.CTRL_MASK));
 		tools_options.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK));
-		*/
+		
 		tools_commandlist.addActionListener(fenetre);
 		tools_options.addActionListener(fenetre);
 		tools.add(tools_commandlist);
