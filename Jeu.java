@@ -45,7 +45,7 @@ public class Jeu {
 	};
 	
 	/** aBrique
-	 * action qui lance la méthode prochainTour des briques de shelter
+	 * action qui lance la méthode prochainTour  des briques de shelter
 	 */
 	ActionListener aBrique = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
