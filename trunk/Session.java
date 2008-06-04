@@ -19,19 +19,20 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	};
 	
 	 public void keyPressed(KeyEvent evt){
+		 System.out.println("caca");
+		 if (evt.getKeyCode() == KeyEvent.VK_LEFT){
+			 ((BaseLaser) game.univers.get(0)).setdeplacement(-1);
+			 System.out.println("gauche");
+		 }
+		 else if (evt.getKeyCode() == KeyEvent.VK_RIGHT){
+			 ((BaseLaser) game.univers.get(0)).setdeplacement(1);
+			 System.out.println("droite");
+		 }
 	 }
 	 public void keyReleased(KeyEvent evt){
 	 }  
 	 public void keyTyped(KeyEvent evt){
-		 System.out.println("caca");
-		 if (evt.getKeyChar() == KeyEvent.VK_LEFT){
-			 ((BaseLaser) game.univers.get(0)).setdeplacement(1);
-			 System.out.println("gauche");
-		 }
-		 else if (evt.getKeyChar() == KeyEvent.VK_RIGHT){
-			 ((BaseLaser) game.univers.get(0)).setdeplacement(-1);
-			 System.out.println("droite");
-		 }
+		 
 	 }
 
 	
