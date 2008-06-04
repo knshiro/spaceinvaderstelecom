@@ -19,14 +19,11 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	};
 	
 	 public void keyPressed(KeyEvent evt){
-		 System.out.println("caca");
 		 if (evt.getKeyCode() == KeyEvent.VK_LEFT){
 			 ((BaseLaser) game.univers.get(0)).setdeplacement(-1);
-			 System.out.println("gauche");
 		 }
 		 else if (evt.getKeyCode() == KeyEvent.VK_RIGHT){
 			 ((BaseLaser) game.univers.get(0)).setdeplacement(1);
-			 System.out.println("droite");
 		 }
 	 }
 	 public void keyReleased(KeyEvent evt){
@@ -41,7 +38,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		addMouseListener(this);
 		addKeyListener (this);
 		player = new Joueur(1,0,"bob");
-		tRefresh = new Timer(80,aRefresh);
+		tRefresh = new Timer(40,aRefresh);
 		setPreferredSize(new java.awt.Dimension(800, 600));
 		setBackground(Color.BLACK);
 		try {
@@ -114,7 +111,6 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	}
 	public void mouseEntered(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		System.out.println("salut");
 		requestFocus();
 		
 	}
@@ -123,9 +119,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		
 	}
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		System.out.println("yo");
-		
+		// TODO Auto-generated method stub		
 	}
 	public void mouseReleased(MouseEvent arg0) {
 		// TODO Auto-generated method stub
