@@ -63,7 +63,7 @@ public class Missile extends Chose {
 				
 			}
 			if(i!=5){
-				System.out.println("TOUCHE PAR MISSILE");
+				//System.out.println("TOUCHE PAR MISSILE");
 				(mechant.getMatrice()[i][j]).degat(1);
 				destruction(); 
 				((BaseLaser) (univers.get(0))).nombremissile--;
@@ -136,7 +136,7 @@ public class Missile extends Chose {
  * Permettra  la fonction de Jeu de contrler le prochain tour
  */
 	public void prochainTour() {
-		System.out.println("entree dans prochain tour de missile");
+		//System.out.println("entree dans prochain tour de missile");
 		deplacement();
 		collision();
 	}

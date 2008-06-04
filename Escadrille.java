@@ -30,7 +30,7 @@ public class Escadrille extends Chose{
 		super(Player, univers, coord, vitesse, vie, largeur, hauteur, id);
 		int i,j;
 		Point place;
-		System.out.println("vitesse state 1= "+ vitesse.getX());
+		//System.out.println("vitesse state 1= "+ vitesse.getX());
 		/*la vie devra valoir 55 au départ*/
 
 		matrice=new Invaders[5][11];/*mettre à jour selon  le constructeur des invaders*/
@@ -69,10 +69,10 @@ public class Escadrille extends Chose{
 			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 2, j, 4);
 			matrice[4][j]=in;
 		}
-		System.out.println("vitesse state 3= "+ matrice[4][4].vitesse.getX());
-		System.out.println("x invader 4x4 state 1 ="+matrice[4][4].coord.getX());
-		System.out.println("x invader 4x4 state 1 ="+matrice[2][10].coord.getX());
-		System.out.println("x invader 4x4 state 1 ="+matrice[3][7].coord.getX());
+		//System.out.println("vitesse state 3= "+ matrice[4][4].vitesse.getX());
+		//System.out.println("x invader 4x4 state 1 ="+matrice[4][4].coord.getX());
+		//System.out.println("x invader 4x4 state 1 ="+matrice[2][10].coord.getX());
+		//System.out.println("x invader 4x4 state 1 ="+matrice[3][7].coord.getX());
 
 		this.sens=sens;
 		this.acceleration=acceleration;
@@ -242,13 +242,13 @@ public class Escadrille extends Chose{
 		 int i,j;
 		 double t;
 		 if (getVie()<=0){
-			 System.out.println("gagne");
+			 //System.out.println("gagne");
 			 game_over=-1;
 		 }
 		 else
 		 {
 			 if (controlebas(bas)){
-				 System.out.println("perdu");
+				 //System.out.println("perdu");
 				 game_over=1;
 			 }
 			 else
@@ -256,13 +256,13 @@ public class Escadrille extends Chose{
 				 t=Math.random();
 				 if (t<0.4){
 					 tir();  
-					 System.out.println("tir ok");
+					 //System.out.println("tir ok");
 				 }
 
 
 				 if (this.controlebord(xmax, xinf)) 
 				 {
-					 System.out.println("on est au bord");
+					 //System.out.println("on est au bord");
 					 sens=-sens;
 					 this.vitesse.setPoint(sens*(Math.abs((this.vitesse.getX())+acceleration)),this.vitesse.getY());
 					 for (i=0;i<5;i++)

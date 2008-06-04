@@ -29,7 +29,7 @@ public class Jeu {
 	ActionListener aEscadrille = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	if(univers.get(1)!=null)
-        		System.out.println("prochain tour escadrille");
+        		//System.out.println("prochain tour escadrille");
         		(univers.get(1)).prochainTour();
         }
 	};

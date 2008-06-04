@@ -5,7 +5,7 @@ import javax.swing.*;
 import  java.awt.event.*;
 
 
-public class Session extends JPanel implements KeyListener{
+public class Session extends JPanel implements KeyListener,MouseListener{
 
 	Jeu game;
 	Joueur player;
@@ -18,8 +18,12 @@ public class Session extends JPanel implements KeyListener{
         }
 	};
 	
-	 public void keyPressed(KeyEvent evt){ }
-	 public void keyReleased(KeyEvent evt){}  
+	 public void keyPressed(KeyEvent evt){
+		 System.out.println("caca");
+	 }
+	 public void keyReleased(KeyEvent evt){
+		 System.out.println("caca");
+	 }  
 	 public void keyTyped(KeyEvent evt){
 		 System.out.println("caca");
 		 if (evt.getKeyChar() == KeyEvent.VK_LEFT)
@@ -30,6 +34,8 @@ public class Session extends JPanel implements KeyListener{
 
 	
 	Session(){
+		requestFocus();
+		addMouseListener(this);
 		addKeyListener (this);
 		player = new Joueur(1,0,"bob");
 		tRefresh = new Timer(80,aRefresh);
@@ -45,13 +51,13 @@ public class Session extends JPanel implements KeyListener{
 	
 	public void jouer(){
 		game = new Jeu(player.getLevel());
-		tRefresh.start();
+		tRefresh.start();/*
 		try{
 			wait(5000);
 		}
 		catch(Exception e){
 			System.err.println(e.getMessage());
-		}
+		}*/
 		
 		game.jouer();
 		
@@ -96,6 +102,29 @@ public class Session extends JPanel implements KeyListener{
 		label.setFont(new Font("Serif",Font.PLAIN,72));
 		add(label,BorderLayout.CENTER);
 		/* afficher le score et demander le nom*/
+	}
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		System.out.println("salut");
+		requestFocus();
+		
+	}
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		System.out.println("yo");
+		
+	}
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
