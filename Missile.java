@@ -123,9 +123,12 @@ public class Missile extends Chose {
  * Rapide test si sortie de l'cran
  */
 	public void deplacement(){
+		
 		if ((coord.getX()>800) || (coord.getY()>600) || (coord.getX()<0) || (coord.getY() <0)) {
 				destruction();
-				((BaseLaser) (univers.get(0))).nombremissile--;
+				if(camp==1){
+					((BaseLaser) (univers.get(0))).nombremissile--;
+				}
 		}
 		else {
 			super.deplacement();
