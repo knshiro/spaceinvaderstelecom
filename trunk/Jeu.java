@@ -101,9 +101,20 @@ public class Jeu {
 			/*for (int i=3;i<43;i++){
 			univers.add(new Brique());
 			}*/
-			for(int i=3;i<=100;i++){
-				univers.add(i,null);
-			}
+			Brique brique= new Brique(player,univers,new Point(100+20/2,100+20/2),new Point(0,0),4,20,20,3);
+			univers.add(3,brique);
+			
+			//univers.add(4,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,4));
+			/*univers.add(new Brique(player,univers,new Point(coord.getX()+5*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			univers.add(new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			univers.add(new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+3*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			univers.add(new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+3*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			univers.add(new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+5*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			univers.add(new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+5*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			univers.add(new Brique(player,univers,new Point(coord.getX()+largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			univers.add(new Brique(player,univers,new Point(coord.getX()+7*largeur/2,coord.getY()+7*hauteur/2),vitesse,4,largeur,hauteur,id_bouclier()));
+			*/
+			
 			tEscadrille = new javax.swing.Timer(80,aEscadrille);
 			tBaseLaser = new javax.swing.Timer(100,aBaseLaser);
 			tBrique = new javax.swing.Timer(500,aBrique);

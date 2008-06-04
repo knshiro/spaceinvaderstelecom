@@ -1,6 +1,6 @@
 public class ArrayPerso {
 
-	Chose[] tableau;
+	public Chose[] tableau;
 	
 	ArrayPerso(){
 		tableau= new Chose[200];
