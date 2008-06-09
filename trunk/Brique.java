@@ -39,7 +39,7 @@ import java.util.ArrayList;
 		 	
 		 case 3:
 			 
-			 g.setColor(col);
+			 g.setColor(Color.GRAY);
 		 		for (j=0;j<=9;j++)
 		 		{
 		 			for (i=0;i<=9;i++)
@@ -51,24 +51,24 @@ import java.util.ArrayList;
 		 	
 		 case 2:
 			 
-			 g.setColor(col);
+			 g.setColor(Color.ORANGE);
 		 		for (j=0;j<=9;j++)
 		 		{
 		 			for (i=0;i<=9;i++)
 		 			{
-		 				g.fillRect(abscisse-largeur/2+i*largeur/10, ordonnee-hauteur/2+j*hauteur/10, largeur/(nbr_aleatoire()+17),hauteur/(nbr_aleatoire()+17));
+		 				g.fillRect(abscisse-largeur/2+i*largeur/10, ordonnee-hauteur/2+j*hauteur/10, largeur/(nbr_aleatoire()+13),hauteur/(nbr_aleatoire()+13));
 		 			}
 		 		}
 		 break;
 		 
 		 case 1:
 			 
-			 g.setColor(col);
+			 g.setColor(Color.RED);
 		 		for (j=0;j<=9;j++)
 		 		{
 		 			for (i=0;i<=9;i++)
 		 			{
-		 				g.fillRect(abscisse-largeur/2+i*largeur/10, ordonnee-hauteur/2+j*hauteur/10, largeur/(nbr_aleatoire()+20),hauteur/(nbr_aleatoire()+20));
+		 				g.fillRect(abscisse-largeur/2+i*largeur/10, ordonnee-hauteur/2+j*hauteur/10, largeur/(nbr_aleatoire()+13),hauteur/(nbr_aleatoire()+13));
 		 			}
 		 		}
 		 break;
