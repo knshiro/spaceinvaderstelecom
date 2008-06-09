@@ -94,14 +94,14 @@ public class BaseLaser extends Chose{
 		if(ordredeplacement==1){// deplacement droite si ordredeplacement vaut 1
 			if (X<800){
 			coord.translate(vitesse.getX(), vitesse.getY());
-			ordredeplacement=0;
+			//ordredeplacement=0;
 			//System.out.println("ordredeplacement="+this.ordredeplacement);
 			}
 		}	
 		else if(ordredeplacement==-1){
 			if (X>0){
 				coord.translate(-(vitesse.getX()), vitesse.getY());
-				ordredeplacement=0;
+				//ordredeplacement=0;
 				//System.out.println("ordredeplacement="+this.ordredeplacement);
 				}
 		}
