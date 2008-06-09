@@ -11,10 +11,12 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	Joueur player;
 	Timer tRefresh;
 	Image img;
+	Thread proc;
 	
 	ActionListener aRefresh = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	repaint();
+        	player.repaint();
         }
 	};
 	
@@ -59,19 +61,24 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		catch (IOException e){
 			e.printStackTrace();
 		}
+		proc = new Thread(){
+			public void run(){
+				tRefresh.start();
+				/*try {
+					sleep(5000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				*/
+				game.jouer();
+			}
+		};
 	}	
 	 
 	public void jouer(){
 		game = new Jeu(player.getLevel());
-		tRefresh.start();/*
-		try{
-			wait(5000);
-		}
-		catch(Exception e){
-			System.err.println(e.getMessage());
-		}*/
-		
-		game.jouer();
+		proc.run();
 		
 	}
 	
