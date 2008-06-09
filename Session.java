@@ -30,6 +30,15 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		 }
 	 }
 	 public void keyReleased(KeyEvent evt){
+		 if (evt.getKeyCode() == KeyEvent.VK_LEFT){
+			 ((BaseLaser) game.univers.get(0)).setdeplacement(0);
+		 }
+		 if (evt.getKeyCode() == KeyEvent.VK_RIGHT){
+			 ((BaseLaser) game.univers.get(0)).setdeplacement(0);
+		 }
+		 if (evt.getKeyCode() == KeyEvent.VK_SPACE){
+			 ((BaseLaser) game.univers.get(0)).setauto(0);
+		 }
 	 }  
 	 public void keyTyped(KeyEvent evt){
 		 
