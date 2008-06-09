@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-
+ 
 public class Joueur extends JPanel{
 
 	private int level;

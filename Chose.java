@@ -89,7 +89,7 @@ public abstract class Chose {
 	* @return rien.
 	*/
 	public void destruction(){
-		univers.add(id,null);
+		univers.add(id,null); 
 	}
 	
 	/** prochainTour

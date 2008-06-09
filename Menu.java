@@ -15,7 +15,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-class Menu extends JMenuBar {
+class Menu extends JMenuBar { 
 
 	Accueil fenetre;
 	JMenuItem game_newgame;

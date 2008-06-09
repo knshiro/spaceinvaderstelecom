@@ -125,7 +125,7 @@ public class Jeu {
 			tBrique = new javax.swing.Timer(30,aBrique);
 			tMissile = new javax.swing.Timer(30,aMissile);
 			break;
-
+ 
 		case 2 :
 			break;
 

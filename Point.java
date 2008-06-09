@@ -17,7 +17,7 @@ class Point
 	{
 		return x;
 	}
-	
+	 
 	/** Récupère l'ordonne du point.
 	 * @param aucun
 	 * @return y, l'ordonne du point.*/

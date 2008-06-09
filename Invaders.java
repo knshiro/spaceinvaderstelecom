@@ -203,7 +203,7 @@ class Invaders extends Chose
 	 * <br> -On vide la case correspondante dans la matrice de l'Escadrille
 	 * <br> -On supprime l'invaders de la liste <i>univers</i> 
 	 */
-	public void destruction()
+	public void destruction() 
 	{
 		
 		univers.get(1).setVie(univers.get(1).getVie()-1);
