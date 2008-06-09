@@ -129,10 +129,11 @@ public class Missile extends Chose {
 	public void deplacement(){ 
 		
 		if ((coord.getX()>800) || (coord.getY()>600) || (coord.getX()<0) || (coord.getY() <0)) {
-				destruction();
-				if(camp==1){
-					((BaseLaser) (univers.get(0))).nombremissile--;
-				}
+			if(camp==1){
+				((BaseLaser) (univers.get(0))).nombremissile--;
+			}	
+			destruction();
+				
 		}
 		else {
 			super.deplacement();
@@ -145,6 +146,7 @@ public class Missile extends Chose {
 	public void prochainTour() {
 		//System.out.println("entree dans prochain tour de missile");
 		deplacement();
-		collision();
+		if( univers.get(getID()) !=null)
+			collision();
 	}
 }
