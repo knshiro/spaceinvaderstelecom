@@ -122,7 +122,7 @@ public class Jeu {
 			
 			tEscadrille = new javax.swing.Timer(100,aEscadrille);
 			tBaseLaser = new javax.swing.Timer(40,aBaseLaser);
-			tBrique = new javax.swing.Timer(500,aBrique);
+			tBrique = new javax.swing.Timer(30,aBrique);
 			tMissile = new javax.swing.Timer(30,aMissile);
 			break;
 
