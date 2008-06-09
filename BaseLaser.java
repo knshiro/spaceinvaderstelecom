@@ -56,6 +56,8 @@ public class BaseLaser extends Chose{
 			while(this.univers.get(i) != null) i++;
 			Missile missile = new Missile(player,this.univers,coords,vitesses,1,3,10,i,1);
 			(missile.univers).add(i,missile);
+			System.out.println(nombremissile);
+			
 			
 		}
 		
