@@ -25,6 +25,9 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		 else if (evt.getKeyCode() == KeyEvent.VK_RIGHT){
 			 ((BaseLaser) game.univers.get(0)).setdeplacement(1);
 		 }
+		 else if (evt.getKeyCode() == KeyEvent.VK_SPACE){
+			 ((BaseLaser) game.univers.get(0)).setauto(1);
+		 }
 	 }
 	 public void keyReleased(KeyEvent evt){
 	 }  
