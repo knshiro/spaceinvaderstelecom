@@ -18,7 +18,7 @@ public class Jeu {
 	javax.swing.Timer tBaseLaser;
 	javax.swing.Timer tBrique;
 	javax.swing.Timer tMissile;
-	private int larginv, hautinv; //modifier pour entrer la hauteur et la largeur des invaders
+	private int larginv, hautinv; //modifier pour entrer la hauteur et la largeur des invaders, utile dans le constructeur
 	private int gameOver;
 	Joueur player;
 	
