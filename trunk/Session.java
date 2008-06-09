@@ -77,7 +77,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	}	
 	 
 	public void jouer(){
-		game = new Jeu(player.getLevel());
+		game = new Jeu(player.getLevel(),player);
 		proc.run();
 		
 	}
@@ -88,7 +88,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		super.paintComponent(g);
 		requestFocus();
 		g.drawImage(img, 0, 0, null);
-		switch(game.getGameOver()){
+		switch(game.player.getGameOver()){
 		case 0 :
 			for (int i=0;i<200;i++){
 				if(game.univers.get(i)!=null)
@@ -112,6 +112,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		JLabel label = new JLabel("YOU WON !");
 		label.setFont(new Font("Serif",Font.PLAIN,72));
 		add(label,BorderLayout.CENTER);
+		game.player.nextLevel();
 		jouer();
 	}
 	
