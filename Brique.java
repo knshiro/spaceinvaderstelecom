@@ -10,8 +10,8 @@ import java.util.ArrayList;
 	{
 		 super(player, univers,coord,vitesse,vie,largeur,hauteur,id);
 		 col=Color.white;
-		 abscisse=this.coord.getX();
-		 ordonnee=this.coord.getY();	 
+		 abscisse=this.coord.getX()+getLargeur()/2;
+		 ordonnee=this.coord.getY()+getHauteur()/2;	 
 		 vie=getVie();
 	}
 	 
