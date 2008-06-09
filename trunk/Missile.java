@@ -73,6 +73,7 @@ public class Missile extends Chose {
 					System.out.println("Touché par 2");
 					(univers.get(2)).degat(1);
 					destruction();
+					((BaseLaser) (univers.get(0))).nombremissile--;
 				}
 				else {
 					i=3;
@@ -81,19 +82,20 @@ public class Missile extends Chose {
 					}
 					if(i<200) {
 						
-						System.out.println("touché par missile");
+						System.out.println("touché par missile"+i);
 						(univers.get(i)).degat(1);
 						destruction();
+						((BaseLaser) (univers.get(0))).nombremissile--;
 					}
 				}
 			}
 		}
 		if(camp==0){  // C'est l'ennemi qui tire
 			i=3;
-			while(i < 43 && !touche(univers.get(i))){
+			while((i < 200 && !touche(univers.get(i))) || i==getID()){
 				i++;
 			}
-			if(i<43) {
+			if(i<200) {
 				(univers.get(i)).degat(1);
 				destruction();
 			}
