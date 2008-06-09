@@ -42,10 +42,9 @@ public class BaseLaser extends Chose{
 		}
 
 	public void tir(){
-		if( (this.autorisation==1) && (this.nombremissile<=0 )) {  // autorisation =1 si on demande  tirer un missile
+		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande  tirer un missile
 			int i=60;
 			autorisation = 0;
-			while(this.univers.get(i) != null) i++;
 			
 			int X = this.coord.getX()+this.getHauteur()/2;
 			int Y = this.coord.getY() - 2;
@@ -55,6 +54,7 @@ public class BaseLaser extends Chose{
 			int vitesseY = this.vitesse.getY() - 10;
 			Point vitesses = new Point(vitesseX,vitesseY);
 			this.nombremissile++;
+			while(this.univers.get(i) != null) i++;
 			Missile missile = new Missile(player,this.univers,coords,vitesses,1,3,10,i,1);
 			(missile.univers).add(i,missile);
 			
