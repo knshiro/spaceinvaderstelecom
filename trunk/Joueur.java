@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 import javax.swing.*;
 
  
@@ -6,6 +8,7 @@ public class Joueur extends JPanel{
 	private int level;
 	private int score;
 	private String pseudo;
+	
 	
 	public void setPseudo(String v){
 		if(v.length()<4){
@@ -44,7 +47,12 @@ public class Joueur extends JPanel{
 		this.level=level;
 		this.score=score;
 		setPseudo(pseudo);
+		setPreferredSize(new java.awt.Dimension(800, 100));
+		setBackground(Color.BLACK);
 	}
 	
-
+	public void paintComponent(java.awt.Graphics g) {
+		super.paintComponent(g);
+		g.drawString(Integer.toString(score), 400, 50);
+	}
 }
