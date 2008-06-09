@@ -105,7 +105,7 @@ public class Jeu {
 			univers.add(2,new MysteryShip(player,univers,new Point(10,50), new Point(2,0), 1, 21, 16, 2,0));
 			for (int i=0;i<=3;i++)
 			{
-				coord.setPoint(100+i*150,500);
+				coord.setPoint(160+i*150,470);
 				univers.add(3+11*i,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,3+11*i));
 				univers.add(4+11*i,new Brique(player,univers,new Point(coord.getX()+3*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,4+11*i));
 				univers.add(5+11*i,new Brique(player,univers,new Point(coord.getX()+5*largeur/2,coord.getY()+hauteur/2),vitesse,4,largeur,hauteur,5+11*i));
