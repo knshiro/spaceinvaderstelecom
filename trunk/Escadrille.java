@@ -258,7 +258,7 @@ public class Escadrille extends Chose{
 		 
 		 int i,j;
 		 double t;
-		 System.out.println("nbColonnes"+this.nbColonnes);
+		 //System.out.println("nbColonnes"+this.nbColonnes);
 		 if (getVie()<=0){
 			 //System.out.println("gagne");
 			 game_over=-1;
