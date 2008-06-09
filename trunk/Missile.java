@@ -70,7 +70,7 @@ public class Missile extends Chose {
 			}
 			else {
 				if(touche(univers.get(2))) {
-					System.out.println("Touché par 2");
+					System.out.println("Touch par 2");
 					(univers.get(2)).degat(1);
 					destruction();
 					((BaseLaser) (univers.get(0))).nombremissile--;
@@ -81,11 +81,10 @@ public class Missile extends Chose {
 						i++;
 					}
 					if(i<200) {
-						
-						System.out.println("touché par missile"+i);
+						((BaseLaser) (univers.get(0))).nombremissile--;
+						System.out.println("touch par missile"+i);
 						(univers.get(i)).degat(1);
 						destruction();
-						((BaseLaser) (univers.get(0))).nombremissile--;
 					}
 				}
 			}
