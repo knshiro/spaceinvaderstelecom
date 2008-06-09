@@ -218,7 +218,7 @@ public class Escadrille extends Chose{
 		 //j=Math.round(Math.round(i));
 		 while (k<j)
 		 {
-			 if (colonnespleines[k]>0)
+			 if (colonnespleines[k]>=0)
 			 {
 				 k++;
 				 l++;
