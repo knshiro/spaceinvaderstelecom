@@ -226,13 +226,19 @@ public class Escadrille extends Chose{
 			 else
 				 l++;
 		 }
-		 k=4;
-		 while ((matrice[k][l]==null)&&(k>=0)){
-			 k--;
-			 if ((k>=0)&&(matrice[k][l]!=null)) 
-			 matrice[k][l].tir(); 
 		 
+		 k=0;
+		 j=0;
+		 for(j=0;j<5;j++)
+		 {
+			 if (matrice[k][l]!=null)
+				 k=j;
 		 }
+		 if ((matrice[k][l]!=null)&&(k<5)&&(k>=0))
+			 matrice[k][l].tir();
+				 
+		 
+		 
 	 
 	 }
 
