@@ -172,7 +172,7 @@ class Invaders extends Chose
 		int vie_missile=1;
 		int largeur_missile=4; //la largeur et la hauteur seront sans doute  modifier
 		int hauteur_missile=10;
-		Point vitesse_missile=new Point(0,20); //j'ai aucune ide de l'ordre de grandeur,  modifier ultrieurement
+		Point vitesse_missile=new Point(0,10); //j'ai aucune ide de l'ordre de grandeur,  modifier ultrieurement
 		int camp=0;//C'est un ennemi
 		Point coord_missile=new Point(abscisse+(largeur-largeur_missile)/2,ordonnee+hauteur);//Pour que le missile parte du bon endroit
 		//instancie un nouveau missile
@@ -193,7 +193,7 @@ class Invaders extends Chose
 		{
 			i++;
 		}
-		return i-1;
+		return i;
 	}
 	
 
