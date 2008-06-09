@@ -37,7 +37,7 @@ public class Missile extends Chose {
 	
 	public boolean touche(Chose c){
 		if(c!=null){
-			boolean contact = !( coord.getX() >= c.coord.getX()) && ( coord.getX() <= c.coord.getX()+c.getLargeur() ) && ( coord.getY() >= c.coord.getY() ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()); 
+			boolean contact = ( coord.getX() >= c.coord.getX()) && ( coord.getX() <= c.coord.getX()+c.getLargeur() ) && ( coord.getY() >= c.coord.getY() ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()); 
 			//System.out.println(( coord.getX() >= c.coord.getX()-c.getLargeur()/2 ) && ( coord.getX() <= c.coord.getX()+c.getLargeur()/2 ) && ( coord.getY() >= c.coord.getY()-c.getHauteur()/2 ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()/2) );
 			return (contact);
 		}
@@ -63,22 +63,25 @@ public class Missile extends Chose {
 				
 			}
 			if(i!=5){
-				//System.out.println("TOUCHE PAR MISSILE");
+				System.out.println("TOUCHE PAR MISSILE");
 				(mechant.getMatrice()[i][j]).degat(1);
 				destruction(); 
 				((BaseLaser) (univers.get(0))).nombremissile--;
 			}
 			else {
 				if(touche(univers.get(2))) {
+					System.out.println("Touché par 2");
 					(univers.get(2)).degat(1);
 					destruction();
 				}
 				else {
 					i=3;
-					while(i <200 && !touche(univers.get(i))){
+					while((i <200 && !touche(univers.get(i)) ) || i==this.getID() ){
 						i++;
 					}
 					if(i<200) {
+						
+						System.out.println("touché par missile");
 						(univers.get(i)).degat(1);
 						destruction();
 					}
