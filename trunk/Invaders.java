@@ -201,6 +201,28 @@ class Invaders extends Chose
 		esc.tableauxAJour(ligne, colonne);
 		super.destruction();
 		esc.setDiff(esc.getDiff()+0.02);
+	switch(type)
+	{
+	case 1:
+		((Joueur) player).addScore(20);
+	break;
+	case 2:
+		((Joueur) player).addScore(50);
+	break;
+	case 3:
+		((Joueur) player).addScore(100);
+	break;
+	case 4:
+		((Joueur) player).addScore(20);
+	break;
+	case 5:
+		((Joueur) player).addScore(50);
+	break;
+	case 6:
+		((Joueur) player).addScore(100);
+	break;
+	}
+		
 	}
 	/**
 	 * Dtermine le comportment  adopter au prochain dclchement du timer. Cette mthode permet le dplacement de l'invaders.
