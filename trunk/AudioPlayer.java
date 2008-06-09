@@ -8,7 +8,7 @@ import javax.media.RealizeCompleteEvent;
 
 public class AudioPlayer {
 
-private Player player;
+private Player player; 
 
 private String audioFile;
 

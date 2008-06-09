@@ -4,7 +4,7 @@ import java.util.*;
 
 //Attention la classe n'est pas du tout oprationnelle pour l'instant, il faut modifier le constructeur.
 
-class MysteryShip extends Chose
+class MysteryShip extends Chose 
 {
 	public MysteryShip(Joueur joueur,ArrayPerso univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id, int etat)
 	{

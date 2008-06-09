@@ -4,7 +4,7 @@ import java.awt.*;
 
 
 class Shelter extends Chose
-{
+{ 
 	
 	Shelter(Joueur player, ArrayPerso univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id)
 	{

@@ -31,7 +31,7 @@ class Accueil extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.pack();
 		this.setVisible(true);
-		System.out.println("test");
+		System.out.println("test"); 
 	}
 	
 	public void actionPerformed(ActionEvent e) {

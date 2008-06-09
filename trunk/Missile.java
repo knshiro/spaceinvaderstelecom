@@ -126,7 +126,7 @@ public class Missile extends Chose {
  * Redondance de la fonction de dplacement 
  * Rapide test si sortie de l'cran
  */
-	public void deplacement(){
+	public void deplacement(){ 
 		
 		if ((coord.getX()>800) || (coord.getY()>600) || (coord.getX()<0) || (coord.getY() <0)) {
 				destruction();

@@ -1,9 +1,9 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-/** Un objet brique représente l'élément de base des boucliers.
- * Le constructeur est le même que celui de la classe Chose.*/
- class Brique extends Chose
+/** Un objet brique reprsente l'lment de base des boucliers.
+ * Le constructeur est le mme que celui de la classe Chose.*/
+ class Brique extends Chose 
 {
 	
 	 public Brique(Joueur player, ArrayPerso univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id)
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 		 vie=getVie();
 	}
 	 
-	 /**C'est la fonction qui dessine la brique, elle prend en compte les différents aspects possibles de la brique en fontion de la vie
+	 /**C'est la fonction qui dessine la brique, elle prend en compte les diffrents aspects possibles de la brique en fontion de la vie
 	  * @param Graphics g
 	  * */
 	 public void dessin(Graphics g)
@@ -78,7 +78,7 @@ import java.util.ArrayList;
 	 }
 
 	 /**
-	  * Cette méthode est utilisée dans la fonction dessin pour dessiner les briques de façon irrégulière
+	  * Cette mthode est utilise dans la fonction dessin pour dessiner les briques de faon irrgulire
 	  * @param aucun
 	  * @return un int compris entre 1 et 3
 	  */

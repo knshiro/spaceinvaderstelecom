@@ -229,7 +229,7 @@ public class Escadrille extends Chose{
 		 k=4;
 		 while ((matrice[k][l]==null)&&(k>=0)){
 			 k--;
-			 if ((k>=0)&&(matrice[k][l]!=null))
+			 if ((k>=0)&&(matrice[k][l]!=null)) 
 			 matrice[k][l].tir(); 
 		 
 		 }

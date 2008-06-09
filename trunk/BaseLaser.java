@@ -44,7 +44,7 @@ public class BaseLaser extends Chose{
 	public void tir(){
 		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande  tirer un missile
 			int i=60;
-			autorisation = 0;
+			autorisation = 0; 
 			
 			int X = this.coord.getX()+this.getHauteur()/2;
 			int Y = this.coord.getY() - 2;

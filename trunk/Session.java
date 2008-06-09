@@ -51,7 +51,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 			e.printStackTrace();
 		}
 	}	
-	
+	 
 	public void jouer(){
 		game = new Jeu(player.getLevel());
 		tRefresh.start();/*
