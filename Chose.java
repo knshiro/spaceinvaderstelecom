@@ -50,6 +50,10 @@ public abstract class Chose {
 		return hauteur;
 	}
 	
+	public int getID(){
+		return id;
+	}
+	
 	/** dessin
 	* méthode à implémenter qui créera le dessin
 	* @param rien.
