@@ -8,6 +8,15 @@ public class Joueur extends JPanel{
 	private int level;
 	private int score;
 	private String pseudo;
+	private int gameOver;
+	
+
+	public void setGameOver(int v){
+		gameOver=v;
+	}
+	public int getGameOver(){
+		return gameOver;
+	}
 	
 	
 	public void setPseudo(String v){

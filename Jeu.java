@@ -19,7 +19,6 @@ public class Jeu {
 	javax.swing.Timer tBrique;
 	javax.swing.Timer tMissile;
 	private int larginv, hautinv; //modifier pour entrer la hauteur et la largeur des invaders, utile dans le constructeur
-	private int gameOver;
 	Joueur player;
 	
 	
@@ -69,12 +68,6 @@ public class Jeu {
 	};
 	
 	
-	public void setGameOver(int v){
-		gameOver=v;
-	}
-	public int getGameOver(){
-		return gameOver;
-	}
 	
 	
 	public void setSon(int v){
@@ -89,13 +82,14 @@ public class Jeu {
 	 * 
 	 * @param level
 	 */
-	Jeu(int level){
+	Jeu(int level, Joueur player){
 		this.level=1;//level;
 		univers = new ArrayPerso();
 		Point coord= new Point(100,500);
 		Point vitesse=new Point(0,0);
 		int largeur=15;
 	 	int hauteur=15;
+	 	this.player = player;
 		switch (level) {
 		
 		case 1 :
