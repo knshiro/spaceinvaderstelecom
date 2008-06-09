@@ -20,6 +20,7 @@ public class Escadrille extends Chose{
 	private int id;
 	int game_over;
 	private int larginv, hautinv;
+	private double diff=0.1;
 
 
 
@@ -134,6 +135,16 @@ public class Escadrille extends Chose{
 	public int[] getLignesPleines ()
 	{
 		return lignespleines;
+	}
+	
+	public double getDiff ()
+	{
+		return this.diff;
+	}
+	
+	public void setDiff (double aug)
+	{
+		this.diff=aug;
 	}
 
 	public void tableauxAJour (int i, int j)
@@ -260,7 +271,7 @@ public class Escadrille extends Chose{
 			 else
 			 {
 				 t=Math.random();
-				 if (t<0.4){
+				 if (t<diff){
 					 tir();  
 					 //System.out.println("tir ok");
 				 }
@@ -271,6 +282,7 @@ public class Escadrille extends Chose{
 					 //System.out.println("on est au bord");
 					 sens=-sens;
 					 this.vitesse.setPoint(sens*(Math.abs((this.vitesse.getX())+acceleration)),this.vitesse.getY());
+					 this.diff+=0.1;
 					 for (i=0;i<5;i++)
 					 {
 						 for (j=0;j<11;j++)

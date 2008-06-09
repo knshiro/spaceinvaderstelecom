@@ -211,6 +211,7 @@ class Invaders extends Chose
 		esc.setMatrice(ligne, colonne, null);
 		esc.tableauxAJour(ligne, colonne);
 		super.destruction();
+		esc.setDiff(esc.getDiff()+0.02);
 	}
 	/**
 	 * Dtermine le comportment  adopter au prochain dclchement du timer. Cette mthode permet le dplacement de l'invaders.
