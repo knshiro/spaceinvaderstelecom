@@ -45,7 +45,7 @@ public class Missile extends Chose {
 	}
 	
 /**
- * Dtecte une ventuelle collision
+ * Dtecte une eventuelle collision
  */
 	public void collision(){
 		int i,j;
@@ -75,10 +75,10 @@ public class Missile extends Chose {
 				}
 				else {
 					i=3;
-					while(i < 100 && !touche(univers.get(i))){
+					while(i <200 && !touche(univers.get(i))){
 						i++;
 					}
-					if(i<100) {
+					if(i<200) {
 						(univers.get(i)).degat(1);
 						destruction();
 					}

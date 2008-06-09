@@ -74,7 +74,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		g.drawImage(img, 0, 0, null);
 		switch(game.getGameOver()){
 		case 0 :
-			for (int i=0;i<60;i++){
+			for (int i=0;i<200;i++){
 				if(game.univers.get(i)!=null)
 					(game.univers.get(i)).dessin(g);
 			}
