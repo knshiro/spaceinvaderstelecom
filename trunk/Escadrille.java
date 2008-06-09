@@ -229,7 +229,7 @@ public class Escadrille extends Chose{
 		 //j=Math.round(Math.round(i));
 		 while (k<j)
 		 {
-			 if (colonnespleines[k]>=0)
+			 if (getColonnesPleines()[k]>=0)
 			 {
 				 k++;
 				 l++;
@@ -258,6 +258,7 @@ public class Escadrille extends Chose{
 		 
 		 int i,j;
 		 double t;
+		 System.out.println("nbColonnes"+this.nbColonnes);
 		 if (getVie()<=0){
 			 //System.out.println("gagne");
 			 game_over=-1;
