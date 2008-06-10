@@ -27,6 +27,7 @@ class Accueil extends JFrame implements ActionListener{
 	AudioPlayer audioPlayer;
 	Joueur player;
 	Timer tRefresh;
+	Thread win;
 	
 	ActionListener aRefresh = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -43,23 +44,24 @@ class Accueil extends JFrame implements ActionListener{
         		
         	case -1:
         		tRefresh.stop();
-        		win();
+        		win.run();
         		break;
         	}
         	
         }
 	};
 
-	public void win(){
+/*	public void win(){
 		partie.game.stop();
 		JLabel label = new JLabel("YOU WON !");
 		label.setFont(new Font("Serif",Font.PLAIN,72));
-		add(label,BorderLayout.CENTER);
+		label.setForeground(Color.RED);
+		partie.add(label,BorderLayout.SOUTH);
 		pack();
 		//partie.game.player.nextLevel();
 		//partie.jouer();
 	}
-	
+*/	
 	public void gameOver(){
 		partie.game.stop();
 		/*afficher un écran perdant*/
@@ -82,6 +84,7 @@ class Accueil extends JFrame implements ActionListener{
 		this.setVisible(true);
 		tRefresh = new Timer(20,aRefresh);
 		System.out.println("Accueil ok"); 
+		
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -94,6 +97,29 @@ class Accueil extends JFrame implements ActionListener{
 			player = new Joueur(1,0);
 			partie = new Session(player);
 			player.partie=partie;
+			win = new Thread(){
+				public void run(){
+					partie.game.stop();
+					/*JLabel label = new JLabel("YOU WON !");
+					label.setFont(new Font("Serif",Font.PLAIN,72));
+					label.setForeground(Color.RED);
+					partie.add(label,BorderLayout.SOUTH);
+					pack();
+					partie.repaint();
+					*/
+					try {
+						sleep(5000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					//partie.remove(label);
+					player.setGameOver(0);
+					partie.jouer();
+					tRefresh.start();
+					
+				}
+			};
 			System.out.println("Nouvelle session ok");
 			add(partie, BorderLayout.CENTER);
 			add(player, BorderLayout.SOUTH);
@@ -107,7 +133,7 @@ class Accueil extends JFrame implements ActionListener{
 			} catch (Exception f) {
 				System.out.println("Impossible de lire (cause : " + f + ")");
 			}	
-			
+
 		}
 		else if (e.getSource()==myMenu.game_pause){
 			if (partie != null)
