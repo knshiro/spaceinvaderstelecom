@@ -1,4 +1,3 @@
-import java.awt.Color;
 import java.awt.*;
 import java.util.*;
 
@@ -10,6 +9,12 @@ class MysteryShip extends Chose
 	{
 			
 		super(joueur,univers,coord,vitesse,vie,largeur,hauteur,id);
+		AudioPlayer son_mystery_ship = new AudioPlayer("file:mysterysound.wav");
+		try {
+			son_mystery_ship.start();
+		} catch (Exception f) {
+			System.out.println("Impossible de lire (cause : " + f + ")");
+		}
 		this.etat=etat;
 		abscisse=coord.getX();
 		ordonnee=coord.getY();
