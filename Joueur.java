@@ -1,4 +1,6 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 
 import javax.swing.*;
@@ -69,6 +71,7 @@ public class Joueur extends JPanel{
 	
 	public void paintComponent(java.awt.Graphics g) {
 		super.paintComponent(g);
+		g.setColor(Color.WHITE);
 		g.drawString(Integer.toString(score), 400, 50);
 		if(partie.game != null){
 			for (int i=0; i< partie.game.univers.get(0).getVie(); i++){
