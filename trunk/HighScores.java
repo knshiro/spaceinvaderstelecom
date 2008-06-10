@@ -32,9 +32,10 @@ public class HighScores extends JFrame implements ActionListener{
 		but=new JButton("Enregistrer");
 		pan.add(but);       
 
-		setContentPane(pan);        //defini le panel de la JFrame
-		setVisible(true);           //affiche la JFrame
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //opération par défaut a la fermeture
+		setContentPane(pan);
+		this.setLocationRelativeTo(this.getParent());
+		setVisible(true);           
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		but.addActionListener(this);
 	}
