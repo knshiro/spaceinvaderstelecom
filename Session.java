@@ -9,16 +9,10 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 
 	Jeu game;
 	Joueur player;
-	Timer tRefresh;
 	Image img;
 	Thread proc;
 	
-	ActionListener aRefresh = new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-        	repaint();
-        	player.repaint();
-        }
-	};
+	
 	
 	 public void keyPressed(KeyEvent evt){
 		 if (evt.getKeyCode() == KeyEvent.VK_LEFT){
@@ -52,7 +46,6 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		requestFocus();
 		addMouseListener(this);
 		addKeyListener (this);
-		tRefresh = new Timer(40,aRefresh);
 		setPreferredSize(new java.awt.Dimension(800, 600));
 		setBackground(Color.BLACK);
 		try {
@@ -63,8 +56,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		}
 		proc = new Thread(){
 			public void run(){
-				tRefresh.start();
-				/*try {
+				/*try {tRefresh = new Timer(40,aRefresh);
 					sleep(5000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -88,42 +80,13 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		super.paintComponent(g);
 		requestFocus();
 		g.drawImage(img, 0, 0, null);
-		switch(player.getGameOver()){
-		case 0 :
 			for (int i=0;i<200;i++){
 				if(game.univers.get(i)!=null)
 					(game.univers.get(i)).dessin(g);
 			}
-			
-			break;
-		
-		case 1 : 
-			gameOver();
-			break;
-		case -1:
-			win();
-			break;
-		}
 	}
 	
-	public void win(){
-		game.stop();
-		/*afficher un écran gagnant*/
-		JLabel label = new JLabel("YOU WON !");
-		label.setFont(new Font("Serif",Font.PLAIN,72));
-		add(label,BorderLayout.CENTER);
-		game.player.nextLevel();
-		jouer();
-	}
 	
-	public void gameOver(){
-		game.stop();
-		/*afficher un écran perdant*/
-		JLabel label = new JLabel("GAME OVER");
-		label.setFont(new Font("Serif",Font.PLAIN,72));
-		add(label,BorderLayout.CENTER);
-		/* afficher le score et demander le nom*/
-	}
 	
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
