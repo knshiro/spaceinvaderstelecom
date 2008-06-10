@@ -3,14 +3,14 @@ import java.awt.*;
 
 
 /** Missile : arme du jeu.
- * @author L'ours
+ * @author jb
  * @version 1.0
  * @package default_package
 */
 public class Missile extends Chose {
 
 /**
- * Permet de dterminer le camp du tireur de missile
+ * Permet de determiner le camp du tireur de missile
  * 1 : Base laser -- 0 : Ennemi
  */	
 	private int camp;
@@ -40,14 +40,13 @@ public class Missile extends Chose {
 	public boolean touche(Chose c){
 		if(c!=null){
 			boolean contact = ( coord.getX() >= c.coord.getX()) && ( coord.getX() <= c.coord.getX()+c.getLargeur() ) && ( coord.getY() >= c.coord.getY() ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()); 
-			//System.out.println(( coord.getX() >= c.coord.getX()-c.getLargeur()/2 ) && ( coord.getX() <= c.coord.getX()+c.getLargeur()/2 ) && ( coord.getY() >= c.coord.getY()-c.getHauteur()/2 ) && ( coord.getY() <= c.coord.getY()+c.getHauteur()/2) );
 			return (contact);
 		}
 		else return false;
 	}
 	
 /**
- * Dtecte une eventuelle collision
+ * Detecte une eventuelle collision
  */
 	public void collision(){
 		int i,j;
@@ -65,14 +64,12 @@ public class Missile extends Chose {
 				
 			}
 			if(i!=5){
-				System.out.println("TOUCHE PAR MISSILE");
 				(mechant.getMatrice()[i][j]).degat(1);
 				destruction(); 
 				((BaseLaser) (univers.get(0))).nombremissile--;
 			}
 			else {
 				if(touche(univers.get(2))) {
-					System.out.println("Touch par 2");
 					(univers.get(2)).degat(1);
 					destruction();
 					((BaseLaser) (univers.get(0))).nombremissile--;
@@ -84,7 +81,6 @@ public class Missile extends Chose {
 					}
 					if(i<200) {
 						((BaseLaser) (univers.get(0))).nombremissile--;
-						System.out.println("touch par missile"+i);
 						(univers.get(i)).degat(1);
 						destruction();
 					}
@@ -126,7 +122,7 @@ public class Missile extends Chose {
 	
 /**
  * Redondance de la fonction de dplacement 
- * Rapide test si sortie de l'cran
+ * Rapide test si sortie de l'ecran
  */
 	public void deplacement(){ 
 		
@@ -143,10 +139,9 @@ public class Missile extends Chose {
 	}
 	
 /**
- * Permettra  la fonction de Jeu de contrler le prochain tour
+ * Permettra  la fonction de Jeu de controler le prochain tour
  */
 	public void prochainTour() {
-		//System.out.println("entree dans prochain tour de missile");
 		deplacement();
 		if( univers.get(getID()) !=null)
 			collision();
