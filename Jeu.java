@@ -6,7 +6,6 @@ import java.awt.event.*;
  * les controlent.
  * 
  * @author Knshiro
- * @author Frotti
  * @version 1.0
  * @package default_package
  */
@@ -19,6 +18,8 @@ public class Jeu {
 	javax.swing.Timer tBaseLaser;
 	javax.swing.Timer tBrique;
 	javax.swing.Timer tMissile;
+	javax.swing.Timer tMysteryShip;
+	javax.swing.Timer tApparitionMysteryShip;
 	private int larginv, hautinv; //modifier pour entrer la hauteur et la largeur des invaders, utile dans le constructeur
 	Joueur player;
 	
@@ -32,6 +33,18 @@ public class Jeu {
         		//System.out.println("prochain tour escadrille");
         		(univers.get(1)).prochainTour();
         }
+	};
+	
+	/**a MysteryShip
+	 * action qui lance la methode prochainTour du MysteryShip
+	 */
+	
+	ActionListener aMysteryShip = new ActionListener(){
+		public void actionPerformed(ActionEvent e){
+			if (univers.get(2)!=null){
+				univers.get(2).prochainTour();
+			}
+		}
 	};
 	
 	/** aBaseLaser
@@ -67,6 +80,21 @@ public class Jeu {
     			}
         }
 	};
+	 
+	/** aApparitionMysteryShip
+	 * action qui décide si on doit faire apparaitre le mysteryship ou non
+	 */
+	
+	ActionListener aApparitionMysteryShip = new ActionListener(){
+		public void actionPerformed(ActionEvent e){
+			double nbr_alea=Math.random();
+			System.out.println("Nbr_alea:"+ nbr_alea);
+			if ((nbr_alea>0.8)&&(univers.get(2)==null))
+			{
+				univers.add(2,new MysteryShip (player,univers,new Point(1,20),new Point(8,0),1,39,27,2,1));
+			}
+		}
+	};
 	
 	
 	
@@ -95,9 +123,10 @@ public class Jeu {
 		
 		case 1 :
 			
-			univers.add(0,new BaseLaser(player,univers, new Point(400,550), new Point(6,0), 4, 21, 16, 0));
-			univers.add(1,new Escadrille(player,univers, new Point(110,50), new Point (3,0), 55, 11, 5, 1, 1, 0, 20, 25, 20, 15));
-			univers.add(2,new MysteryShip(player,univers,new Point(10,50), new Point(2,0), 1, 21, 16, 2,0));
+
+			univers.add(0,new BaseLaser(player,univers, new Point(400,550), new Point(3,0), 4, 21, 16, 0));
+			univers.add(1,new Escadrille(player,univers, new Point(110,50), new Point (3,0), 55, 11, 5, 1, 1, 0, 10, 25, 20, 10));
+			
 			for (int i=0;i<=3;i++)
 			{
 				coord.setPoint(160+i*150,470);
@@ -115,10 +144,14 @@ public class Jeu {
 			}
 			
 			
+
 			tEscadrille = new javax.swing.Timer(85,aEscadrille);
-			tBaseLaser = new javax.swing.Timer(40,aBaseLaser);
+			tBaseLaser = new javax.swing.Timer(20,aBaseLaser);
 			tBrique = new javax.swing.Timer(30,aBrique);
 			tMissile = new javax.swing.Timer(30,aMissile);
+			tMysteryShip = new javax.swing.Timer (100,aMysteryShip);
+			tApparitionMysteryShip = new javax.swing.Timer (5000,aApparitionMysteryShip);
+			
 			break;
  
 		case 2 :
@@ -137,11 +170,17 @@ public class Jeu {
 		tBaseLaser.start();
 		tBrique.start();
 		tMissile.start();
+		tMysteryShip.start();
+		tApparitionMysteryShip.start();
 	}
 	public void stop(){
 		tEscadrille.stop();
 		tBaseLaser.stop();
 		tBrique.stop();
 		tMissile.stop();
+		tMysteryShip.start();
+		tApparitionMysteryShip.start();
 	}
+	
+	
 }
