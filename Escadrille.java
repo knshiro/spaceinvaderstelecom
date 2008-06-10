@@ -261,13 +261,13 @@ public class Escadrille extends Chose{
 		 //System.out.println("nbColonnes"+this.nbColonnes);
 		 if (getVie()<=0){
 			 //System.out.println("gagne");
-			 game_over=-1;
+			 player.setGameOver(-1);
 		 }
 		 else
 		 {
 			 if (controlebas(bas)){
 				 //System.out.println("perdu");
-				 game_over=1;
+				 player.setGameOver(1);
 			 }
 			 else
 			 {
