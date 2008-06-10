@@ -3,6 +3,12 @@ import java.awt.Graphics;
 
 import javax.swing.*;
 
+/** Joueur : Classe qui gère qui gère et affiche le score et la vie du joueur
+ * 
+ * @author Knshiro
+ * @version 1.0
+ * @package default_package
+ */
  
 public class Joueur extends JPanel{
 

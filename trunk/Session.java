@@ -4,6 +4,11 @@ import javax.imageio.*;
 import javax.swing.*;
 import  java.awt.event.*;
 
+/** Session : gere l'affichage du jeu à proprement dit.
+ * @author Knshiro
+ * @version 1.0
+ * @package default_package
+*/
 
 public class Session extends JPanel implements KeyListener,MouseListener{
 

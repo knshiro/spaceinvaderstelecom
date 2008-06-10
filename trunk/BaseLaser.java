@@ -2,6 +2,12 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+/** BaseLaser : objet représentant la base laser et gérant son comportement
+ * 
+ * @author Benoît Bottineau
+ * @version 1.0
+ * @package default_package
+ */
 
 
 public class BaseLaser extends Chose{

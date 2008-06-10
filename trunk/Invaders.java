@@ -2,8 +2,13 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.awt.Graphics;
 /**
- * Un objet invaders est un vaisseau ennemi. Son constructeur comporte plus d'arguments que le constructeur de Chose.
- * En effet il faut aussi prciser quel est le type du vaisseau (cela change le nombre de points attribus en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone).
+ * Invaders : vaisseau ennemi. Son constructeur comporte plus d'arguments que le constructeur de Chose.
+ * En effet il faut aussi prciser quel est le type du vaisseau (cela change le nombre de points attribus en cas de destruction), ainsi que sa position dans l'escadrille (ligne, colone).  HighScores: boîte de dialogue permettant l'enregistrement du score.
+ * @author: Knshiro
+ * @version:1.0
+ * @package:default_package
+ * 
+ * 
  */
 class Invaders extends Chose 
 {

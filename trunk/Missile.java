@@ -3,8 +3,10 @@ import java.awt.*;
 
 
 /** Missile : arme du jeu.
- * Important : CHANGER dans deplacement les bords de l'cran qu'on a mis, moi et mes mains  800*600
- */
+ * @author L'ours
+ * @version 1.0
+ * @package default_package
+*/
 public class Missile extends Chose {
 
 /**
