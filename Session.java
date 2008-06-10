@@ -47,11 +47,11 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	 }
 
 	
-	Session(){
+	Session(Joueur player){
+		this.player=player;
 		requestFocus();
 		addMouseListener(this);
 		addKeyListener (this);
-		player = new Joueur(1,0,"bob");
 		tRefresh = new Timer(40,aRefresh);
 		setPreferredSize(new java.awt.Dimension(800, 600));
 		setBackground(Color.BLACK);
@@ -88,7 +88,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		super.paintComponent(g);
 		requestFocus();
 		g.drawImage(img, 0, 0, null);
-		switch(game.player.getGameOver()){
+		switch(player.getGameOver()){
 		case 0 :
 			for (int i=0;i<200;i++){
 				if(game.univers.get(i)!=null)
