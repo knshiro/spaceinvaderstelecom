@@ -30,7 +30,6 @@ public class Jeu {
 	ActionListener aEscadrille = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
         	if(univers.get(1)!=null)
-        		//System.out.println("prochain tour escadrille");
         		(univers.get(1)).prochainTour();
         }
 	};
@@ -82,13 +81,12 @@ public class Jeu {
 	};
 	 
 	/** aApparitionMysteryShip
-	 * action qui décide si on doit faire apparaitre le mysteryship ou non
+	 * action qui dcide si on doit faire apparaitre le mysteryship ou non
 	 */
 	
 	ActionListener aApparitionMysteryShip = new ActionListener(){
 		public void actionPerformed(ActionEvent e){
 			double nbr_alea=Math.random();
-			System.out.println("Nbr_alea:"+ nbr_alea);
 			if ((nbr_alea>0.8)&&(univers.get(2)==null))
 			{
 				univers.add(2,new MysteryShip (player,univers,new Point(1,20),new Point(8,0),1,39,27,2,1));

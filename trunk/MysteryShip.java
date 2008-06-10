@@ -18,7 +18,6 @@ class MysteryShip extends Chose
 		this.etat=etat;
 		abscisse=coord.getX();
 		ordonnee=coord.getY();
-		System.out.println("Le mysteryShip est instancié");
 		
 	}
 	

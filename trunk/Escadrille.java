@@ -33,8 +33,6 @@ public class Escadrille extends Chose{
 		super(Player, univers, coord, vitesse, vie, largeur, hauteur, id);
 		int i,j;
 		Point place;
-		//System.out.println("vitesse state 1= "+ vitesse.getX());
-		/*la vie devra valoir 55 au départ*/
 
 		matrice=new Invaders[5][11];/*mettre à jour selon  le constructeur des invaders*/
 		colonnespleines=new int[11];
@@ -91,11 +89,7 @@ public class Escadrille extends Chose{
 			
 		}
 
-		//System.out.println("vitesse state 3= "+ matrice[4][4].vitesse.getX());
-		//System.out.println("x invader 4x4 state 1 ="+matrice[4][4].coord.getX());
-		//System.out.println("x invader 4x4 state 1 ="+matrice[2][10].coord.getX());
-		//System.out.println("x invader 4x4 state 1 ="+matrice[3][7].coord.getX());
-
+		
 		this.sens=sens;
 		this.acceleration=acceleration;
 		this.pas=pas;
@@ -105,9 +99,9 @@ public class Escadrille extends Chose{
 		this.bas=600;
 	}
 
-	/*pour récupérer la matrice
-	 * param:rien
-	 * renvoi:matrice
+	/**pour récupérer la matrice
+	 * @param:rien
+	 * @return:matrice
 	 */
 
 	public Invaders[][] getMatrice ()
@@ -172,7 +166,6 @@ public class Escadrille extends Chose{
 	{
 		setLignesPleines(i,(getLignesPleines()[i])-1);
 		setColonnesPleines(j,(getColonnesPleines()[j])-1);
-		System.out.println("colonnes pleines "+j+" "+getColonnesPleines()[j]);
 		if (getColonnesPleines()[j]==0)
 			nbColonnes--;
 
@@ -265,7 +258,6 @@ public class Escadrille extends Chose{
 		 {
 			 k--;
 		 }
-		 System.out.println("tir :"+k+" "+l);
 		 if ((matrice[k][l]!=null)&&(k<5)&&(k>=0))
 			 matrice[k][l].tir();
 				 
@@ -279,15 +271,12 @@ public class Escadrille extends Chose{
 		 
 		 int i,j;
 		 double t;
-		 //System.out.println("nbColonnes"+this.nbColonnes);
 		 if (getVie()<=0){
-			 //System.out.println("gagne");
 			 player.setGameOver(-1);
 		 }
 		 else
 		 {
 			 if (controlebas(bas)){
-				 //System.out.println("perdu");
 				 player.setGameOver(1);
 			 }
 			 else
@@ -295,13 +284,11 @@ public class Escadrille extends Chose{
 				 t=Math.random();
 				 if (t<diff){
 					 tir();  
-					 //System.out.println("tir ok");
 				 }
 
 
 				 if (this.controlebord(xmax, xinf)) 
 				 {
-					 //System.out.println("on est au bord");
 					 sens=-sens;
 					 this.vitesse.setPoint(sens*(Math.abs((this.vitesse.getX())+acceleration)),this.vitesse.getY());
 					 this.diff+=0.03;
@@ -326,7 +313,6 @@ public class Escadrille extends Chose{
 						 {
 							 if (matrice[i][j]!=null)
 							 {
-								 //System.out.println("deplacement de "+ vitesse.getX()+ " " + vitesse.getY());
 								 matrice[i][j].prochainTour();
 							 }
 						 }
