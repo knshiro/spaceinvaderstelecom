@@ -124,6 +124,7 @@ class Accueil extends JFrame implements ActionListener{
 			add(partie, BorderLayout.CENTER);
 			add(player, BorderLayout.SOUTH);
 			pack();
+			this.setLocationRelativeTo(this.getParent());
 			System.out.println("Disposition des panels ok");
 			partie.jouer();
 			tRefresh.start();
