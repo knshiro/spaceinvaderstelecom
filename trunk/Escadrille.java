@@ -259,13 +259,13 @@ public class Escadrille extends Chose{
 				 l++;
 		 }
 		 
-		 k=0;
+		 k=4;
 		 j=0;
-		 for(j=0;j<5;j++)
+		 while(k>0 && matrice[k][l]==null)
 		 {
-			 if (matrice[k][l]!=null)
-				 k=j;
+			 k--;
 		 }
+		 System.out.println("tir :"+k+" "+l);
 		 if ((matrice[k][l]!=null)&&(k<5)&&(k>=0))
 			 matrice[k][l].tir();
 				 
