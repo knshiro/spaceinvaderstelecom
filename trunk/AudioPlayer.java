@@ -6,6 +6,11 @@ import javax.media.MediaLocator;
 import javax.media.Player;
 import javax.media.RealizeCompleteEvent;
 
+/** AudioPlayer : permet de lancer du son.
+ * @author Bébépilé
+ * @version 1.0
+ * @package default_package
+*/
 public class AudioPlayer {
 
 private Player player; 

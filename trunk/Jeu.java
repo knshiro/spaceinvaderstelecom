@@ -6,6 +6,7 @@ import java.awt.event.*;
  * les controlent.
  * 
  * @author Knshiro
+ * @author Frotti
  * @version 1.0
  * @package default_package
  */

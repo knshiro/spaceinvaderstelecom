@@ -10,7 +10,7 @@ import javax.swing.KeyStroke;
 
 /** Menu : Classe du menu qui affiche les différentes options du jeu
  * 
- * @author Matthieu Gedon
+ * @author Bébépilé
  * @version 1.0
  * @package default_package
  */

@@ -15,6 +15,7 @@ import javax.swing.Timer;
 /** Accueil : Fenêtre principale, effectue le raffraîchissement, contient le main
  * 
  * @author Knshiro
+ * @author Bébépilé
  * @version 1.0
  * @package default_package
  */
