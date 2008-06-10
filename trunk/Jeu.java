@@ -176,8 +176,8 @@ public class Jeu {
 		tBaseLaser.stop();
 		tBrique.stop();
 		tMissile.stop();
-		tMysteryShip.start();
-		tApparitionMysteryShip.start();
+		tMysteryShip.stop();
+		tApparitionMysteryShip.stop();
 	}
 	
 	
