@@ -96,6 +96,7 @@ class MysteryShip extends Chose
 	
 	public void destruction()
 	{
+		super.destruction();
 		player.addScore(250);
 	}
 	
