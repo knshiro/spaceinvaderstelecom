@@ -1,8 +1,14 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-/** Un objet brique reprsente l'lment de base des boucliers.
- * Le constructeur est le mme que celui de la classe Chose.*/
+/** Brique : Un objet brique reprsente l'élément de base des boucliers.
+ * 
+ * @author Frotti
+ * @version 1.0
+ * @package default_package
+ */
+
+
  class Brique extends Chose 
 {
 	

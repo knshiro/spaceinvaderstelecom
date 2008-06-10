@@ -1,13 +1,15 @@
 import java.util.*;
 import java.awt.*;
 
+/** classe Escadrille: hérite de chose. gère un tableau 5*11 d'Invaders pour les faire bouger et tirer
+ * @author: Charlix
+ * @version:1.1
+ * @package:default_package
+ */
+
 public class Escadrille extends Chose{
 
-	/** classe Escadrille: hérite de chose. gère un tableau 5*11 d'Invaders pour les faire bouger et tirer
-	 * @author: Charlix
-	 * @version:1.1
-	 * @package:default_package
-	 * penser à rajouter de quoi perdre quand l'escadrille arrive en bas*/
+	
 	private Invaders[][] matrice; /*tableau des invaders*/
 	private int[] colonnespleines;/*colonnespleines(i) vaut le nombre d'invaders dans la colonne*/
 	private int[] lignespleines;

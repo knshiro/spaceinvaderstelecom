@@ -1,11 +1,3 @@
-//  Created by Matthieu Gedon-Monaco on 01/06/08.
-//  Copyright 2008 Bbnuts. All rights reserved.
-//
-//
-// Fonctionne en autonome, pour l'intgration, penser
-//  enlever le main. Pour l'instant c'est un menu qui
-// pourra tre intgr  la fentre de jeu.
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -19,6 +11,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.Timer;
+
+/** Accueil : Fenêtre principale, effectue le raffraîchissement, contient le main
+ * 
+ * @author Knshiro
+ * @version 1.0
+ * @package default_package
+ */
 
 class Accueil extends JFrame implements ActionListener{
 

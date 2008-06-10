@@ -7,6 +7,11 @@ import java.io.IOException;
 
 import javax.swing.*;
 
+/** HighScores: boîte de dialogue permettant l'enregistrement du score.
+ * @author: Knshiro
+ * @version:1.0
+ * @package:default_package
+ */
 
 public class HighScores extends JFrame implements ActionListener{
 

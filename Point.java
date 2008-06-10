@@ -1,5 +1,10 @@
-/** La classe point dfinit un Point de coordonnes x et y. Le constructeur est du type Point(int x, int y). On accde  ses attributs au moyen des mthodes getX, getY et setPoint*/
-
+/** Point : coordonnes x et y. Le constructeur est du type Point(int x, int y). 
+ * On accde  ses attributs au moyen des mthodes getX, getY et setPoint
+ * 
+ * @author Knshiro
+ * @version 1.0
+ * @package default_package
+ */
 
 class Point 
 {
