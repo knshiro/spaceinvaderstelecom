@@ -91,8 +91,9 @@ class Accueil extends JFrame implements ActionListener{
 				remove(player);
 				partie=null;
 			}
-			player = new Joueur(1,0,"bob");
+			player = new Joueur(1,0);
 			partie = new Session(player);
+			player.partie=partie;
 			System.out.println("Nouvelle session ok");
 			add(partie, BorderLayout.CENTER);
 			add(player, BorderLayout.SOUTH);
