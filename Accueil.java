@@ -51,17 +51,6 @@ class Accueil extends JFrame implements ActionListener{
         }
 	};
 
-/*	public void win(){
-		partie.game.stop();
-		JLabel label = new JLabel("YOU WON !");
-		label.setFont(new Font("Serif",Font.PLAIN,72));
-		label.setForeground(Color.RED);
-		partie.add(label,BorderLayout.SOUTH);
-		pack();
-		//partie.game.player.nextLevel();
-		//partie.jouer();
-	}
-*/	
 	public void gameOver(){
 		partie.game.stop();
 		/*afficher un écran perdant*/
