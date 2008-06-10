@@ -22,7 +22,7 @@ public class Escadrille extends Chose{
 	private int id;
 	int game_over;
 	private int larginv, hautinv;
-	private double diff=0.1;
+	private double diff=0.03;
 
 
 
@@ -304,7 +304,7 @@ public class Escadrille extends Chose{
 					 //System.out.println("on est au bord");
 					 sens=-sens;
 					 this.vitesse.setPoint(sens*(Math.abs((this.vitesse.getX())+acceleration)),this.vitesse.getY());
-					 this.diff+=0.1;
+					 this.diff+=0.03;
 					 for (i=0;i<5;i++)
 					 {
 						 for (j=0;j<11;j++)
