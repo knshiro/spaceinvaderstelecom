@@ -45,31 +45,50 @@ public class Escadrille extends Chose{
 		{
 			lignespleines[i]=11;
 		}
-		for (i=1;i<4;i++)
+		for (i=0;i<=4;i++)
 		{
-			for(j=0;j<11;j++)
-			{
-				Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-				//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-				matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, i, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+			switch(i){
+			case 0 :
+				for(j=0;j<11;j++)
+				{
+					Point plac = new Point(coord.getX()+j*(espace+larginv)+9,coord.getY()+i*(espace+hautinv));
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 12, 16, 15, 1, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+				}
+				break;
+			case 1 :
+				for(j=0;j<11;j++)
+				{
+					Point plac = new Point(coord.getX()+j*(espace+larginv)+5,coord.getY()+i*(espace+hautinv));
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 20, 25, 15, 2, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+				}
+				break;
+			case 2 :
+				for(j=0;j<11;j++)
+				{
+					Point plac = new Point(coord.getX()+j*(espace+larginv)+5,coord.getY()+i*(espace+hautinv));
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 20, 25, 15, 2, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+				}
+
+				break;
+			case 3 :
+				for(j=0;j<11;j++)
+				{
+					Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 28, 25, 15, 3, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+				}
+
+				break;
+			case 4 :
+				for(j=0;j<11;j++)
+				{
+					Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 28, 25, 15, 3, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+				}
+				break;
 			}
+			
 		}
 
-		for(j=0;j<11;j++)
-		{
-			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
-			//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
-			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 1, j, 0);
-			matrice[0][j]=in;
-		}
-
-		for(j=0;j<11;j++)
-		{
-			Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+4*(espace+hautinv));
-			//place.setPoint(coord.getX()+j*(espace+larginv),coord.getY()+0*(espace+hautinv));
-			Invaders in=new Invaders(Player, univers, plac, vitesse, 1, larginv, hautinv, 15, 2, j, 4);
-			matrice[4][j]=in;
-		}
 		//System.out.println("vitesse state 3= "+ matrice[4][4].vitesse.getX());
 		//System.out.println("x invader 4x4 state 1 ="+matrice[4][4].coord.getX());
 		//System.out.println("x invader 4x4 state 1 ="+matrice[2][10].coord.getX());
