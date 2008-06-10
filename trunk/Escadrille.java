@@ -54,7 +54,7 @@ public class Escadrille extends Chose{
 				for(j=0;j<11;j++)
 				{
 					Point plac = new Point(coord.getX()+j*(espace+larginv)+9,coord.getY()+i*(espace+hautinv));
-					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 12, 16, 15, 1, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 12, 16, 15, 3, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
 				}
 				break;
 			case 1 :
@@ -76,7 +76,7 @@ public class Escadrille extends Chose{
 				for(j=0;j<11;j++)
 				{
 					Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 28, 25, 15, 3, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 28, 25, 15, 1, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
 				}
 
 				break;
@@ -84,7 +84,7 @@ public class Escadrille extends Chose{
 				for(j=0;j<11;j++)
 				{
 					Point plac = new Point(coord.getX()+j*(espace+larginv),coord.getY()+i*(espace+hautinv));
-					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 28, 25, 15, 3, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
+					matrice[i][j]= new Invaders(Player, univers, plac, vitesse, 1, 28, 25, 15, 1, j, i);/*new Invaders(Player, univers, place, vitesse, 1,21, 16, 15, i, j, i);*//*voir selon le constructeur de Invaders*/
 				}
 				break;
 			}
