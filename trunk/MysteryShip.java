@@ -8,15 +8,21 @@ class MysteryShip extends Chose
 {
 	public MysteryShip(Joueur joueur,ArrayPerso univers,Point coord, Point vitesse, int vie, int largeur,int hauteur, int id, int etat)
 	{
+			
 		super(joueur,univers,coord,vitesse,vie,largeur,hauteur,id);
 		this.etat=etat;
 		abscisse=coord.getX();
 		ordonnee=coord.getY();
+		System.out.println("Le mysteryShip est instancié");
 		
 	}
 	
 	public void dessin(Graphics g)
 	{
+		largeur = getLargeur();
+		hauteur = getHauteur();
+		abscisse = coord.getX();
+		ordonnee = coord.getY();
 		if(etat==1)
 		{
 			g.setColor(Color.red);
@@ -39,9 +45,10 @@ class MysteryShip extends Chose
 			{		
 				g.fillRect(abscisse +(2*i-1)*largeur/13, ordonnee + 8*hauteur/9, largeur/13, hauteur/9);//8
 			}		
+			
 		}
 			
-		if(etat==2)
+		else if(etat==2)
 		{
 			g.setColor(Color.red);
 			g.fillRect(abscisse +5*largeur/13, ordonnee, largeur/13, hauteur/9);//1
@@ -65,6 +72,7 @@ class MysteryShip extends Chose
 			}
 			
 		}	
+		
 	}
 	
 	
@@ -75,6 +83,20 @@ class MysteryShip extends Chose
 		{
 			destruction();
 		}
+		switch (etat)
+		{
+		case 1:
+			etat=2;
+			break;
+		case 2:
+			etat=1;
+			break;
+		}
+	}
+	
+	public void destruction()
+	{
+		player.addScore(250);
 	}
 	
 	private int i, abscisse, ordonnee, largeur, hauteur, etat;
