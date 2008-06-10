@@ -94,7 +94,7 @@ public class Jeu {
 		
 		case 1 :
 			
-			univers.add(0,new BaseLaser(player,univers, new Point(400,550), new Point(3,0), 4, 21, 16, 0));
+			univers.add(0,new BaseLaser(player,univers, new Point(400,550), new Point(6,0), 4, 21, 16, 0));
 			univers.add(1,new Escadrille(player,univers, new Point(110,50), new Point (3,0), 55, 11, 5, 1, 1, 0, 30, 25, 20, 10));
 			univers.add(2,new MysteryShip(player,univers,new Point(10,50), new Point(2,0), 1, 21, 16, 2,0));
 			for (int i=0;i<=3;i++)
@@ -114,7 +114,7 @@ public class Jeu {
 			}
 			
 			
-			tEscadrille = new javax.swing.Timer(100,aEscadrille);
+			tEscadrille = new javax.swing.Timer(70,aEscadrille);
 			tBaseLaser = new javax.swing.Timer(40,aBaseLaser);
 			tBrique = new javax.swing.Timer(30,aBrique);
 			tMissile = new javax.swing.Timer(30,aMissile);

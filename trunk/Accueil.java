@@ -82,7 +82,7 @@ class Accueil extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.pack();
 		this.setVisible(true);
-		tRefresh = new Timer(20,aRefresh);
+		tRefresh = new Timer(15,aRefresh);
 		System.out.println("Accueil ok"); 
 		
 	}
