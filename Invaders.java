@@ -248,7 +248,7 @@ class Invaders extends Chose
 			type=2;
 		break;
 		case 6:
-			type=1;
+			type=3;
 		break;
 		}
 	
