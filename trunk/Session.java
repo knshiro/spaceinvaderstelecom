@@ -2,6 +2,7 @@ import java.awt.*;
 import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
+
 import  java.awt.event.*;
 
 /** Session : gere l'affichage du jeu à proprement dit.
@@ -16,7 +17,7 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 	Joueur player;
 	Image img;
 	Thread proc;
-	
+
 	
 	
 	 public void keyPressed(KeyEvent evt){
@@ -56,7 +57,8 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		try {
 		img = ImageIO.read(new File("FarAway.jpg"));
 		}
-		catch (IOException e){
+		catch (IOException e)
+		{
 			e.printStackTrace();
 		}
 		proc = new Thread(){
@@ -71,12 +73,12 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 				game.jouer();
 			}
 		};
+
 	}	
 	 
 	public void jouer(){
 		game = new Jeu(player.getLevel(),player);
 		proc.run();
-		
 	}
 	
 	
@@ -87,8 +89,11 @@ public class Session extends JPanel implements KeyListener,MouseListener{
 		g.drawImage(img, 0, 0, null);
 			for (int i=0;i<200;i++){
 				if(game.univers.get(i)!=null)
+				{
 					(game.univers.get(i)).dessin(g);
+				}
 			}
+
 	}
 	
 	
