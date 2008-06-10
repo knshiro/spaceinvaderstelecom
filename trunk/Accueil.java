@@ -7,22 +7,70 @@
 // pourra tre intgr  la fentre de jeu.
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.Timer;
 
 class Accueil extends JFrame implements ActionListener{
 
-	static Session partie;
+	Session partie;
 	Menu myMenu;
 	AudioPlayer audioPlayer;
 	Joueur player;
-
+	Timer tRefresh;
 	
+	ActionListener aRefresh = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+        	switch(partie.player.getGameOver()){
+        	case 0:
+        	partie.repaint();
+        	player.repaint();
+        	break;
+        	
+        	case 1:
+        		tRefresh.stop();
+        		gameOver();
+        		break;
+        		
+        	case -1:
+        		tRefresh.stop();
+        		win();
+        		break;
+        	}
+        	
+        }
+	};
+
+	public void win(){
+		partie.game.stop();
+		JLabel label = new JLabel("YOU WON !");
+		label.setFont(new Font("Serif",Font.PLAIN,72));
+		add(label,BorderLayout.CENTER);
+		pack();
+		//partie.game.player.nextLevel();
+		//partie.jouer();
+	}
+	
+	public void gameOver(){
+		partie.game.stop();
+		/*afficher un écran perdant*/
+		JLabel label = new JLabel("GAME OVER");
+		label.setFont(new Font("Serif",Font.PLAIN,72));
+		label.setForeground(Color.RED);
+		partie.add(label,BorderLayout.SOUTH);
+		pack();
+		HighScores end = new HighScores(player.getScore());
+		/* afficher le score et demander le nom*/
+	}
 	
 	Accueil(){
 		myMenu = new Menu(this);
@@ -32,7 +80,8 @@ class Accueil extends JFrame implements ActionListener{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.pack();
 		this.setVisible(true);
-		System.out.println("test"); 
+		tRefresh = new Timer(20,aRefresh);
+		System.out.println("Accueil ok"); 
 	}
 	
 	public void actionPerformed(ActionEvent e) {
@@ -50,6 +99,7 @@ class Accueil extends JFrame implements ActionListener{
 			pack();
 			System.out.println("Disposition des panels ok");
 			partie.jouer();
+			tRefresh.start();
 			audioPlayer = new AudioPlayer("file:spaceinvaders.wav");
 			try {
 				audioPlayer.start();
