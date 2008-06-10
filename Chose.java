@@ -20,6 +20,17 @@ public abstract class Chose {
 	private int hauteur;
 	private int id;
 	
+	/** Constructeur de Chose
+	* @param player : permet d'acceder aux paramètres actuels de l'objet joueur
+	* @param univers : permet d'accéder aux autres éléments del'univers de la partie en cours
+	* @param coord : definit la position dans l'écran en pixel
+	* @param vitess : definit la vitesse de déplacement en pixel
+	* @param vie : donne l'état de santé de l'objet
+	* @param largeur : definit la largeur de l'objet sur l'ecran en pixel
+	* @param hauteur : definit la hauteur de l'objet sur l'ecran en pixel
+	* @param id : permet à l'objet de se reconnaitre dans l'univers
+	*/
+	
 	Chose(Joueur player,ArrayPerso univers, Point coord, Point vitesse, int vie, int largeur, int hauteur, int id){
 		this.player = player;
 		this.univers = univers;
