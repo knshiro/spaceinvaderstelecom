@@ -55,7 +55,6 @@ public class BaseLaser extends Chose{
 			while(this.univers.get(i) != null) i++;
 			Missile missile = new Missile(player,this.univers,coords,vitesses,1,3,10,i,1);
 			(missile.univers).add(i,missile);
-			System.out.println(nombremissile);
 			
 			
 		}
@@ -70,8 +69,7 @@ public class BaseLaser extends Chose{
 		ordonnee=coord.getY();
 		hauteur=super.getHauteur();
 		largeur=super.getLargeur();
-		//System.out.println("largeur = "+ largeur);
-		//System.out.println("hauteur = "+ hauteur);
+		
 		
 		
 		g.setColor(Color.white);
@@ -90,19 +88,14 @@ public class BaseLaser extends Chose{
 	
 	public void deplacement(){
 		int X = this.coord.getX();
-		//System.out.println("DéplacementX base laser = "+ ordredeplacement);
 		if(ordredeplacement==1){// deplacement droite si ordredeplacement vaut 1
 			if (X<800){
 			coord.translate(vitesse.getX(), vitesse.getY());
-			//ordredeplacement=0;
-			//System.out.println("ordredeplacement="+this.ordredeplacement);
 			}
 		}	
 		else if(ordredeplacement==-1){
 			if (X>0){
 				coord.translate(-(vitesse.getX()), vitesse.getY());
-				//ordredeplacement=0;
-				//System.out.println("ordredeplacement="+this.ordredeplacement);
 				}
 		}
 			
