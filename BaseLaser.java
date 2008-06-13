@@ -14,6 +14,7 @@ public class BaseLaser extends Chose{
 	int nombremissile;
 	private int autorisation;
 	private int ordredeplacement;
+	long derniertir;
 	
 	
 	int getdeplacement(){
@@ -38,12 +39,13 @@ public class BaseLaser extends Chose{
 		this.nombremissile=0;
 		this.ordredeplacement=0;
 		this.autorisation=0;
+		derniertir = System.currentTimeMillis();
 		}
 
 	public void tir(){
-		if( (this.autorisation==1) && (this.nombremissile<=3 )) {  // autorisation =1 si on demande  tirer un missile
+		if( (this.autorisation==1) && (this.nombremissile<=3) && (System.currentTimeMillis()-derniertir>100)) {  // autorisation =1 si on demande  tirer un missile
+			derniertir=System.currentTimeMillis();
 			int i=60; 
-			autorisation=0;
 			int X = this.coord.getX()+this.getHauteur()/2;
 			int Y = this.coord.getY() - 2;
 			Point coords = new Point(X,Y);
