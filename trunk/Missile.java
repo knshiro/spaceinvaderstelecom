@@ -80,7 +80,7 @@ public class Missile extends Chose {
 						i++;
 					}
 					if(i<200) {
-						((BaseLaser) (univers.get(0))).nombremissile--;
+						//((BaseLaser) (univers.get(0))).nombremissile--;
 						(univers.get(i)).degat(1);
 						destruction();
 					}
@@ -127,9 +127,6 @@ public class Missile extends Chose {
 	public void deplacement(){ 
 		
 		if ((coord.getX()>800) || (coord.getY()>600) || (coord.getX()<0) || (coord.getY() <0)) {
-			if(camp==1){
-				((BaseLaser) (univers.get(0))).nombremissile--;
-			}	
 			destruction();
 				
 		}
@@ -141,9 +138,18 @@ public class Missile extends Chose {
 /**
  * Permettra  la fonction de Jeu de controler le prochain tour
  */
-	public void prochainTour() {
+	public void prochainTour() {((BaseLaser) (univers.get(0))).nombremissile--;
 		deplacement();
 		if( univers.get(getID()) !=null)
 			collision();
 	}
+
+
+	public void destruction() {
+		if (camp==1){
+			((BaseLaser) (univers.get(0))).nombremissile--;
+		}
+		super.destruction();
+	}
+	
 }
