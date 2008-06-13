@@ -66,13 +66,13 @@ public class Missile extends Chose {
 			if(i!=5){
 				(mechant.getMatrice()[i][j]).degat(1);
 				destruction(); 
-				((BaseLaser) (univers.get(0))).nombremissile--;
+				//((BaseLaser) (univers.get(0))).nombremissile--;
 			}
 			else {
 				if(touche(univers.get(2))) {
 					(univers.get(2)).degat(1);
 					destruction();
-					((BaseLaser) (univers.get(0))).nombremissile--;
+					//((BaseLaser) (univers.get(0))).nombremissile--;
 				}
 				else {
 					i=3;
@@ -138,7 +138,7 @@ public class Missile extends Chose {
 /**
  * Permettra  la fonction de Jeu de controler le prochain tour
  */
-	public void prochainTour() {((BaseLaser) (univers.get(0))).nombremissile--;
+	public void prochainTour() {
 		deplacement();
 		if( univers.get(getID()) !=null)
 			collision();
