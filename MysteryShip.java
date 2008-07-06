@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.*;
 
-//Attention la classe n'est pas du tout oprationnelle pour l'instant, il faut modifier le constructeur.
+//Il faut absolument noter que ceux qui sont Sénégal en ce moment sont des gros PD. De plus, pendant qu'ils sont loin du pays leur mère prend du bon temps...les jambes en l'air.
 
 class MysteryShip extends Chose 
 {
